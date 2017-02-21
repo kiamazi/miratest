@@ -1,0 +1,120 @@
+
+
+  {{ INCLUDE head }}
+  <body itemscope itemtype="http://schema.org/Article">
+    {{ INCLUDE header }}
+    <main class="content" role="main">
+    {{ FOREACH POSTS }}
+      <article class="post">
+        {{ IF image }}
+        <div class="article-image">
+          <div class="post-image-image" style="background-image: url(/miratest/{{ image }})">
+            Article Image
+          </div>
+          <div class="post-meta">
+            <h1 class="post-title">{{ title }}</h1>
+            <div class="cf post-meta-text">
+              <div class="author-image" style="background-image: url({{ FloorCONF.author_image }})">Blog Logo</div>
+              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ author }}</h4>
+              on
+              <span class="date" dir="rtl">{{ CALENDAR.jday | $FarsiNum }}&nbsp;&nbsp;{{ CALENDAR.jmonth_name }}&nbsp;&nbsp;{{ CALENDAR.jyear | $FarsiNum }}</span>
+            </div>
+            <div style="text-align:center">
+              <a href="#topofpage" class="topofpage"><i class="fa fa-angle-down"></i></a>
+            </div>
+          </div>
+        </div>
+        {{ ELSE }}
+        <div class="noarticleimage">
+          <div class="post-meta">
+            <h1 class="post-title">{{ title }}</h1>
+            <div class="cf post-meta-text">
+              <div class="author-image" style="background-image: url({{ FloorCONF.author_image }})">Blog Logo</div>
+              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ author }}</h4>
+              on<br>
+              <time datetime="{{ date }}" dir="rtl">{{ CALENDAR.jday | $FarsiNum }}{{ CALENDAR.jmonth_name }}{{ CALENDAR.jyear | $FarsiNum }}</time>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        {{ END }}
+        <section dir="rtl" class="post-content">
+          <div class="post-reading">
+            <span class="post-reading-time"></span> read
+          </div>
+          <a name="topofpage"></a>
+          {{ body.more }}
+        </section>
+        <footer class="post-footer">
+          <section class="share">
+
+	{{ FOREACH social IN FloorCONF.social }}
+              {{ IF social.share_url }}
+                <a class="icon-{{ social.icon }}" href="{{ social.share_url }}{{ social.share_title }}{{ title | uri }}{{ social.share_link }}{{ url }}"
+                  onclick="window.open(this.href, '{{ icon }}-share', 'width=550,height=255');return false;">
+                <i class="fa fa-{{ social.icon }}"></i><span class="hidden">{{ social.icon }}</span>
+                </a>
+              {{ END }}
+	{{ END }}
+
+             {{ IF comment == 'yes' }}
+              <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'behroozam';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+              {{ END }}
+
+          </section>
+        </footer>
+        <div class="bottom-teaser cf">
+          <div class="isLeft">
+            <h5 class="index-headline featured"><span>Written by</span></h5>
+            <section class="author">
+              <div class="author-image" style="background-image: url({{ FloorCONF.author_image }})">Blog Logo</div>
+              <h4>{{ author }}</h4>
+              <p class="bio">{{ FloorAuthorBio }}</p>
+              <hr>
+              <p class="published">Published <time datetime="{{ date }}">{{ CALENDAR.day }}{{ CALENDAR.month_name }}{{ CALENDAR.year }}</time></p>
+            </section>
+          </div>
+
+          <div class="isRight">
+            <h5 class="index-headline featured"><span>Supported by</span></h5>
+            <footer class="site-footer">
+              <section dir="rtl" class="poweredby">قدرت گرفته به وسیله<a dir="rtl" href="http://miraxy.github.io"> mira</a></section>
+              <a class="subscribe" href="{{ FloorROOT }}/feed.xml"> <span class="tooltip"> <i class="fa fa-rss"></i> You should subscribe to my feed.</span></a>
+              <div class="inner">
+                <section class="copyright">All content Under GNU FDL <a href="{{ FloorURL }}/">{{ author }}</a>  {{ CALENDAR.year }}<br>free knowlege for all </section>
+              </div>
+            </footer>
+          </div>
+        </div>
+      </article>
+{{ END }}
+    </main>
+    <div class="bottom-closer">
+      <div class="background-closer-image" style="background-image: url({{ FloorCONF.cover }})">
+        Image
+      </div>
+      <div class="inner">
+        <h1 class="blog-title">{{ FloorTitle }}</h1>
+        <h2 class="blog-description">{{ FloorDESCRIPTION }}</h2>
+        <a href="{{ FloorROOT }}" class="btn">بازگشت به صفحه اول</a>
+      </div>
+    </div>
+    {{ INCLUDE javascripts }}
+
+  </body>
+</html>
