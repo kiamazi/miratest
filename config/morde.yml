@@ -1,0 +1,79 @@
+# PenomatiK general configs
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+
+## Site settings
+title: مرده
+description: تصور کن که زندگی‌ات در تخیلات یک مگس مرده باشد.
+
+name: مرده
+author: امیر مومنیان
+email: nainemom@gmail.com
+
+ # the base hostname & protocol for your site
+url: https://kiamazi.github.io/
+root: /miratest/morde/
+
+
+
+# if fill static and imageurl, they will be cretaed in your root
+# change from /MAIN_ROOT/YOUR_MAIN_STATIC_PATH to-> /MAIN_ROOT/FLOOR_ROOT/YOUR_STATIC_PATH
+# and
+# change from /MAIN_ROOT/YOUR_MAIN_Image_PATH to-> /MAIN_ROOT/FLOOR_ROOT/YOUR_Image_PATH
+static: /miratest/static/morde
+imageurl: /miratest/static/morde/images
+
+## default post permanent link
+permalink: /:title/
+
+##date format default is gregorian, but you can change it to jalali
+date_format: jalali
+
+## Your local Time Zone
+TimeZone: +03:30
+
+## Build settings
+default_body_format: markdown
+
+## number of posts will be show in main index page
+post_num: 5
+
+## number of posts will be show in archives index page
+archive_post_num: all
+
+
+## Mira's main directory in your pc
+
+
+
+## template path by root is penurlPATH/template
+## if you want use a custom template for examle in penurlPATH/template/CustomThEM
+## just type custom template folder name
+#> template: Custom_Template_Folde_Name
+template: default-theme
+
+## the fields you want use for archive, like category, tag and ...
+## by default Mira archive date field dont need type it here
+## Mira use this fields by default for the floors which haven't field section
+## in FloorName.yaml, or haven't FloorName.yaml file
+
+#this fields are not allowed: archives, static
+lists:
+ - tags
+ - cat
+
+namespace:
+  آموزش: learn
+  کتاب: book
+  درباره: about
+  شخصی: personal
+  عمومی: general
+  نمونه کارها: portfolios
+  نمونه کار: portfolios
+  طراحی مجدد: redesign
+  تایپوگرافی: typographi
+
