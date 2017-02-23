@@ -20,7 +20,8 @@
       <a class="blog-logo" href="{{ URL }}" style="background-image: url('{{ SITE.logo }}')">{{ TITLE }}</a>
 
     <h1 class="blog-title">{{ TITLE }}</h1>
-    <h2 class="blog-description">{{ DESCRIPTION }}</h2>
+    <h2 class="blog-description">{{ DESCRIPTION }}<br><a href="{{ SITE.source }}">{{ SITE.source }}</a></h2>
+
     <div class="custom-links">
       {{ FOREACH social in SITE.social }}
         {{ IF social.url }}

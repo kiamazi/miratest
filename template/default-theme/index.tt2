@@ -4,13 +4,10 @@
 
   <header id="header">
     <img id="header_img" src="{{ MainSTATIC }}/default-theme/img/mira-c.png">
-		<h1>
-      {{ TITLE }}
-		</h1>
-		<h5>
-			{{ DESCRIPTION }}
-		</h5>
-	</header>
+      <h1>{{ TITLE }}</h1>
+      <h5>{{ DESCRIPTION }}</h5>
+      <h6><a href="{{ SITE.source }}">{{ SITE.source }}</a></h6>
+  </header>
 
 
 {{ INCLUDE navbar }}
@@ -67,7 +64,7 @@
 
       <div class="body">
         <p>{{ body.less }}</p>
-        <a class="read-more" href="{{ url }}#more">Continue...</a>
+        <a class="read-more" href="{{ url }}#more">ادامه...</a>
       </div>
 
 
