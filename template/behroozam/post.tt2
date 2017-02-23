@@ -14,7 +14,7 @@
           <div class="post-meta">
             <h1 class="post-title">{{ title }}</h1>
             <div class="cf post-meta-text">
-              <div class="author-image" style="background-image: url({{ FloorCONF.author_image }})">Blog Logo</div>
+              <div class="author-image" style="background-image: url({{ SITE.author_image }})">Blog Logo</div>
               <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ author }}</h4>
               on
               <span class="date" dir="rtl">{{ CALENDAR.jday | $FarsiNum }}&nbsp;&nbsp;{{ CALENDAR.jmonth_name }}&nbsp;&nbsp;{{ CALENDAR.jyear | $FarsiNum }}</span>
@@ -29,7 +29,7 @@
           <div class="post-meta">
             <h1 class="post-title">{{ title }}</h1>
             <div class="cf post-meta-text">
-              <div class="author-image" style="background-image: url({{ FloorCONF.author_image }})">Blog Logo</div>
+              <div class="author-image" style="background-image: url({{ SITE.author_image }})">Blog Logo</div>
               <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ author }}</h4>
               on<br>
               <time datetime="{{ date }}" dir="rtl">{{ CALENDAR.jday | $FarsiNum }}{{ CALENDAR.jmonth_name }}{{ CALENDAR.jyear | $FarsiNum }}</time>
@@ -50,9 +50,9 @@
         <footer class="post-footer">
           <section class="share">
 
-	{{ FOREACH social IN FloorCONF.social }}
+	{{ FOREACH social IN SITE.social }}
               {{ IF social.share_url }}
-                <a class="icon-{{ social.icon }}" href="{{ social.share_url }}{{ social.share_title }}{{ title | uri }}{{ social.share_link }}{{ url }}"
+                <a class="icon-{{ social.icon }}" href="{{ social.share_url }}{{ social.share_title }}{{ title | uri }}{{ social.share_link }}{{ URL }}{{ url }}"
                   onclick="window.open(this.href, '{{ icon }}-share', 'width=550,height=255');return false;">
                 <i class="fa fa-{{ social.icon }}"></i><span class="hidden">{{ social.icon }}</span>
                 </a>
@@ -82,9 +82,9 @@
           <div class="isLeft">
             <h5 class="index-headline featured"><span>Written by</span></h5>
             <section class="author">
-              <div class="author-image" style="background-image: url({{ FloorCONF.author_image }})">Blog Logo</div>
+              <div class="author-image" style="background-image: url({{ SITE.author_image }})">Blog Logo</div>
               <h4>{{ author }}</h4>
-              <p class="bio">{{ FloorAuthorBio }}</p>
+              <p class="bio">{{ SITE.authorbio }}</p>
               <hr>
               <p class="published">Published <time datetime="{{ date }}">{{ CALENDAR.day }}{{ CALENDAR.month_name }}{{ CALENDAR.year }}</time></p>
             </section>
@@ -105,13 +105,13 @@
 {{ END }}
     </main>
     <div class="bottom-closer">
-      <div class="background-closer-image" style="background-image: url({{ FloorCONF.cover }})">
+      <div class="background-closer-image" style="background-image: url({{ SITE.cover }})">
         Image
       </div>
       <div class="inner">
-        <h1 class="blog-title">{{ FloorTitle }}</h1>
-        <h2 class="blog-description">{{ FloorDESCRIPTION }}</h2>
-        <a href="{{ FloorROOT }}" class="btn">بازگشت به صفحه اول</a>
+        <h1 class="blog-title">{{ TITILE }}</h1>
+        <h2 class="blog-description">{{ DESCRIPTION }}</h2>
+        <a href="{{ ROOT }}" class="btn">بازگشت به صفحه اول</a>
       </div>
     </div>
     {{ INCLUDE javascripts }}

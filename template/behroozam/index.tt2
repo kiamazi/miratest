@@ -10,31 +10,26 @@
       <div class="wrapper">
 
 <div class="teaserimage">
-    <div class="teaserimage-image" style="background-image: url({{ FloorCONF.cover }})">
+    <div class="teaserimage-image" style="background-image: url({{ SITE.cover }})">
         Teaser Image
     </div>
 </div>
 
 <header class="blog-header">
 
-      <a class="blog-logo" href="{{ FloorURL }}" style="background-image: url('{{ FloorCONF.logo }}')">{{ FloorTITLE }}</a>
+      <a class="blog-logo" href="{{ URL }}" style="background-image: url('{{ SITE.logo }}')">{{ TITLE }}</a>
 
-    <h1 class="blog-title">{{ FloorTITLE }}</h1>
-    <h2 class="blog-description">{{ FloorDESCRIPTION }}</h2>
+    <h1 class="blog-title">{{ TITLE }}</h1>
+    <h2 class="blog-description">{{ DESCRIPTION }}</h2>
     <div class="custom-links">
-
-<a class="icon-twitter" href="https://twitter.com/b3hroozam">
-<i class="fa fa-twitter"></i>
-</a>
-&nbsp;&nbsp;·&nbsp;&nbsp;
-<a class="icon-github" href="https://github.com/behroozam">
-<i class="fa fa-github"></i>
-</a>
-&nbsp;&nbsp;·&nbsp;&nbsp;
-<a class="icon-instagram" href="https://instagram.com/behroozam">
-<i class="fa fa-instagram"></i>
-</a>
-&nbsp;&nbsp;·&nbsp;&nbsp;
+      {{ FOREACH social in SITE.social }}
+        {{ IF social.url }}
+            <a class="icon-{{ social.icon }}" href="{{ social.url }}">
+              <i class="fa fa-{{ social.icon }}"></i>
+            </a>
+            &nbsp;&nbsp;·&nbsp;&nbsp;
+        {{ END }}
+      {{- END }}
 
       <a href="/behroozam/about/">درباره بهروزم</a>
     </div>

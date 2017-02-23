@@ -9,21 +9,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <title>{{ PageTITLE }}</title>
-  <meta name="description" content="{{ FloorDESCRIPTION }}" />
+  <meta name="description" content="{{ DESCRIPTION }}" />
 
   <meta name="HandheldFriendly" content="True" />
   <meta name="MobileOptimized" content="320" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-  <link rel="canonical" href="{{ FloorUrl }}">
+  <link rel="canonical" href="{{ URL }}">
 
-  <link rel="shortcut icon" href="{{ FloorCONF.icon }}">
+  <link rel="shortcut icon" href="{{ SITE.icon }}">
 
   <link rel="stylesheet" href="http://brick.a.ssl.fastly.net/Linux+Libertine:400,400i,700,700i/Open+Sans:400,400i,700,700i">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" type="text/css" media="screen" href="{{ FloorSTATIC }}/css/main.css" />
-  <link rel="stylesheet" type="text/css" media="print" href="{{ FloorSTATIC }}/css/print.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC }}/css/main.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="{{ STATIC }}/css/print.css" />
   
 </head>

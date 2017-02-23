@@ -1,5 +1,5 @@
 <!-- header start -->
 
-<a href="{{ FloorROOT }}" class="logo-readium"><span class="logo" style="background-image: url({{ FloorCONF.logo }})"></span></a>
+<a href="{{ ROOT }}" class="logo-readium"><span class="logo" style="background-image: url({{ SITE.logo }})"></span></a>
 
 <!-- header end -->
