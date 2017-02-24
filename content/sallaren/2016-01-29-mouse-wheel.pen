@@ -7,9 +7,9 @@ tags:
 title: 'Developing for The Real Web - Mouse Wheel Programming'
 utid: 20160129183530
 ---
-{% blockquote %}
+<blockquote>
 **tl;dr**: Calculating mouse wheel value across browsers is a real pain in the ass. Avoid it as long as you can.
-{% endblockquote %}
+</blockquote>
 
 So nowadays there’s all these talks about React, Redux and so many other cool things to do. But usually at our day jobs,
 we can’t just start using all these modern things. We have IE9 customers to think about and we have to make sure our
@@ -21,11 +21,9 @@ change it’s speed and velocity, and animate an element using that information.
 I started developing this using Chrome on OS X, with Magic Mouse, and everything was smooth and easy. In it’s simplest
 form:
 
-``` js
-container.addEventListener("mousewheel", (e) => {
-    el.style.transform = `translate3d(0, ${e.deltaY / 3}px, 0)`;
-});
-```
+	container.addEventListener("mousewheel", (e) => {
+		el.style.transform = `translate3d(0, ${e.deltaY / 3}px, 0)`;
+	});
 
 You’d think this would work nicely everywhere, but nope. There are several things wrong with this code:
 
@@ -36,10 +34,8 @@ You’d think this would work nicely everywhere, but nope. There are several thi
 ## Fixing it
 First, let’s add an event listener for other browsers:
 
-``` js
-container.addEventListener("mousewheel", handleScroll);
-container.addEventListener("DOMMouseScroll", handleScroll);
-```
+	container.addEventListener("mousewheel", handleScroll);
+	container.addEventListener("DOMMouseScroll", handleScroll);
 
 This will cover IE and couple of other browsers. Then now the real trouble begins:
 
@@ -52,16 +48,14 @@ This will cover IE and couple of other browsers. Then now the real trouble begin
 
 My first attempt to solve this was a solution like this:
 
-``` js
-// Determine the speed
-if (typeof e.deltaY !== "undefined") {
-    travel = 0 - parseInt(e.deltaY / 3, 10);
-} else if (typeof e.wheelDelta !== "undefined") {
-    travel = parseInt((e.wheelDelta / 120) / 3, 10);
-} else if (typeof e.detail !== "undefined") {
-    travel = 0 - parseInt(e.detail / 3, 10);
-}
-```
+	// Determine the speed
+	if (typeof e.deltaY !== "undefined") {
+	    travel = 0 - parseInt(e.deltaY / 3, 10);
+	} else if (typeof e.wheelDelta !== "undefined") {
+	    travel = parseInt((e.wheelDelta / 120) / 3, 10);
+	} else if (typeof e.detail !== "undefined") {
+	    travel = 0 - parseInt(e.detail / 3, 10);
+	}
 
 Which is quite terrible and doesn’t work as expected. The numbers are not the same so the animation speed would be
 really different across browsers. Which is not something that we want.
@@ -69,41 +63,37 @@ really different across browsers. Which is not something that we want.
 After some Googling, I came across [this page](http://phrogz.net/js/wheeldelta.html) which was mentioned in a
 Stack Overflow issue. I cleaned up the code a bit:
 
-``` js
-function wheelDistance(evt) {
-    if (!evt) {
-        evt = window.event;
-    }
-
-    let w = evt.wheelDelta,
-        d = evt.detail;
-
-    if (d) {
-        if (w) {
-            return ((w / d / 40 * d) > 0) ? 1 : -1; // Opera
-        }
-        return -d / 3; // Firefox;
-    }
-
-    return w / 120; // IE, Safari & Chrome
-}
-```
+	function wheelDistance(evt) {
+	    if (!evt) {
+	        evt = window.event;
+	    }
+	
+	    let w = evt.wheelDelta,
+	        d = evt.detail;
+	
+	    if (d) {
+	        if (w) {
+	            return ((w / d / 40 * d) > 0) ? 1 : -1; // Opera
+	        }
+	        return -d / 3; // Firefox;
+	    }
+	
+	    return w / 120; // IE, Safari & Chrome
+	}
 
 This function tries to solve all issues I mentioned earlier and normalize the output. Then I could just use the output
 and adjust the speed as needed. To solve the `transform` and `translate3d` issues I added prefixes:
 
-``` js
-container.addEventListener("mousewheel", handleScroll);
-container.addEventListener("DOMMouseScroll", handleScroll);
-
-function handleScroll(e) {
-    let deltaY = wheelDistance(e);
-
-    el.style.transform = `translate3d(0, ${deltaY}px, 0)`; // Modern browsers
-    el.style.webkitTransform = `translate3d(0, ${deltaY}px, 0)`; // Webkit
-    el.style.msTransform = `translate(0, ${deltaY}px)`; // Use 2D transform for IE9
-}
-```
+	container.addEventListener("mousewheel", handleScroll);
+	container.addEventListener("DOMMouseScroll", handleScroll);
+	
+	function handleScroll(e) {
+	    let deltaY = wheelDistance(e);
+	
+	    el.style.transform = `translate3d(0, ${deltaY}px, 0)`; // Modern browsers
+	    el.style.webkitTransform = `translate3d(0, ${deltaY}px, 0)`; // Webkit
+	    el.style.msTransform = `translate(0, ${deltaY}px)`; // Use 2D transform for IE9
+	}
 
 ## References
 In case you have to do the same thing, here are some links:
