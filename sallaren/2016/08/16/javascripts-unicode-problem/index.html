@@ -1,0 +1,182 @@
+
+
+
+
+
+  <!DOCTYPE html>
+<html lang="English">
+<head>
+
+<meta charset="utf-8">
+
+<title>Javascript’s Unicode Problem - Sallar Kaboli</title>
+
+<meta name="description" content="Exploring Javascript &amp; Things">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Exploring Javascript &amp; Things">
+<meta property="og:type" content="website">
+<meta property="og:title" content="">
+<meta property="og:url" content="https:/kiamazi.github.io/miratest/sallaren">
+<meta property="og:site_name" content="Sallar Kaboli">
+<meta property="og:description" content="">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+<meta name="twitter:creator" content="@sallar">
+<link rel="alternative" href="/miratest/sallaren/atom.xml" title="Sallar Kaboli" type="application/atom+xml">
+<link rel="short icon" href="/miratest/static/theme/sallar/img/logo.png">
+<link rel="stylesheet" href="/miratest/static/theme/sallar/css/style-ltr.css" type="text/css">
+
+</head>
+
+
+<body>
+
+<!--
+ تیتر خام صفحه
+ برای صفحه اصلی تیتر، برای پست ها خلاصه مطلب
+
+-->
+
+
+
+    <!-- Header -->
+
+<header>
+    <a href="https:/kiamazi.github.io/miratest/sallaren" class="logo"><img src="/miratest/static/theme/sallar/img/logo.png"></a>
+    <h1>Sallar Kaboli / Exploring JavaScript & Things.</h1>
+
+        <ul class="nav nav-list">
+            <li class="nav-list-item"><a href="https:/kiamazi.github.io/miratest/sallaren" target="_self" class="nav-list-link">Blog</a></li>
+            <li class="nav-list-item"><a href="https://sallar.me/about/" target="_self" class="nav-list-link">About</a></li>
+            <li class="nav-list-item"><a href="/miratest/sallaren/atom.xml" target="_self" class="nav-list-link">Rss</a></li>
+            <li class="nav-list-item"><a href="https://twitter.com/sallar" target="_blank" class="nav-list-link">Twitter</a></li>
+            <li class="nav-list-item"><a href="https://github.com/sallar" target="_blank" class="nav-list-link">Github</a></li>
+            <li class="nav-list-item"><a href="/miratest/sallaren/sallarblog/" target="_self" class="nav-list-link">Persian</a></li>
+	</ul>
+
+</header>
+
+<!-- /Header -->
+
+
+    <section id="content" class="container">
+    
+	
+        <div class="post">
+	
+    <article id="-Javascript’s Unicode Problem" class="article article-type-" itemscope itemprop="blogPost">
+        <h2 itemprop="name">
+           <a class="archive-article-title" href="/miratest/sallaren/2016/08/16/javascripts-unicode-problem/" target="_blank" itemprop="url">Javascript’s Unicode Problem</a>
+        </h2>
+	
+          <h4><time datetime="2016-08-16 21:42:20" itemprop="datePublished">16August2016</time></h4>
+	
+
+	
+        <section class="post-content">
+            <a name="more"></a><br><blockquote>
+  <p>Disclaimer: A repost of my article for <a href="https://cafedev.org/article/2016/08/javascript-unicode/">CafeDev</a></p>
+</blockquote>
+
+<p>A while ago I needed a sim­ple string pad func­tion, and since it’s a freak­ishly sim­ple task, I just wrote a sim­ple
+func­tion:</p>
+
+<p>```js
+function limit(str, limit = 16, padString = "#", padPosition = "right") {
+    const strLength = str.length;</p>
+
+<pre><code>if (strLength &gt; limit) {
+    return str.substring(0, limit);
+} else if (strLength &lt; limit) {
+    const padRepeats = padString.repeat(limit - strLength);
+    return (padPosition === "left") ? padRepeats + str : str + padRepeats;
+}
+return str;
+</code></pre>
+
+<p>}
+```</p>
+
+<p>Pretty sim­ple, right? And it works too… Until you add in an emoji to your text. Then every­thing falls apart and worlds
+col­lide! How? Simple:</p>
+
+<p><code>js
+"💩".length // 2!
+</code></p>
+
+<p>(If you’re read­ing this on Linux you might ac­tu­ally see 2 bro­ken uni­code char­ac­ters, and the re­sult makes sense un­less
+you have in­stalled an emoji pack­age on your browser or OS)...</p>
+
+<p><a href="https://cafedev.org/article/2016/08/javascript-unicode/">Read the full story on CafeDev &rarr;</a></p>
+        </section>
+	
+
+        <section class="meta">
+            <hr>
+
+	
+            
+              <span class="hide-on-mobile">
+	      tags: 
+              
+                <a href="/miratest/sallaren/tags/Javascript/">Javascript</a>
+		،&nbsp;
+                <a href="/miratest/sallaren/tags/Unicode/">Unicode</a>
+		
+              </span>
+            
+	
+                <section class="share">
+                    <share-button></share-button>
+                </section>
+        </section>
+
+        <section id="comments">
+          <div id="disqus_thread">
+	  
+	  <script>
+	    var disqus_shortname = 'sallar';
+	      (function(){
+		var dsq = document.createElement('script');
+		dsq.type = 'text/javascript';
+		dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+	    </script>
+            
+          <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </section>
+
+    </article>
+	
+        </div>
+	
+
+
+
+</section>
+
+  <!-- /Content -->
+<!-- Footer -->
+
+<footer class="blog-footer">
+    <a href="/miratest/sallaren" class="logo"></a>
+    2015-2016<br />
+    cc &nbsp; /&nbsp;<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" rel="license" target="_blank">creative commons</a>
+</footer>
+
+
+
+<!-- /Footer -->
+
+<!-- Scripts -->
+
+<!-- /Scripts -->
+
+</body>
+</html>
+
+

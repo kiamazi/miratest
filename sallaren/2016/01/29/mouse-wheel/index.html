@@ -1,0 +1,259 @@
+
+
+
+
+
+  <!DOCTYPE html>
+<html lang="English">
+<head>
+
+<meta charset="utf-8">
+
+<title>Developing for The Real Web - Mouse Wheel Programming - Sallar Kaboli</title>
+
+<meta name="description" content="Exploring Javascript &amp; Things">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Exploring Javascript &amp; Things">
+<meta property="og:type" content="website">
+<meta property="og:title" content="">
+<meta property="og:url" content="https:/kiamazi.github.io/miratest/sallaren">
+<meta property="og:site_name" content="Sallar Kaboli">
+<meta property="og:description" content="">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+<meta name="twitter:creator" content="@sallar">
+<link rel="alternative" href="/miratest/sallaren/atom.xml" title="Sallar Kaboli" type="application/atom+xml">
+<link rel="short icon" href="/miratest/static/theme/sallar/img/logo.png">
+<link rel="stylesheet" href="/miratest/static/theme/sallar/css/style-ltr.css" type="text/css">
+
+</head>
+
+
+<body>
+
+<!--
+ تیتر خام صفحه
+ برای صفحه اصلی تیتر، برای پست ها خلاصه مطلب
+
+-->
+
+
+
+    <!-- Header -->
+
+<header>
+    <a href="https:/kiamazi.github.io/miratest/sallaren" class="logo"><img src="/miratest/static/theme/sallar/img/logo.png"></a>
+    <h1>Sallar Kaboli / Exploring JavaScript & Things.</h1>
+
+        <ul class="nav nav-list">
+            <li class="nav-list-item"><a href="https:/kiamazi.github.io/miratest/sallaren" target="_self" class="nav-list-link">Blog</a></li>
+            <li class="nav-list-item"><a href="https://sallar.me/about/" target="_self" class="nav-list-link">About</a></li>
+            <li class="nav-list-item"><a href="/miratest/sallaren/atom.xml" target="_self" class="nav-list-link">Rss</a></li>
+            <li class="nav-list-item"><a href="https://twitter.com/sallar" target="_blank" class="nav-list-link">Twitter</a></li>
+            <li class="nav-list-item"><a href="https://github.com/sallar" target="_blank" class="nav-list-link">Github</a></li>
+            <li class="nav-list-item"><a href="/miratest/sallaren/sallarblog/" target="_self" class="nav-list-link">Persian</a></li>
+	</ul>
+
+</header>
+
+<!-- /Header -->
+
+
+    <section id="content" class="container">
+    
+	
+        <div class="post">
+	
+    <article id="-Developing for The Real Web - Mouse Wheel Programming" class="article article-type-" itemscope itemprop="blogPost">
+        <h2 itemprop="name">
+           <a class="archive-article-title" href="/miratest/sallaren/2016/01/29/mouse-wheel/" target="_blank" itemprop="url">Developing for The Real Web - Mouse Wheel Programming</a>
+        </h2>
+	
+          <h4><time datetime="2016-01-29 18:35:30" itemprop="datePublished">29January2016</time></h4>
+	
+
+	
+        <section class="post-content">
+            <a name="more"></a><br><p>{% blockquote %}
+<strong>tl;dr</strong>: Calculating mouse wheel value across browsers is a real pain in the ass. Avoid it as long as you can.
+{% endblockquote %}</p>
+
+<p>So nowadays there’s all these talks about React, Redux and so many other cool things to do. But usually at our day jobs,
+we can’t just start using all these modern things. We have IE9 customers to think about and we have to make sure our
+stuff won’t break for them, otherwise we’d be out of business.</p>
+
+<p>Recently I’ve been given a task at work which involves mouse wheel/trackpad scrolling. I’d have to capture that event,
+change it’s speed and velocity, and animate an element using that information.</p>
+
+<p>I started developing this using Chrome on OS X, with Magic Mouse, and everything was smooth and easy. In it’s simplest
+form:</p>
+
+<p><code>js
+container.addEventListener("mousewheel", (e) =&gt; {
+    el.style.transform = `translate3d(0, ${e.deltaY / 3}px, 0)`;
+});
+</code></p>
+
+<p>You’d think this would work nicely everywhere, but nope. There are several things wrong with this code:</p>
+
+<ul>
+<li>The event is not called <code>mousewheel</code> in every browser.</li>
+<li><code>e.deltaY</code> is not available in all browsers.</li>
+<li><code>transform</code> and <code>translate3d</code> are not available in all browsers.</li>
+</ul>
+
+<h2>Fixing it</h2>
+
+<p>First, let’s add an event listener for other browsers:</p>
+
+<p><code>js
+container.addEventListener("mousewheel", handleScroll);
+container.addEventListener("DOMMouseScroll", handleScroll);
+</code></p>
+
+<p>This will cover IE and couple of other browsers. Then now the real trouble begins:</p>
+
+<ul>
+<li>Some browsers report <code>e.deltaY</code> in Wheel Event</li>
+<li>Some browsers report <code>e.wheelDelta</code> and they are multiplied by 120</li>
+<li>Some browsers report <code>e.detail</code> and sometimes they are multiplied by 3</li>
+<li>Some browsers report both <code>e.wheelDelta</code> and <code>e.detail</code></li>
+<li>Number signs in mouse wheel event are different across browsers (+/-)</li>
+<li>Some browsers don’t pass the event to the callback at all! And you’d have to read the event from <code>window.event</code>!</li>
+</ul>
+
+<p>My first attempt to solve this was a solution like this:</p>
+
+<p><code>js
+// Determine the speed
+if (typeof e.deltaY !== "undefined") {
+    travel = 0 - parseInt(e.deltaY / 3, 10);
+} else if (typeof e.wheelDelta !== "undefined") {
+    travel = parseInt((e.wheelDelta / 120) / 3, 10);
+} else if (typeof e.detail !== "undefined") {
+    travel = 0 - parseInt(e.detail / 3, 10);
+}
+</code></p>
+
+<p>Which is quite terrible and doesn’t work as expected. The numbers are not the same so the animation speed would be
+really different across browsers. Which is not something that we want.</p>
+
+<p>After some Googling, I came across <a href="http://phrogz.net/js/wheeldelta.html">this page</a> which was mentioned in a
+Stack Overflow issue. I cleaned up the code a bit:</p>
+
+<p>``` js
+function wheelDistance(evt) {
+    if (!evt) {
+        evt = window.event;
+    }</p>
+
+<pre><code>let w = evt.wheelDelta,
+    d = evt.detail;
+
+if (d) {
+    if (w) {
+        return ((w / d / 40 * d) &gt; 0) ? 1 : -1; // Opera
+    }
+    return -d / 3; // Firefox;
+}
+
+return w / 120; // IE, Safari &amp; Chrome
+</code></pre>
+
+<p>}
+```</p>
+
+<p>This function tries to solve all issues I mentioned earlier and normalize the output. Then I could just use the output
+and adjust the speed as needed. To solve the <code>transform</code> and <code>translate3d</code> issues I added prefixes:</p>
+
+<p>``` js
+container.addEventListener("mousewheel", handleScroll);
+container.addEventListener("DOMMouseScroll", handleScroll);</p>
+
+<p>function handleScroll(e) {
+    let deltaY = wheelDistance(e);</p>
+
+<pre><code>el.style.transform = `translate3d(0, ${deltaY}px, 0)`; // Modern browsers
+el.style.webkitTransform = `translate3d(0, ${deltaY}px, 0)`; // Webkit
+el.style.msTransform = `translate(0, ${deltaY}px)`; // Use 2D transform for IE9
+</code></pre>
+
+<p>}
+```</p>
+
+<h2>References</h2>
+
+<p>In case you have to do the same thing, here are some links:
+- <a href="http://www.adomas.org/javascript-mouse-wheel/">Mouse wheel programming using Javascript</a>
+- <a href="http://phrogz.net/js/wheeldelta.html">Wheel data normalization (Demo)</a>
+- <a href="http://stackoverflow.com/questions/5527601/normalizing-mousewheel-speed-across-browsers">Normalizing mousewheel speed across browsers</a></p>
+        </section>
+	
+
+        <section class="meta">
+            <hr>
+
+	
+            
+              <span class="hide-on-mobile">
+	      tags: 
+              
+                <a href="/miratest/sallaren/tags/Javascript/">Javascript</a>
+		
+              </span>
+            
+	
+                <section class="share">
+                    <share-button></share-button>
+                </section>
+        </section>
+
+        <section id="comments">
+          <div id="disqus_thread">
+	  
+	  <script>
+	    var disqus_shortname = 'sallar';
+	      (function(){
+		var dsq = document.createElement('script');
+		dsq.type = 'text/javascript';
+		dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+	    </script>
+            
+          <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </section>
+
+    </article>
+	
+        </div>
+	
+
+
+
+</section>
+
+  <!-- /Content -->
+<!-- Footer -->
+
+<footer class="blog-footer">
+    <a href="/miratest/sallaren" class="logo"></a>
+    2015-2016<br />
+    cc &nbsp; /&nbsp;<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" rel="license" target="_blank">creative commons</a>
+</footer>
+
+
+
+<!-- /Footer -->
+
+<!-- Scripts -->
+
+<!-- /Scripts -->
+
+</body>
+</html>
+
+

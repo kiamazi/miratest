@@ -1,0 +1,220 @@
+
+
+
+
+
+  <!DOCTYPE html>
+<html lang="English">
+<head>
+
+<meta charset="utf-8">
+
+<title>Making an iOS app using Javascript vs. Swift - Sallar Kaboli</title>
+
+<meta name="description" content="Exploring Javascript &amp; Things">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Exploring Javascript &amp; Things">
+<meta property="og:type" content="website">
+<meta property="og:title" content="">
+<meta property="og:url" content="https:/kiamazi.github.io/miratest/sallaren">
+<meta property="og:site_name" content="Sallar Kaboli">
+<meta property="og:description" content="">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+<meta name="twitter:creator" content="@sallar">
+<link rel="alternative" href="/miratest/sallaren/atom.xml" title="Sallar Kaboli" type="application/atom+xml">
+<link rel="short icon" href="/miratest/static/theme/sallar/img/logo.png">
+<link rel="stylesheet" href="/miratest/static/theme/sallar/css/style-ltr.css" type="text/css">
+
+</head>
+
+
+<body>
+
+<!--
+ تیتر خام صفحه
+ برای صفحه اصلی تیتر، برای پست ها خلاصه مطلب
+
+-->
+
+
+
+    <!-- Header -->
+
+<header>
+    <a href="https:/kiamazi.github.io/miratest/sallaren" class="logo"><img src="/miratest/static/theme/sallar/img/logo.png"></a>
+    <h1>Sallar Kaboli / Exploring JavaScript & Things.</h1>
+
+        <ul class="nav nav-list">
+            <li class="nav-list-item"><a href="https:/kiamazi.github.io/miratest/sallaren" target="_self" class="nav-list-link">Blog</a></li>
+            <li class="nav-list-item"><a href="https://sallar.me/about/" target="_self" class="nav-list-link">About</a></li>
+            <li class="nav-list-item"><a href="/miratest/sallaren/atom.xml" target="_self" class="nav-list-link">Rss</a></li>
+            <li class="nav-list-item"><a href="https://twitter.com/sallar" target="_blank" class="nav-list-link">Twitter</a></li>
+            <li class="nav-list-item"><a href="https://github.com/sallar" target="_blank" class="nav-list-link">Github</a></li>
+            <li class="nav-list-item"><a href="/miratest/sallaren/sallarblog/" target="_self" class="nav-list-link">Persian</a></li>
+	</ul>
+
+</header>
+
+<!-- /Header -->
+
+
+    <section id="content" class="container">
+    
+	
+        <div class="post">
+	
+    <article id="-Making an iOS app using Javascript vs. Swift" class="article article-type-" itemscope itemprop="blogPost">
+        <h2 itemprop="name">
+           <a class="archive-article-title" href="/miratest/sallaren/2015/12/23/app-journey/" target="_blank" itemprop="url">Making an iOS app using Javascript vs. Swift</a>
+        </h2>
+	
+          <h4><time datetime="2015-12-23 21:35:00" itemprop="datePublished">23December2015</time></h4>
+	
+
+	
+        <section class="post-content">
+            <a name="more"></a><br><p>We decided to do a small hackaton at <a href="http://www.kiosked.com/">Kiosked</a> during summer which was all kinds of fun. Couple of colleagues and me decided to make an app for finding the best restaurant to go to for lunch, which as you know isn’t an easy thing to do ;-) Our lunch app was called Lunchify and it would do these things:</p>
+
+<ul>
+<li>Show the list of venues based on location proximity</li>
+<li>Show lunch menu for each restaurant</li>
+<li>Show directions to the venue (navigation)</li>
+</ul>
+
+<h2>Cordova/AngularJS</h2>
+
+<p>As a strong believer in Javascript, I suggested we build the app using Javascript so it would be easier to implement and also be cross-platform. The guys worked out the API behind the app and scraped some data from the web to show in the app, and I coded the app using JS, <a href="https://cordova.apache.org/">Cordova</a> and <a href="http://ionicframework.com/">Ionic</a> Framework. The whole thing went pretty well and we had a working app by the end of second day. 
+The amount of effort I put into making the app was really minimal and many things were already being handled by Ionic and <a href="https://angularjs.org/">AngularJS</a>, so what I was actually doing was just connecting things together. This is the result:</p>
+
+<p><img src="/miratest/static/sallaren/img/app-journey/cordova.jpg" alt="Cordova AngularJS" title="Cordova AngularJS" ></p>
+
+<p>The result was more than OK for what it was (a hackaton project) and everybody was happy with it. But as a perfectionist that I am, I wanted it to be more than that. So I registered a new domain and decided to do a real app to be released in the App Store. I could just continue working on the existing project, but it had a few issues:</p>
+
+<ul>
+<li>Cordova apps are wrapped in a UIWebView, so basically they run a bit slower than normal browsers</li>
+<li>UI elements are not native. They are MADE to look native using CSS, but it’s not quite the same</li>
+<li>Animation performance (specially during page transitions) is not great and far from native-looking</li>
+<li>AngularJS. Nothing personal though.</li>
+</ul>
+
+<h2>React Native</h2>
+
+<p>At the time, <a href="https://facebook.github.io/react-native/">React Native</a> was under heavy development, but it looked really promising. And again as a strong believer in Javascript, I decided to git it a shot. React Native has major benefits:</p>
+
+<ul>
+<li>Coded in ES6 (JSX actually, but whatever), so yay Classes, Destructuring and every awesome feature of ES6. Since it’s transpiled using <a href="https://babeljs.io/">Babel</a></li>
+<li>Mostly native, so no UIWebView anymore. React Native is just a bridge between Javascript and Objective-C</li>
+<li>Cross-Platform, recent versions of React Native work for Android too</li>
+<li>Polyfills awesome APIs in browsers, like <code>fetch</code> API</li>
+</ul>
+
+<p>I rebuilt most of what I had done in Cordova using React Native, and while the process wasn’t all sunshine and candies (since React Native was and is in Beta and changes a lot), the resulting app was <em>native</em> and smooth. Here it is:</p>
+
+<p><img src="/miratest/static/sallaren/img/app-journey/react-native.jpg" alt="React Native" title="React Native" ></p>
+
+<p>Although I put nearly a month of my free time into this, but I wasn’t quite happy with the result. Mainly because:</p>
+
+<ul>
+<li>JSX! Tried to be open-minded but HTML in JS? No way.</li>
+<li>Performance issues. Maps and animations don’t play well with each other.</li>
+<li>Takes time to startup since it needs to read a huge Javascript file and do them all in Objective-C (or Java)</li>
+<li>The API is not complete and for many things I had to submit issues, play with their code or write plugins.</li>
+<li>Errors are not sometimes clear and takes hours to debug a simple issue. Node dependency issues are terrible here.</li>
+</ul>
+
+<h2>Swift</h2>
+
+<p>OK, at this point I had two options. Choose between React Native and AngularJS/Cordova, or just give up and forget about the project. It was a nice experiment after all. Then I thought of a third option: Learn <a href="https://swift.org/">Swift</a> and build the app with that. How hard could it possibly be? Turns out: Not hard at all. 
+I never liked Objective-C’s syntax. It’s too verbose in my opinion. But Swift on the other hand looked really clean and had a modern syntax, much like the languages I’m already familiar with. So I followed some online courses, read the Swift docs and a book, and then started coding the same thing in XCode. Pros:</p>
+
+<ul>
+<li>Clean and familiar syntax</li>
+<li>All Objective-C libraries, APIs and tools are available</li>
+<li>Great debugging with XCode</li>
+<li>Genunie native without any bridges</li>
+<li>Great performance</li>
+</ul>
+
+<p>As I’m writing this post, the app looks like this:</p>
+
+<p><img src="/miratest/static/sallaren/img/app-journey/swift.jpg" alt="Swift" title="Swift" ></p>
+
+<p>And the source code is <a href="https://github.com/sallar/lunchify-swift">on Github</a> at your disposal. I’m a rookie Swift developer so excuse any bad practices or repetative code, I will make it better as I go further. 
+I also put the <a href="https://github.com/sallar/lunchify-cordova">Cordova</a> and <a href="https://github.com/sallar/lunchify-react-native">React Native</a> source codes on Github if you want to check them out too for any reason. I haven’t cleaned the code up though. </p>
+
+<h2>Now What?</h2>
+
+<p>I will continue working on the Swift version of the app and release it on App Store as soon as I have enough data to make it useful. Play with the code and send a pull request if you will :-)</p>
+        </section>
+	
+
+        <section class="meta">
+            <hr>
+
+	
+            
+              <span class="hide-on-mobile">
+	      tags: 
+              
+                <a href="/miratest/sallaren/tags/Swift/">Swift</a>
+		،&nbsp;
+                <a href="/miratest/sallaren/tags/Javascript/">Javascript</a>
+		
+              </span>
+            
+	
+                <section class="share">
+                    <share-button></share-button>
+                </section>
+        </section>
+
+        <section id="comments">
+          <div id="disqus_thread">
+	  
+	  <script>
+	    var disqus_shortname = 'sallar';
+	      (function(){
+		var dsq = document.createElement('script');
+		dsq.type = 'text/javascript';
+		dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+	    </script>
+            
+          <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </section>
+
+    </article>
+	
+        </div>
+	
+
+
+
+</section>
+
+  <!-- /Content -->
+<!-- Footer -->
+
+<footer class="blog-footer">
+    <a href="/miratest/sallaren" class="logo"></a>
+    2015-2015<br />
+    cc &nbsp; /&nbsp;<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" rel="license" target="_blank">creative commons</a>
+</footer>
+
+
+
+<!-- /Footer -->
+
+<!-- Scripts -->
+
+<!-- /Scripts -->
+
+</body>
+</html>
+
+

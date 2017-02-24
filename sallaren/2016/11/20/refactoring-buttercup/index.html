@@ -1,0 +1,186 @@
+
+
+
+
+
+  <!DOCTYPE html>
+<html lang="English">
+<head>
+
+<meta charset="utf-8">
+
+<title>Refactoring Buttercup with React/Redux - Sallar Kaboli</title>
+
+<meta name="description" content="Exploring Javascript &amp; Things">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Exploring Javascript &amp; Things">
+<meta property="og:type" content="website">
+<meta property="og:title" content="">
+<meta property="og:url" content="https:/kiamazi.github.io/miratest/sallaren">
+<meta property="og:site_name" content="Sallar Kaboli">
+<meta property="og:description" content="">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+<meta name="twitter:creator" content="@sallar">
+<link rel="alternative" href="/miratest/sallaren/atom.xml" title="Sallar Kaboli" type="application/atom+xml">
+<link rel="short icon" href="/miratest/static/theme/sallar/img/logo.png">
+<link rel="stylesheet" href="/miratest/static/theme/sallar/css/style-ltr.css" type="text/css">
+
+</head>
+
+
+<body>
+
+<!--
+ تیتر خام صفحه
+ برای صفحه اصلی تیتر، برای پست ها خلاصه مطلب
+
+-->
+
+
+
+    <!-- Header -->
+
+<header>
+    <a href="https:/kiamazi.github.io/miratest/sallaren" class="logo"><img src="/miratest/static/theme/sallar/img/logo.png"></a>
+    <h1>Sallar Kaboli / Exploring JavaScript & Things.</h1>
+
+        <ul class="nav nav-list">
+            <li class="nav-list-item"><a href="https:/kiamazi.github.io/miratest/sallaren" target="_self" class="nav-list-link">Blog</a></li>
+            <li class="nav-list-item"><a href="https://sallar.me/about/" target="_self" class="nav-list-link">About</a></li>
+            <li class="nav-list-item"><a href="/miratest/sallaren/atom.xml" target="_self" class="nav-list-link">Rss</a></li>
+            <li class="nav-list-item"><a href="https://twitter.com/sallar" target="_blank" class="nav-list-link">Twitter</a></li>
+            <li class="nav-list-item"><a href="https://github.com/sallar" target="_blank" class="nav-list-link">Github</a></li>
+            <li class="nav-list-item"><a href="/miratest/sallaren/sallarblog/" target="_self" class="nav-list-link">Persian</a></li>
+	</ul>
+
+</header>
+
+<!-- /Header -->
+
+
+    <section id="content" class="container">
+    
+	
+        <div class="post">
+	
+    <article id="-Refactoring Buttercup with React/Redux" class="article article-type-" itemscope itemprop="blogPost">
+        <h2 itemprop="name">
+           <a class="archive-article-title" href="/miratest/sallaren/2016/11/20/refactoring-buttercup/" target="_blank" itemprop="url">Refactoring Buttercup with React/Redux</a>
+        </h2>
+	
+          <h4><time datetime="2016-11-20 18:43:00" itemprop="datePublished">20November2016</time></h4>
+	
+
+	
+        <section class="post-content">
+            <a name="more"></a><br><p>I started refactoring <a href="https://github.com/buttercup-pw/buttercup">Buttercup</a>’s UI about <a href="https://github.com/buttercup-pw/buttercup/pull/92/commits/839345b5c71e8d213535e56ced6775037654543f">8 months ago</a> I had no idea how difficult it’s going to be.</p>
+
+<h2>Why I Refactored</h2>
+
+<p>Back in 2015 when <a href="http://perrymitchell.net/">Perry</a> and I started making Buttercup, I decided to use <a href="http://backbonejs.org/">BackboneJS</a> for coding the front-end part of things, and it went well for a while. But I quickly realized BackboneJS is not suitable for what Buttercup wants to achieve. Backbone does not scale well in large applications IMO. To name a few issues we had:</p>
+
+<ul>
+<li>Very manual way of rendering and re-rendering. Rendering in BackboneJS is done by replacing the dom contents manually using a jQuery method (<code>$(...).html(CONTENT)</code>) and it’s not very efficient. Specially in case of forms and data-heavy interfaces.</li>
+<li>Backbone is meant to be used with "Ajax" resources (a REST API for example). I wanted to use <code>Backnone.Model</code> but I had to create a hacky way to make it work with a local <code>ipc</code>-based communication.</li>
+<li>Templates are totally separated from the view logic, and the only way to show/handle data is a very basic templating language (<code>_.template</code>) which is OK most of the times but not for Buttercup. Of course there are other options available but that requires integrating more custom/hacky things.</li>
+</ul>
+
+<p>I was constantly feeling that I’m doing something wrong. So Perry and I decided to look into other options to see if there’s something more suitable to our needs.</p>
+
+<h2>React/Redux Fatigue</h2>
+
+<p>I had used React before in some React Native applications, and I was kind of familiar with it’s capabilities. And we realized there are many large-scale projects using React in production and the community around it, is very active. So we said why not go with React.</p>
+
+<p>If you look into ways of implementing React code into large applications, you naturally end up using Redux too: a single-state data store meant to be used with React. I won’t go into details about why it’s good and why you should use it, but instead I’m going to tell you how hard it was to get a hang of it.</p>
+
+<p>The problem with React+Redux is, as a newcomer you have to go through learning curve, and that’s not usually a problem until you start searching online for best practices and suggested ways of organizing the app architecture. Every single developer has their own opinions and they call it "React/Redux Best Practices". So you end up being frustrated and pulling your hair out. I only started making progress when I decided to fuck it; I’m going to go with my guts.</p>
+
+<h2>The Beauty of Redux</h2>
+
+<p>After I got comfortable with Redux, I fell in love with it. Not with Redux itself, but with the way of thinking behind it. The fact that it’s only possible to change data by emitting actions and creating a new single state every time is very appealing to me. That state is serializable, so you can easily make your app and all of it’s settings/data portable.</p>
+
+<p>I suggest you look into it for your next project, if you haven’t already.</p>
+
+<h2>Meet the new Buttercup</h2>
+
+<p><img src="/miratest/static/sallaren/img/refactoring-buttercup/screen.png" alt="Buttercup" title="Buttercup" >
+Perry made it possible to use the <code>buttercup-core</code> module in browsers and it actually is faster than it’s NodeJS counterpart, thanks to Chrome’s built-in <code>crypto</code> implementation. So in the new Buttercup version, we decided to move the actual Buttercup logic from <code>main</code> to <code>renderer</code> process, which means it sits right beside React and Redux in the UI process.</p>
+
+<p>You can read all about the new release <a href="https://github.com/buttercup-pw/buttercup/releases/tag/v0.3.0-alpha">in Github Releases page</a>. In short: it’s faster, better and a lot of bugs are fixed. The new Buttercup also uses a lot of native OS functions, so you can expect natural behavior in most places (like right clicks, drag and drop, resize, etc).</p>
+
+<p>So go ahead, <a href="https://download.buttercup.pw">download the latest release</a>, give it a spin and <a href="https://github.com/buttercup-pw/buttercup/issues">let us what you think</a>.</p>
+        </section>
+	
+
+        <section class="meta">
+            <hr>
+
+	
+            
+              <span class="hide-on-mobile">
+	      tags: 
+              
+                <a href="/miratest/sallaren/tags/Programming/">Programming</a>
+		،&nbsp;
+                <a href="/miratest/sallaren/tags/Javascript/">Javascript</a>
+		،&nbsp;
+                <a href="/miratest/sallaren/tags/Buttercup/">Buttercup</a>
+		
+              </span>
+            
+	
+                <section class="share">
+                    <share-button></share-button>
+                </section>
+        </section>
+
+        <section id="comments">
+          <div id="disqus_thread">
+	  
+	  <script>
+	    var disqus_shortname = 'sallar';
+	      (function(){
+		var dsq = document.createElement('script');
+		dsq.type = 'text/javascript';
+		dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+	    </script>
+            
+          <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </section>
+
+    </article>
+	
+        </div>
+	
+
+
+
+</section>
+
+  <!-- /Content -->
+<!-- Footer -->
+
+<footer class="blog-footer">
+    <a href="/miratest/sallaren" class="logo"></a>
+    2015-2016<br />
+    cc &nbsp; /&nbsp;<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" rel="license" target="_blank">creative commons</a>
+</footer>
+
+
+
+<!-- /Footer -->
+
+<!-- Scripts -->
+
+<!-- /Scripts -->
+
+</body>
+</html>
+
+

@@ -1,0 +1,240 @@
+
+
+
+
+
+  <!DOCTYPE html>
+<html lang="English">
+<head>
+
+<meta charset="utf-8">
+
+<title>Elevator Stops Problem + Solution - Sallar Kaboli</title>
+
+<meta name="description" content="Exploring Javascript &amp; Things">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Exploring Javascript &amp; Things">
+<meta property="og:type" content="website">
+<meta property="og:title" content="">
+<meta property="og:url" content="https:/kiamazi.github.io/miratest/sallaren">
+<meta property="og:site_name" content="Sallar Kaboli">
+<meta property="og:description" content="">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+<meta name="twitter:creator" content="@sallar">
+<link rel="alternative" href="/miratest/sallaren/atom.xml" title="Sallar Kaboli" type="application/atom+xml">
+<link rel="short icon" href="/miratest/static/theme/sallar/img/logo.png">
+<link rel="stylesheet" href="/miratest/static/theme/sallar/css/style-ltr.css" type="text/css">
+
+</head>
+
+
+<body>
+
+<!--
+ تیتر خام صفحه
+ برای صفحه اصلی تیتر، برای پست ها خلاصه مطلب
+
+-->
+
+
+
+    <!-- Header -->
+
+<header>
+    <a href="https:/kiamazi.github.io/miratest/sallaren" class="logo"><img src="/miratest/static/theme/sallar/img/logo.png"></a>
+    <h1>Sallar Kaboli / Exploring JavaScript & Things.</h1>
+
+        <ul class="nav nav-list">
+            <li class="nav-list-item"><a href="https:/kiamazi.github.io/miratest/sallaren" target="_self" class="nav-list-link">Blog</a></li>
+            <li class="nav-list-item"><a href="https://sallar.me/about/" target="_self" class="nav-list-link">About</a></li>
+            <li class="nav-list-item"><a href="/miratest/sallaren/atom.xml" target="_self" class="nav-list-link">Rss</a></li>
+            <li class="nav-list-item"><a href="https://twitter.com/sallar" target="_blank" class="nav-list-link">Twitter</a></li>
+            <li class="nav-list-item"><a href="https://github.com/sallar" target="_blank" class="nav-list-link">Github</a></li>
+            <li class="nav-list-item"><a href="/miratest/sallaren/sallarblog/" target="_self" class="nav-list-link">Persian</a></li>
+	</ul>
+
+</header>
+
+<!-- /Header -->
+
+
+    <section id="content" class="container">
+    
+	
+        <div class="post">
+	
+    <article id="-Elevator Stops Problem + Solution" class="article article-type-" itemscope itemprop="blogPost">
+        <h2 itemprop="name">
+           <a class="archive-article-title" href="/miratest/sallaren/2016/10/01/elevator-stops-problem/" target="_blank" itemprop="url">Elevator Stops Problem + Solution</a>
+        </h2>
+	
+          <h4><time datetime="2016-10-01 21:38:00" itemprop="datePublished">01October2016</time></h4>
+	
+
+	
+        <section class="post-content">
+            <a name="more"></a><br><p>Recently I went to a technical interview in a big tech company for the front-end engineering role. Regardless of how I feel about their process and how unrelated the test was to the job, I found one of the questions interesting and thought it would be nice if I post my solution here.</p>
+
+<p>Here’s the problem:</p>
+
+<blockquote>
+  <p>There is an elevator in a building with <code>M</code> floors. This elevator can take a max of <code>X</code> people at a time or max of total weight <code>Y</code>. Given that a set of people and their weight and the floor they need to stop, how many stops has the elevator taken to serve all the people? Consider the elevator serves in "first come first serve" basis and the order for the queue can not be changed.</p>
+  
+  <p><strong>Example:</strong></p>
+  
+  <p>Let Array <code>A</code> be the weight of each person <code>A = [60, 80, 40]</code>. 
+  Let Array <code>B</code> be the floors where each person needs to be dropped off <code>B = [2, 3, 5]</code>.</p>
+  
+  <p>The building has 5 floors, maximum of 2 persons are allowed in the elevator at a time with max weight capacity being 200. For this example, the elevator would take total of 5 stops in floors: <strong>2</strong>, <strong>3</strong>, <strong>G</strong>, <strong>5</strong> and finally <strong>G</strong>.</p>
+</blockquote>
+
+<p>And here’s my solution:</p>
+
+<p>``` js
+/**
+ * Remove duplicate items from an array
+ * @param {Array} arr
+ * @returns {Array}
+ */
+function uniq(arr) {
+    return arr.reduce((prev, curr) => {
+        if (prev.indexOf(curr) === -1) {
+            prev = prev.concat(curr);
+        }
+        return prev;
+    }, []);
+}</p>
+
+<p>/**
+ * Solution to our problem
+ * 
+ * @param {Array.<Number>}  A Array of passengers weights
+ * @param {Array.<Number>}  B Array of passenger destination floors
+ * @param {Number}          M Number of floors in the building 
+ * @param {Number}          X Elevator max passenger capacity
+ * @param {Number}          Y Elevator max weight capacity
+ * @returns {Number}        Number of total stops
+ */
+function solution(A, B, M, X, Y) {
+    let trip = 0,
+        tripWeight = 0,
+        rounds = [];</p>
+
+<pre><code>for (let i = 0, len = A.length; i &lt; len; i += 1) {
+    // If there's an unclosed trip, let’s see if we can get more people in
+    if (typeof rounds[trip] !== 'undefined') {
+        // Check if we have filled the capacity for the current trip,
+        // if so, then close the existing trip and create a new one
+        if (rounds[trip].length === X || tripWeight + A[i] &gt; Y) {
+            // Increase trip count
+            trip++;
+            // Reset current weight
+            tripWeight = 0;
+        }
+    }
+
+    // Create an empty array for the current trip
+    rounds[trip] = rounds[trip] || [];
+    // Push passengers destination to current trip
+    rounds[trip].push(B[i]);  
+    // Increase current load
+    tripWeight += A[i];
+}
+
+// Remove duplicate floors from each trip, since
+// the elevator will make 1 stop for pessengers that
+// go to the same floor. Then add 1 (return to ground floor)
+rounds = rounds.map(round =&gt; uniq(round).length + 1);
+
+// To get number of total stops, we sum up
+// destination count in each trip.
+return rounds.reduce((prev, curr) =&gt; prev + curr, 0);
+</code></pre>
+
+<p>}</p>
+
+<p>console.log(
+    solution(
+        [60, 80, 40],   // Weights
+        [2, 3, 5],      // Destinations
+        5,              // Floors
+        2,              // Max passengers
+        200             // Max weight
+    )
+); // -> 5
+```</p>
+
+<p>After I successfully submitted the solution, I searched Google to see if this question has been asked before, turns out it’s a common problem that is asked in programming tests and many people have solved it (<a href="http://codereview.stackexchange.com/questions/111673/program-to-determine-total-stops-taken-by-elevator">for example this one</a>).</p>
+
+<p>I hope this solution comes in handy for anybody who's willing to cheat a programming test. Hope you don’t though :-)</p>
+        </section>
+	
+
+        <section class="meta">
+            <hr>
+
+	
+            
+              <span class="hide-on-mobile">
+	      tags: 
+              
+                <a href="/miratest/sallaren/tags/Programming/">Programming</a>
+		
+              </span>
+            
+	
+                <section class="share">
+                    <share-button></share-button>
+                </section>
+        </section>
+
+        <section id="comments">
+          <div id="disqus_thread">
+	  
+	  <script>
+	    var disqus_shortname = 'sallar';
+	      (function(){
+		var dsq = document.createElement('script');
+		dsq.type = 'text/javascript';
+		dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+	    </script>
+            
+          <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </section>
+
+    </article>
+	
+        </div>
+	
+
+
+
+</section>
+
+  <!-- /Content -->
+<!-- Footer -->
+
+<footer class="blog-footer">
+    <a href="/miratest/sallaren" class="logo"></a>
+    2015-2016<br />
+    cc &nbsp; /&nbsp;<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" rel="license" target="_blank">creative commons</a>
+</footer>
+
+
+
+<!-- /Footer -->
+
+<!-- Scripts -->
+
+<!-- /Scripts -->
+
+</body>
+</html>
+
+

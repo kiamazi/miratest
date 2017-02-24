@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <description></description>
+    <link></link>
+    <atom:link href="https:/kiamazi.github.io/miratest/sallaren/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>2017-02-24 22:36:28</pubDate>
+    <lastBuildDate>2017-02-24 22:36:28</lastBuildDate>
+    <generator>mira</generator>
+
+
+      
+        <item>
+          <title>Refactoring Buttercup with React/Redux</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;I started refactoring &lt;a href=&quot;https://github.com/buttercup-pw/buttercup&quot;&gt;Buttercup&lt;/a&gt;’s UI about &lt;a href=&quot;https://github.com/buttercup-pw/buttercup/pull/92/commits/839345b5c71e8d213535e56ced6775037654543f&quot;&gt;8 months ago&lt;/a&gt; I had no idea how difficult it’s going to be.&lt;/p&gt;
+
+&lt;h2&gt;Why I Refactored&lt;/h2&gt;
+
+&lt;p&gt;Back in 2015 when &lt;a href=&quot;http://perrymitchell.net/&quot;&gt;Perry&lt;/a&gt; and I started making Buttercup, I decided to use &lt;a href=&quot;http://backbonejs.org/&quot;&gt;BackboneJS&lt;/a&gt; for coding the front-end part of things, and it went well for a while. But I quickly realized BackboneJS is not suitable for what Buttercup wants to achieve. Backbone does not scale well in large applications IMO. To name a few issues we had:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Very manual way of rendering and re-rendering. Rendering in BackboneJS is done by replacing the dom contents manually using a jQuery method (&lt;code&gt;$(...).html(CONTENT)&lt;/code&gt;) and it’s not very efficient. Specially in case of forms and data-heavy interfaces.&lt;/li&gt;
+&lt;li&gt;Backbone is meant to be used with &quot;Ajax&quot; resources (a REST API for example). I wanted to use &lt;code&gt;Backnone.Model&lt;/code&gt; but I had to create a hacky way to make it work with a local &lt;code&gt;ipc&lt;/code&gt;-based communication.&lt;/li&gt;
+&lt;li&gt;Templates are totally separated from the view logic, and the only way to show/handle data is a very basic templating language (&lt;code&gt;_.template&lt;/code&gt;) which is OK most of the times but not for Buttercup. Of course there are other options available but that requires integrating more custom/hacky things.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I was constantly feeling that I’m doing something wrong. So Perry and I decided to look into other options to see if there’s something more suitable to our needs.&lt;/p&gt;
+
+&lt;h2&gt;React/Redux Fatigue&lt;/h2&gt;
+
+&lt;p&gt;I had used React before in some React Native applications, and I was kind of familiar with it’s capabilities. And we realized there are many large-scale projects using React in production and the community around it, is very active. So we said why not go with React.&lt;/p&gt;
+
+&lt;p&gt;If you look into ways of implementing React code into large applications, you naturally end up using Redux too: a single-state data store meant to be used with React. I won’t go into details about why it’s good and why you should use it, but instead I’m going to tell you how hard it was to get a hang of it.&lt;/p&gt;
+
+&lt;p&gt;The problem with React+Redux is, as a newcomer you have to go through learning curve, and that’s not usually a problem until you start searching online for best practices and suggested ways of organizing the app architecture. Every single developer has their own opinions and they call it &quot;React/Redux Best Practices&quot;. So you end up being frustrated and pulling your hair out. I only started making progress when I decided to fuck it; I’m going to go with my guts.&lt;/p&gt;
+
+&lt;h2&gt;The Beauty of Redux&lt;/h2&gt;
+
+&lt;p&gt;After I got comfortable with Redux, I fell in love with it. Not with Redux itself, but with the way of thinking behind it. The fact that it’s only possible to change data by emitting actions and creating a new single state every time is very appealing to me. That state is serializable, so you can easily make your app and all of it’s settings/data portable.&lt;/p&gt;
+
+&lt;p&gt;I suggest you look into it for your next project, if you haven’t already.&lt;/p&gt;
+
+&lt;h2&gt;Meet the new Buttercup&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/miratest/static/sallaren/img/refactoring-buttercup/screen.png&quot; alt=&quot;Buttercup&quot; title=&quot;Buttercup&quot; &gt;
+Perry made it possible to use the &lt;code&gt;buttercup-core&lt;/code&gt; module in browsers and it actually is faster than it’s NodeJS counterpart, thanks to Chrome’s built-in &lt;code&gt;crypto&lt;/code&gt; implementation. So in the new Buttercup version, we decided to move the actual Buttercup logic from &lt;code&gt;main&lt;/code&gt; to &lt;code&gt;renderer&lt;/code&gt; process, which means it sits right beside React and Redux in the UI process.&lt;/p&gt;
+
+&lt;p&gt;You can read all about the new release &lt;a href=&quot;https://github.com/buttercup-pw/buttercup/releases/tag/v0.3.0-alpha&quot;&gt;in Github Releases page&lt;/a&gt;. In short: it’s faster, better and a lot of bugs are fixed. The new Buttercup also uses a lot of native OS functions, so you can expect natural behavior in most places (like right clicks, drag and drop, resize, etc).&lt;/p&gt;
+
+&lt;p&gt;So go ahead, &lt;a href=&quot;https://download.buttercup.pw&quot;&gt;download the latest release&lt;/a&gt;, give it a spin and &lt;a href=&quot;https://github.com/buttercup-pw/buttercup/issues&quot;&gt;let us what you think&lt;/a&gt;.&lt;/p&gt;</description>
+          <pubDate>2016-11-20 18:43:00</pubDate>
+          <link>/miratest/sallaren/2016/11/20/refactoring-buttercup/</link>
+          <guid isPermaLink="true">/miratest/sallaren/2016/11/20/refactoring-buttercup/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>Elevator Stops Problem + Solution</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;Recently I went to a technical interview in a big tech company for the front-end engineering role. Regardless of how I feel about their process and how unrelated the test was to the job, I found one of the questions interesting and thought it would be nice if I post my solution here.&lt;/p&gt;
+
+&lt;p&gt;Here’s the problem:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;There is an elevator in a building with &lt;code&gt;M&lt;/code&gt; floors. This elevator can take a max of &lt;code&gt;X&lt;/code&gt; people at a time or max of total weight &lt;code&gt;Y&lt;/code&gt;. Given that a set of people and their weight and the floor they need to stop, how many stops has the elevator taken to serve all the people? Consider the elevator serves in &quot;first come first serve&quot; basis and the order for the queue can not be changed.&lt;/p&gt;
+  
+  &lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
+  
+  &lt;p&gt;Let Array &lt;code&gt;A&lt;/code&gt; be the weight of each person &lt;code&gt;A = [60, 80, 40]&lt;/code&gt;. 
+  Let Array &lt;code&gt;B&lt;/code&gt; be the floors where each person needs to be dropped off &lt;code&gt;B = [2, 3, 5]&lt;/code&gt;.&lt;/p&gt;
+  
+  &lt;p&gt;The building has 5 floors, maximum of 2 persons are allowed in the elevator at a time with max weight capacity being 200. For this example, the elevator would take total of 5 stops in floors: &lt;strong&gt;2&lt;/strong&gt;, &lt;strong&gt;3&lt;/strong&gt;, &lt;strong&gt;G&lt;/strong&gt;, &lt;strong&gt;5&lt;/strong&gt; and finally &lt;strong&gt;G&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;And here’s my solution:&lt;/p&gt;
+
+&lt;p&gt;``` js
+/**
+ * Remove duplicate items from an array
+ * @param {Array} arr
+ * @returns {Array}
+ */
+function uniq(arr) {
+    return arr.reduce((prev, curr) =&gt; {
+        if (prev.indexOf(curr) === -1) {
+            prev = prev.concat(curr);
+        }
+        return prev;
+    }, []);
+}&lt;/p&gt;
+
+&lt;p&gt;/**
+ * Solution to our problem
+ * 
+ * @param {Array.&lt;Number&gt;}  A Array of passengers weights
+ * @param {Array.&lt;Number&gt;}  B Array of passenger destination floors
+ * @param {Number}          M Number of floors in the building 
+ * @param {Number}          X Elevator max passenger capacity
+ * @param {Number}          Y Elevator max weight capacity
+ * @returns {Number}        Number of total stops
+ */
+function solution(A, B, M, X, Y) {
+    let trip = 0,
+        tripWeight = 0,
+        rounds = [];&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;for (let i = 0, len = A.length; i &amp;lt; len; i += 1) {
+    // If there's an unclosed trip, let’s see if we can get more people in
+    if (typeof rounds[trip] !== 'undefined') {
+        // Check if we have filled the capacity for the current trip,
+        // if so, then close the existing trip and create a new one
+        if (rounds[trip].length === X || tripWeight + A[i] &amp;gt; Y) {
+            // Increase trip count
+            trip++;
+            // Reset current weight
+            tripWeight = 0;
+        }
+    }
+
+    // Create an empty array for the current trip
+    rounds[trip] = rounds[trip] || [];
+    // Push passengers destination to current trip
+    rounds[trip].push(B[i]);  
+    // Increase current load
+    tripWeight += A[i];
+}
+
+// Remove duplicate floors from each trip, since
+// the elevator will make 1 stop for pessengers that
+// go to the same floor. Then add 1 (return to ground floor)
+rounds = rounds.map(round =&amp;gt; uniq(round).length + 1);
+
+// To get number of total stops, we sum up
+// destination count in each trip.
+return rounds.reduce((prev, curr) =&amp;gt; prev + curr, 0);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}&lt;/p&gt;
+
+&lt;p&gt;console.log(
+    solution(
+        [60, 80, 40],   // Weights
+        [2, 3, 5],      // Destinations
+        5,              // Floors
+        2,              // Max passengers
+        200             // Max weight
+    )
+); // -&gt; 5
+```&lt;/p&gt;
+
+&lt;p&gt;After I successfully submitted the solution, I searched Google to see if this question has been asked before, turns out it’s a common problem that is asked in programming tests and many people have solved it (&lt;a href=&quot;http://codereview.stackexchange.com/questions/111673/program-to-determine-total-stops-taken-by-elevator&quot;&gt;for example this one&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;I hope this solution comes in handy for anybody who's willing to cheat a programming test. Hope you don’t though :-)&lt;/p&gt;</description>
+          <pubDate>2016-10-01 21:38:00</pubDate>
+          <link>/miratest/sallaren/2016/10/01/elevator-stops-problem/</link>
+          <guid isPermaLink="true">/miratest/sallaren/2016/10/01/elevator-stops-problem/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>Javascript’s Unicode Problem</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;blockquote&gt;
+  &lt;p&gt;Disclaimer: A repost of my article for &lt;a href=&quot;https://cafedev.org/article/2016/08/javascript-unicode/&quot;&gt;CafeDev&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A while ago I needed a sim­ple string pad func­tion, and since it’s a freak­ishly sim­ple task, I just wrote a sim­ple
+func­tion:&lt;/p&gt;
+
+&lt;p&gt;```js
+function limit(str, limit = 16, padString = &quot;#&quot;, padPosition = &quot;right&quot;) {
+    const strLength = str.length;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if (strLength &amp;gt; limit) {
+    return str.substring(0, limit);
+} else if (strLength &amp;lt; limit) {
+    const padRepeats = padString.repeat(limit - strLength);
+    return (padPosition === &quot;left&quot;) ? padRepeats + str : str + padRepeats;
+}
+return str;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+```&lt;/p&gt;
+
+&lt;p&gt;Pretty sim­ple, right? And it works too… Until you add in an emoji to your text. Then every­thing falls apart and worlds
+col­lide! How? Simple:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;js
+&quot;💩&quot;.length // 2!
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;(If you’re read­ing this on Linux you might ac­tu­ally see 2 bro­ken uni­code char­ac­ters, and the re­sult makes sense un­less
+you have in­stalled an emoji pack­age on your browser or OS)...&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://cafedev.org/article/2016/08/javascript-unicode/&quot;&gt;Read the full story on CafeDev &amp;rarr;&lt;/a&gt;&lt;/p&gt;</description>
+          <pubDate>2016-08-16 21:42:20</pubDate>
+          <link>/miratest/sallaren/2016/08/16/javascripts-unicode-problem/</link>
+          <guid isPermaLink="true">/miratest/sallaren/2016/08/16/javascripts-unicode-problem/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>The Importance of Open Source</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;I started learning to code when most things were closed source; at least they were to me. There was no Github and the internet wasn’t something I could effortlessly access. Nothing like today. I had to try hard to create something, and I was taught to never reveal my secret once I’ve created it, since it was my intellectual property and my road to success.&lt;/p&gt;
+
+&lt;p&gt;How wrong I was.&lt;/p&gt;
+
+&lt;p&gt;Even the best programmers make mistakes, and they can’t know everything. Creating software isn’t possible without collaboration, brainstorming and different skills. One person can not know all. And it’s not everyday that you have access to a dedicated team of programmers for making software.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, knowledge will die if it’s not transferred. How did I learn to code? Either someone taught me or I read other peoples codes. What if everybody wanted to keep their knowledge a secret? I wouldn’t have the money for buying it and I would never become a programmer. We’re as good as the information we have access to.&lt;/p&gt;
+
+&lt;p&gt;Thankfully there are enough great developers who don’t think knowledge should be locked away. Enters Github, StackOverflow and so many other great places to find open-source and free (as in freedom) knowledge and code to learn from.&lt;/p&gt;
+
+&lt;h2&gt;Taking Open Source for Granted&lt;/h2&gt;
+
+&lt;p&gt;Everyday we use countless open-source projects without realizing the people behind them and their efforts; without realizing the countless hours of their lives spent making these amazing tools and software. We just use them for free, make money out of them and go bash them in their Github Issues when something goes wrong. God forbid if they respond to the issue an hour late; we start tweeting at them harshly. Basically we expect them to be our free servants who do anything we ask them to, for free.&lt;/p&gt;
+
+&lt;p&gt;When it comes to our own software that we built using other peoples free code, everything is a secret and intellectual property and we wouldn’t even consider open-sourcing a line of it’s code. Because we’re making money out of it.&lt;/p&gt;
+
+&lt;h2&gt;Business Value&lt;/h2&gt;
+
+&lt;p&gt;I understand we can’t just go open-source everything. There are some things that have substantial business value to them and some are trade secrets. In a company that depends on such things, it’s not at all possible to release this kind of software for free.&lt;/p&gt;
+
+&lt;p&gt;But there are some things that have nothing to do with the business itself, like build tools etc. If they can help other developers to be better at their jobs too, why not open-source those? Only good can come out of this. We should give back to the same community that we took from.&lt;/p&gt;
+
+&lt;p&gt;Let’s think for a second: would our software be possible without open-source code? How much time and money would it cost to build everything from scratch without using a line of open-source code?&lt;/p&gt;
+
+&lt;h2&gt;Open Source On My Own Time&lt;/h2&gt;
+
+&lt;p&gt;I have been dedicating a good amount of my own time to writing and releasing open-source software. I think I personally owe it to the community to give knowledge back. I wouldn’t be here in this position if it weren’t for the community. I’ve learnt a lot from every single line of code they have released and every single advice they have given. And I’m lucky to have people around me who think and believe the same.&lt;/p&gt;
+
+&lt;p&gt;To the open-source community: Thank you.&lt;/p&gt;</description>
+          <pubDate>2016-04-11 20:33:10</pubDate>
+          <link>/miratest/sallaren/2016/04/11/open-source/</link>
+          <guid isPermaLink="true">/miratest/sallaren/2016/04/11/open-source/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>Buttercup 0.1.0-alpha has been released</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;It’s been couple of months that &lt;a href=&quot;http://perrymitchell.net&quot;&gt;Perry&lt;/a&gt; and I have been working on our own password manager called &lt;a href=&quot;http://buttercup.pw&quot;&gt;Buttercup&lt;/a&gt;. We released the very first alpha version today, and you can &lt;a href=&quot;https://github.com/buttercup-pw/buttercup/releases/tag/v0.1.0-alpha&quot;&gt;get it from Github now&lt;/a&gt;. Mac and Linux versions are ready at the time of writing this post and a Windows version is underway.
+&lt;img src=&quot;/miratest/static/sallaren/img/buttercup/buttercup-main.png&quot; alt=&quot;Buttercup Main&quot; title=&quot;Buttercup Main&quot; &gt;&lt;/p&gt;
+
+&lt;h2&gt;What’s Buttercup&lt;/h2&gt;
+
+&lt;p&gt;The existing solutions out there are quite good, but not exactly what we wanted. We needed a free, well-made, open-source and secure password management solution, so we decided to build our own. We put all of our trust in Javascript and started coding it in Javascript using NodeJS and &lt;a href=&quot;http://electron.atom.io/&quot;&gt;Electron&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Security&lt;/h3&gt;
+
+&lt;p&gt;Perry worked on the &lt;a href=&quot;https://github.com/buttercup-pw/buttercup-core&quot;&gt;buttercup-core&lt;/a&gt; and made a library to be used by the Electron app (or any interested party). The buttercup-core uses &lt;strong&gt;AES 256bit CBC&lt;/strong&gt; algorithm to encrypt the data and prepares the password with &lt;strong&gt;PBKDF2&lt;/strong&gt; at 1000 iterations. The buttercup-core basically handles all data-related operations like adding/removing groups and entries.&lt;/p&gt;
+
+&lt;h3&gt;Cross-Platform&lt;/h3&gt;
+
+&lt;p&gt;I also worked on the client app using Electron and NodeJS, which was an exciting experience. The client is connected to buttercup-core through Electron’s &lt;code&gt;ipc&lt;/code&gt; module and all operations are done real-time (the UI is just a graphical representation of what’s inside buttercup-core, it doesn’t have logic by itself).&lt;/p&gt;
+
+&lt;h3&gt;Mobile&lt;/h3&gt;
+
+&lt;p&gt;We’re also planning to add mobile support using &lt;a href=&quot;https://cordova.apache.org/&quot;&gt;Cordova&lt;/a&gt; or &lt;a href=&quot;https://facebook.github.io/react-native/&quot;&gt;React Native&lt;/a&gt;. Electron has been a good choice for the desktop clients and I’m pretty confident we can make a reliable client for mobile using only Javascript.&lt;/p&gt;
+
+&lt;h3&gt;Cloud and Importing&lt;/h3&gt;
+
+&lt;p&gt;Two of most important features of Buttercup are Cloud-syncing and Importing existing archives from other managers, like Keepass, which are fairly popular. We’re working on these heavily and will release them ASAP.&lt;/p&gt;
+
+&lt;h2&gt;Made with Coffee in Helsinki&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/miratest/static/sallaren/img/buttercup/helsinki.jpg&quot; alt=&quot;Helsinki&quot; title=&quot;Helsinki&quot; &gt;&lt;/p&gt;
+
+&lt;p&gt;Perry and I have spend a lot of weekends coding and designing Buttercup in cafés in Helsinki, and we hope that you will enjoy using it as much as we enjoyed making it.&lt;/p&gt;
+
+&lt;h2&gt;Get Buttercup&lt;/h2&gt;
+
+&lt;p&gt;You can head to our &lt;a href=&quot;https://github.com/buttercup-pw/buttercup/releases&quot;&gt;Releases page on Github&lt;/a&gt; to see the latest alpha releases and download the binary you need. If you want to contribute, you can do so by forking the project and sending a PR.&lt;/p&gt;
+
+&lt;p&gt;Have a safe day!&lt;/p&gt;</description>
+          <pubDate>2016-01-30 19:10:12</pubDate>
+          <link>/miratest/sallaren/2016/01/30/buttercup/</link>
+          <guid isPermaLink="true">/miratest/sallaren/2016/01/30/buttercup/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>Developing for The Real Web - Mouse Wheel Programming</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;{% blockquote %}
+&lt;strong&gt;tl;dr&lt;/strong&gt;: Calculating mouse wheel value across browsers is a real pain in the ass. Avoid it as long as you can.
+{% endblockquote %}&lt;/p&gt;
+
+&lt;p&gt;So nowadays there’s all these talks about React, Redux and so many other cool things to do. But usually at our day jobs,
+we can’t just start using all these modern things. We have IE9 customers to think about and we have to make sure our
+stuff won’t break for them, otherwise we’d be out of business.&lt;/p&gt;
+
+&lt;p&gt;Recently I’ve been given a task at work which involves mouse wheel/trackpad scrolling. I’d have to capture that event,
+change it’s speed and velocity, and animate an element using that information.&lt;/p&gt;
+
+&lt;p&gt;I started developing this using Chrome on OS X, with Magic Mouse, and everything was smooth and easy. In it’s simplest
+form:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;js
+container.addEventListener(&quot;mousewheel&quot;, (e) =&amp;gt; {
+    el.style.transform = `translate3d(0, ${e.deltaY / 3}px, 0)`;
+});
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;You’d think this would work nicely everywhere, but nope. There are several things wrong with this code:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The event is not called &lt;code&gt;mousewheel&lt;/code&gt; in every browser.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;e.deltaY&lt;/code&gt; is not available in all browsers.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;transform&lt;/code&gt; and &lt;code&gt;translate3d&lt;/code&gt; are not available in all browsers.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Fixing it&lt;/h2&gt;
+
+&lt;p&gt;First, let’s add an event listener for other browsers:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;js
+container.addEventListener(&quot;mousewheel&quot;, handleScroll);
+container.addEventListener(&quot;DOMMouseScroll&quot;, handleScroll);
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;This will cover IE and couple of other browsers. Then now the real trouble begins:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Some browsers report &lt;code&gt;e.deltaY&lt;/code&gt; in Wheel Event&lt;/li&gt;
+&lt;li&gt;Some browsers report &lt;code&gt;e.wheelDelta&lt;/code&gt; and they are multiplied by 120&lt;/li&gt;
+&lt;li&gt;Some browsers report &lt;code&gt;e.detail&lt;/code&gt; and sometimes they are multiplied by 3&lt;/li&gt;
+&lt;li&gt;Some browsers report both &lt;code&gt;e.wheelDelta&lt;/code&gt; and &lt;code&gt;e.detail&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Number signs in mouse wheel event are different across browsers (+/-)&lt;/li&gt;
+&lt;li&gt;Some browsers don’t pass the event to the callback at all! And you’d have to read the event from &lt;code&gt;window.event&lt;/code&gt;!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;My first attempt to solve this was a solution like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;js
+// Determine the speed
+if (typeof e.deltaY !== &quot;undefined&quot;) {
+    travel = 0 - parseInt(e.deltaY / 3, 10);
+} else if (typeof e.wheelDelta !== &quot;undefined&quot;) {
+    travel = parseInt((e.wheelDelta / 120) / 3, 10);
+} else if (typeof e.detail !== &quot;undefined&quot;) {
+    travel = 0 - parseInt(e.detail / 3, 10);
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Which is quite terrible and doesn’t work as expected. The numbers are not the same so the animation speed would be
+really different across browsers. Which is not something that we want.&lt;/p&gt;
+
+&lt;p&gt;After some Googling, I came across &lt;a href=&quot;http://phrogz.net/js/wheeldelta.html&quot;&gt;this page&lt;/a&gt; which was mentioned in a
+Stack Overflow issue. I cleaned up the code a bit:&lt;/p&gt;
+
+&lt;p&gt;``` js
+function wheelDistance(evt) {
+    if (!evt) {
+        evt = window.event;
+    }&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;let w = evt.wheelDelta,
+    d = evt.detail;
+
+if (d) {
+    if (w) {
+        return ((w / d / 40 * d) &amp;gt; 0) ? 1 : -1; // Opera
+    }
+    return -d / 3; // Firefox;
+}
+
+return w / 120; // IE, Safari &amp;amp; Chrome
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+```&lt;/p&gt;
+
+&lt;p&gt;This function tries to solve all issues I mentioned earlier and normalize the output. Then I could just use the output
+and adjust the speed as needed. To solve the &lt;code&gt;transform&lt;/code&gt; and &lt;code&gt;translate3d&lt;/code&gt; issues I added prefixes:&lt;/p&gt;
+
+&lt;p&gt;``` js
+container.addEventListener(&quot;mousewheel&quot;, handleScroll);
+container.addEventListener(&quot;DOMMouseScroll&quot;, handleScroll);&lt;/p&gt;
+
+&lt;p&gt;function handleScroll(e) {
+    let deltaY = wheelDistance(e);&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;el.style.transform = `translate3d(0, ${deltaY}px, 0)`; // Modern browsers
+el.style.webkitTransform = `translate3d(0, ${deltaY}px, 0)`; // Webkit
+el.style.msTransform = `translate(0, ${deltaY}px)`; // Use 2D transform for IE9
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+```&lt;/p&gt;
+
+&lt;h2&gt;References&lt;/h2&gt;
+
+&lt;p&gt;In case you have to do the same thing, here are some links:
+- &lt;a href=&quot;http://www.adomas.org/javascript-mouse-wheel/&quot;&gt;Mouse wheel programming using Javascript&lt;/a&gt;
+- &lt;a href=&quot;http://phrogz.net/js/wheeldelta.html&quot;&gt;Wheel data normalization (Demo)&lt;/a&gt;
+- &lt;a href=&quot;http://stackoverflow.com/questions/5527601/normalizing-mousewheel-speed-across-browsers&quot;&gt;Normalizing mousewheel speed across browsers&lt;/a&gt;&lt;/p&gt;</description>
+          <pubDate>2016-01-29 18:35:30</pubDate>
+          <link>/miratest/sallaren/2016/01/29/mouse-wheel/</link>
+          <guid isPermaLink="true">/miratest/sallaren/2016/01/29/mouse-wheel/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>Making an iOS app using Javascript vs. Swift</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;We decided to do a small hackaton at &lt;a href=&quot;http://www.kiosked.com/&quot;&gt;Kiosked&lt;/a&gt; during summer which was all kinds of fun. Couple of colleagues and me decided to make an app for finding the best restaurant to go to for lunch, which as you know isn’t an easy thing to do ;-) Our lunch app was called Lunchify and it would do these things:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Show the list of venues based on location proximity&lt;/li&gt;
+&lt;li&gt;Show lunch menu for each restaurant&lt;/li&gt;
+&lt;li&gt;Show directions to the venue (navigation)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Cordova/AngularJS&lt;/h2&gt;
+
+&lt;p&gt;As a strong believer in Javascript, I suggested we build the app using Javascript so it would be easier to implement and also be cross-platform. The guys worked out the API behind the app and scraped some data from the web to show in the app, and I coded the app using JS, &lt;a href=&quot;https://cordova.apache.org/&quot;&gt;Cordova&lt;/a&gt; and &lt;a href=&quot;http://ionicframework.com/&quot;&gt;Ionic&lt;/a&gt; Framework. The whole thing went pretty well and we had a working app by the end of second day. 
+The amount of effort I put into making the app was really minimal and many things were already being handled by Ionic and &lt;a href=&quot;https://angularjs.org/&quot;&gt;AngularJS&lt;/a&gt;, so what I was actually doing was just connecting things together. This is the result:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/miratest/static/sallaren/img/app-journey/cordova.jpg&quot; alt=&quot;Cordova AngularJS&quot; title=&quot;Cordova AngularJS&quot; &gt;&lt;/p&gt;
+
+&lt;p&gt;The result was more than OK for what it was (a hackaton project) and everybody was happy with it. But as a perfectionist that I am, I wanted it to be more than that. So I registered a new domain and decided to do a real app to be released in the App Store. I could just continue working on the existing project, but it had a few issues:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Cordova apps are wrapped in a UIWebView, so basically they run a bit slower than normal browsers&lt;/li&gt;
+&lt;li&gt;UI elements are not native. They are MADE to look native using CSS, but it’s not quite the same&lt;/li&gt;
+&lt;li&gt;Animation performance (specially during page transitions) is not great and far from native-looking&lt;/li&gt;
+&lt;li&gt;AngularJS. Nothing personal though.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;React Native&lt;/h2&gt;
+
+&lt;p&gt;At the time, &lt;a href=&quot;https://facebook.github.io/react-native/&quot;&gt;React Native&lt;/a&gt; was under heavy development, but it looked really promising. And again as a strong believer in Javascript, I decided to git it a shot. React Native has major benefits:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Coded in ES6 (JSX actually, but whatever), so yay Classes, Destructuring and every awesome feature of ES6. Since it’s transpiled using &lt;a href=&quot;https://babeljs.io/&quot;&gt;Babel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Mostly native, so no UIWebView anymore. React Native is just a bridge between Javascript and Objective-C&lt;/li&gt;
+&lt;li&gt;Cross-Platform, recent versions of React Native work for Android too&lt;/li&gt;
+&lt;li&gt;Polyfills awesome APIs in browsers, like &lt;code&gt;fetch&lt;/code&gt; API&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I rebuilt most of what I had done in Cordova using React Native, and while the process wasn’t all sunshine and candies (since React Native was and is in Beta and changes a lot), the resulting app was &lt;em&gt;native&lt;/em&gt; and smooth. Here it is:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/miratest/static/sallaren/img/app-journey/react-native.jpg&quot; alt=&quot;React Native&quot; title=&quot;React Native&quot; &gt;&lt;/p&gt;
+
+&lt;p&gt;Although I put nearly a month of my free time into this, but I wasn’t quite happy with the result. Mainly because:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;JSX! Tried to be open-minded but HTML in JS? No way.&lt;/li&gt;
+&lt;li&gt;Performance issues. Maps and animations don’t play well with each other.&lt;/li&gt;
+&lt;li&gt;Takes time to startup since it needs to read a huge Javascript file and do them all in Objective-C (or Java)&lt;/li&gt;
+&lt;li&gt;The API is not complete and for many things I had to submit issues, play with their code or write plugins.&lt;/li&gt;
+&lt;li&gt;Errors are not sometimes clear and takes hours to debug a simple issue. Node dependency issues are terrible here.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Swift&lt;/h2&gt;
+
+&lt;p&gt;OK, at this point I had two options. Choose between React Native and AngularJS/Cordova, or just give up and forget about the project. It was a nice experiment after all. Then I thought of a third option: Learn &lt;a href=&quot;https://swift.org/&quot;&gt;Swift&lt;/a&gt; and build the app with that. How hard could it possibly be? Turns out: Not hard at all. 
+I never liked Objective-C’s syntax. It’s too verbose in my opinion. But Swift on the other hand looked really clean and had a modern syntax, much like the languages I’m already familiar with. So I followed some online courses, read the Swift docs and a book, and then started coding the same thing in XCode. Pros:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Clean and familiar syntax&lt;/li&gt;
+&lt;li&gt;All Objective-C libraries, APIs and tools are available&lt;/li&gt;
+&lt;li&gt;Great debugging with XCode&lt;/li&gt;
+&lt;li&gt;Genunie native without any bridges&lt;/li&gt;
+&lt;li&gt;Great performance&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As I’m writing this post, the app looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/miratest/static/sallaren/img/app-journey/swift.jpg&quot; alt=&quot;Swift&quot; title=&quot;Swift&quot; &gt;&lt;/p&gt;
+
+&lt;p&gt;And the source code is &lt;a href=&quot;https://github.com/sallar/lunchify-swift&quot;&gt;on Github&lt;/a&gt; at your disposal. I’m a rookie Swift developer so excuse any bad practices or repetative code, I will make it better as I go further. 
+I also put the &lt;a href=&quot;https://github.com/sallar/lunchify-cordova&quot;&gt;Cordova&lt;/a&gt; and &lt;a href=&quot;https://github.com/sallar/lunchify-react-native&quot;&gt;React Native&lt;/a&gt; source codes on Github if you want to check them out too for any reason. I haven’t cleaned the code up though. &lt;/p&gt;
+
+&lt;h2&gt;Now What?&lt;/h2&gt;
+
+&lt;p&gt;I will continue working on the Swift version of the app and release it on App Store as soon as I have enough data to make it useful. Play with the code and send a pull request if you will :-)&lt;/p&gt;</description>
+          <pubDate>2015-12-23 21:35:00</pubDate>
+          <link>/miratest/sallaren/2015/12/23/app-journey/</link>
+          <guid isPermaLink="true">/miratest/sallaren/2015/12/23/app-journey/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+        <item>
+          <title>Promisified Arrays</title>
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;I like Javascript &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise&quot;&gt;Promises&lt;/a&gt; a lot, so I’m trying to fit them everywhere in my apps. If you haven’t heard about Promises, or haven’t used them yet, I suggest you check out &lt;a href=&quot;https://davidwalsh.name/promises&quot;&gt;this great guide&lt;/a&gt; on them.&lt;/p&gt;
+
+&lt;p&gt;I also like ES5 array functions and in my opinion they’re a few of the best additions to the language. My favorites are &lt;code&gt;filter&lt;/code&gt; and &lt;code&gt;map&lt;/code&gt;. The problem with these functions is they are synchronous, and I find myself trying to do something like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;js
+var result = arr.map(function(item) {
+    // Do something Async here.
+});
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Which clearly isn’t going to work out since the callback function passed to &lt;code&gt;map&lt;/code&gt; needs to have a return value. A possible solution to this is turn each array item into a &lt;code&gt;Promise&lt;/code&gt; object and wait for all promises to resolve using &lt;code&gt;Promise.all&lt;/code&gt;. Something like:&lt;/p&gt;
+
+&lt;p&gt;``` js
+var arr = [1, 2, 3];
+var promisified = arr.map(function(item) {
+    return new Promise(function(resolve) {
+        resolve(item * 10);
+    });
+});&lt;/p&gt;
+
+&lt;p&gt;Promise.all(promisified).then(function(result) {
+    console.log(result); // [10, 20, 30];
+});
+```&lt;/p&gt;
+
+&lt;p&gt;This solution is alright, until you need to do it repeatedly then it will get verbose pretty fast. So &lt;a href=&quot;https://github.com/sallar/promise-arrays&quot;&gt;I made a small helper library&lt;/a&gt; to do it.&lt;/p&gt;
+
+&lt;h3&gt;promise-arrays&lt;/h3&gt;
+
+&lt;p&gt;This super small library provides async versions of &lt;code&gt;map&lt;/code&gt; and &lt;code&gt;filter&lt;/code&gt; which return a &lt;code&gt;Promise&lt;/code&gt; with the result. Take this example:&lt;/p&gt;
+
+&lt;p&gt;``` js
+var PromiseArrays = require('promise-arrays');
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];&lt;/p&gt;
+
+&lt;p&gt;PromiseArrays.filter(arr, function(item) {
+    return new Promise(function(resolve) {
+        window.setTimeout(function() {
+            resolve(item &gt; 3 &amp;amp;&amp;amp; item &amp;lt; 8);
+        }, 100);
+    });
+}).then(function(result) {
+    console.log(result); // [4, 5, 6, 7] after about ~100ms.
+});
+```&lt;/p&gt;
+
+&lt;p&gt;It’s possible to return a new &lt;code&gt;Promise&lt;/code&gt; or a normal value from the callback.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;promise-arrays&lt;/code&gt; is available to use with Node.JS, UMD and browser globals. &lt;a href=&quot;https://github.com/sallar/promise-arrays&quot;&gt;Check it out on Github&lt;/a&gt; and please report any issues. All suggestions are also welcome :-)&lt;/p&gt;</description>
+          <pubDate>2015-12-16 20:36:48</pubDate>
+          <link>/miratest/sallaren/2015/12/16/promise-arrays/</link>
+          <guid isPermaLink="true">/miratest/sallaren/2015/12/16/promise-arrays/</guid>
+
+
+        <category>
+          
+        </category>
+        </item>
+      
+
+
+    </channel>
+</rss>
