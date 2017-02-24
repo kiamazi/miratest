@@ -11,8 +11,11 @@
 
 <section id="intro">
     <p class="container">
-        من <strong>سالار کابلی</strong> هستم،<br />
+
+        من <strong><a href="{{ SITE.source }}">{{ AUTHOR }}</a></strong> هستم،<br />
         توسعه‌دهنده نرم‌افزار در <a href="http://www.kiosked.com" targt="_blank">کیاسکد</a>.
+
+
     </p>
 </section>
 

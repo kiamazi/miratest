@@ -20,7 +20,7 @@
 <meta name="twitter:creator" content="@sallar">
 <link rel="alternative" href="{{ ROOT }}/atom.xml" title="Sallar Kaboli" type="application/atom+xml">
 <link rel="short icon" href="{{ SITE.icon }}">
-<link rel="stylesheet" href="{{ MainSTATIC }}/sallar/css/style.css" type="text/css">
+<link rel="stylesheet" href="{{ MainSTATIC }}/theme/sallar/css/{{ SITE.css }}" type="text/css">
 
 </head>
 
