@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="http://brick.a.ssl.fastly.net/Linux+Libertine:400,400i,700,700i/Open+Sans:400,400i,700,700i">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC }}/css/main.css" />
-  <link rel="stylesheet" type="text/css" media="print" href="{{ STATIC }}/css/print.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="{{ MainSTATIC }}/theme/behroozam/css/main.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="{{ MainSTATIC }}/theme/behroozam/css/print.css" />
   
 </head>

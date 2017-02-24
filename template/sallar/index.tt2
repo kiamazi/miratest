@@ -1,0 +1,62 @@
+
+
+
+  {{ INCLUDE head 
+	TitleContent =  TITLE 
+	HeadDesc     =  DESCRIPTION
+  }}
+
+
+    {{ INCLUDE header }}
+
+<section id="intro">
+    <p class="container">
+        من <strong>سالار کابلی</strong> هستم،<br />
+        توسعه‌دهنده نرم‌افزار در <a href="http://www.kiosked.com" targt="_blank">کیاسکد</a>.
+    </p>
+</section>
+
+    <!-- content start -->
+
+<section id="content" class="container">
+{{ FOREACH POSTS }}
+
+    <article id="{{ layout }}-{{ title }}" class="article article-type-{{ layout }}" itemscope itemprop="blogPost">
+        <h2 itemprop="name">
+           <a class="archive-article-title" href="{{ url }}" target="_blank" itemprop="url">{{ title }}</a>
+        </h2>
+        <h4><time datetime="{{ date }}" itemprop="datePublished">{{ CALENDAR.jday | $FarsiNum }}{{ CALENDAR.jmonth_name }}{{ CALENDAR.jyear | $FarsiNum }}</time></h4>
+
+        <section class="content">
+            {{ body.less }}
+        </section>
+
+	<p class="article-more-link">
+            <a href="{{ url }}#more">بیشتر بخوانید</a>
+        </p>
+
+    </article>
+
+{{ END }}
+</section>
+
+    <!-- Paging -->
+    <section id="pager">
+        <nav class="container">
+          {{ IF next }}
+	    <a class="extend next" rel="next" href="{{ next }}"><i>→</i><span> نوشته‌های کهنه‌تر</span></a>
+          {{- END }}
+
+          {{ IF prev }}
+            <a class="extend prev" rel="prev" href="{{ prev }}"><span>نوشته‌های تازه‌تر </span><i>←</i></a>
+          {{- END }}
+        </nav>
+    </section>
+    <!-- /Paging -->
+
+
+  {{ INCLUDE footer }}
+
+
+
+

@@ -1,0 +1,15 @@
+<!-- Header -->
+<header>
+    <nav class="container">
+        <ul>
+            <li><a href="{{ MainURL }}">صفحه اول</a></li>
+            <li><a href="{{ ROOT }}">بلاگ</a></li>
+            <li><a href="{{ ROOT }}/contact/">تماس</a></li>
+            <li class="logo"><a href="/">- سالار‌کابلی -</a></li>
+            <li><a href="https://fi.linkedin.com/in/sallarkaboli" target="_blank">لینکدین</a></li>
+            <li><a href="https://github.com/sallar" target="_blank">گیتهاب</a></li>
+            <li><a href="https://twitter.com/sallar" target="_blank">توییتر</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- /Header -->

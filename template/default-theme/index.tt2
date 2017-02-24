@@ -3,7 +3,7 @@
 
 
   <header id="header">
-    <img id="header_img" src="{{ MainSTATIC }}/default-theme/img/mira-c.png">
+    <img id="header_img" src="{{ MainSTATIC }}/theme/default-theme/img/mira-c.png">
       <h1>{{ TITLE }}</h1>
       <h5>{{ DESCRIPTION }}</h5>
       <h6><a href="{{ SITE.source }}">{{ SITE.source }}</a></h6>

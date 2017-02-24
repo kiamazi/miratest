@@ -17,22 +17,22 @@ author: 'behrooz hasanbeygi'
 email: b.hasanbg[at]gmail[dot]com
 
  # the base hostname & protocol for your site
-url: https://kiamazi.github.io/
+url: https://kiamazi.github.io/miratest/behroozam/
 root: /miratest/behroozam/
 
 
 
-logo: /miratest/static/behroozam/images/logo2.jpg
-cover: /miratest/static/behroozam/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg
-author_image: /miratest/static/behroozam/images/behroozam.jpg
-icon: /miratest/static/behroozam/images/favicon.ico
+logo: /miratest/static/theme/behroozam/images/logo2.jpg
+cover: /miratest/static/theme/behroozam/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg
+author_image: /miratest/static/theme/behroozam/images/behroozam.jpg
+icon: /miratest/static/theme/behroozam/images/favicon.ico
 
 # if fill static and imageurl, they will be cretaed in your root
 # change from /MAIN_ROOT/YOUR_MAIN_STATIC_PATH to-> /MAIN_ROOT/FLOOR_ROOT/YOUR_STATIC_PATH
 # and
 # change from /MAIN_ROOT/YOUR_MAIN_Image_PATH to-> /MAIN_ROOT/FLOOR_ROOT/YOUR_Image_PATH
 static: /miratest/static/behroozam
-imageurl: /miratest/static/behroozam/images
+imageurl: /miratest/static/behroozam/article_images
 
 ## default post permanent link
 permalink: :year/:month/:day/:title/
@@ -82,6 +82,8 @@ namespace:
   نمونه کار: portfolios
   طراحی مجدد: redesign
   تایپوگرافی: typographi
+
+disqus_shortname: behroozam
 
 social:
  -  icon: twitter

@@ -9,7 +9,7 @@ author: kiavash
 email: your-email@domain.com
 
  # the base hostname & protocol for your site
-url: http://kiamazi.github.io/
+url: http://kiamazi.github.io/miratest/
 root: /miratest/
 static: /miratest/static
 imageurl: /miratest/static/img

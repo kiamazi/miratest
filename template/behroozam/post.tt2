@@ -94,9 +94,9 @@
             <h5 class="index-headline featured"><span>Supported by</span></h5>
             <footer class="site-footer">
               <section dir="rtl" class="poweredby">قدرت گرفته به وسیله<a dir="rtl" href="http://miraxy.github.io"> mira</a></section>
-              <a class="subscribe" href="{{ FloorROOT }}/feed.xml"> <span class="tooltip"> <i class="fa fa-rss"></i> You should subscribe to my feed.</span></a>
+              <a class="subscribe" href="{{ ROOT }}/feed.xml"> <span class="tooltip"> <i class="fa fa-rss"></i> You should subscribe to my feed.</span></a>
               <div class="inner">
-                <section class="copyright">All content Under GNU FDL <a href="{{ FloorURL }}/">{{ author }}</a>  {{ CALENDAR.year }}<br>free knowlege for all </section>
+                <section class="copyright">All content Under GNU FDL <a href="{{ URL }}/">{{ author }}</a>  {{ CALENDAR.year }}<br>free knowlege for all </section>
               </div>
             </footer>
           </div>

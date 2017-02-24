@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="English">
+<head>
+
+<meta charset="utf-8">
+
+<title>{{ PageTITLE }}</title>
+
+<meta name="description" content="Exploring Javascript &amp; Things">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Exploring Javascript &amp; Things">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ TitleContent }}">
+<meta property="og:url" content="{{ URL }}">
+<meta property="og:site_name" content="{{ TITLE }}">
+<meta property="og:description" content="{{ HeadDesc }}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ TitleContent }}">
+<meta name="twitter:description" content="{{ HeadDesc }}">
+<meta name="twitter:creator" content="@sallar">
+<link rel="alternative" href="{{ ROOT }}/atom.xml" title="Sallar Kaboli" type="application/atom+xml">
+<link rel="short icon" href="{{ SITE.icon }}">
+<link rel="stylesheet" href="{{ MainSTATIC }}/sallar/css/style.css" type="text/css">
+
+</head>
+
+
+<body>
+
+<!--
+{{ TitleContent }} تیتر خام صفحه
+{{ HeadDesc }} برای صفحه اصلی تیتر، برای پست ها خلاصه مطلب
+
+-->

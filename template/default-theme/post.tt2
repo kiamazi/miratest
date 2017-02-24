@@ -3,7 +3,7 @@
 
 
   <header id="header">
-    <img id="header_img" src="{{ MainSTATIC }}/default-theme/img/mira-c.png">
+    <img id="header_img" src="{{ MainSTATIC }}/theme/default-theme/img/mira-c.png">
 		<h1>
       {{ TITLE }}
 		</h1>
@@ -51,11 +51,11 @@
 
       {{ IF categories }}
       <h6 class="cat">
-				<i class="fa fa-file-text-o" aria-hidden="true"></i>
-            {{ FOREACH categories.values }}
-            <a href="{{ url }}">@{{ name }}</a>
-      {{- END }}
-			</h6>
+	<i class="fa fa-file-text-o" aria-hidden="true"></i>
+        {{ FOREACH categories.values }}
+        <a href="{{ url }}">@{{ name }}</a>
+        {{- END }}
+      </h6>
       {{- END }}
 
       {{ IF tags }}

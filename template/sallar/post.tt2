@@ -1,0 +1,64 @@
+{{ FOREACH POSTS }}
+
+  {{ INCLUDE head 
+	TitleContent =  title
+	HeadDesc     =  body.less
+  }}
+
+
+    {{ INCLUDE header }}
+    <section id="content" class="container">
+
+    <article id="{{ layout }}-{{ title }}" class="article article-type-{{ layout }}" itemscope itemprop="blogPost">
+        <h2 itemprop="name">
+           <a class="archive-article-title" href="{{ url }}" target="_blank" itemprop="url">{{ title }}</a>
+        </h2>
+        <h4><time datetime="{{ date }}" itemprop="datePublished">{{ CALENDAR.jday | $FarsiNum }}{{ CALENDAR.jmonth_name }}{{ CALENDAR.jyear | $FarsiNum }}</time></h4>
+
+        <section class="content">
+            {{ body.more }}
+        </section>
+
+        <section class="meta">
+            <hr>
+            {{ IF categories }}
+              <span class="hide-on-mobile">
+    منتشر شده در:
+              {{ FOREACH categories.values }}
+                <a href="{{ url }}">{{ name }}</a>
+		{{ IF (loop.index != loop.max) }}،&nbsp;{{ END }}
+              {{- END }}
+
+              </span>
+            {{ END }}
+                <section class="share">
+                    <share-button></share-button>
+                </section>
+        </section>
+
+        <section id="comments">
+          <div id="disqus_thread">
+	  {{ IF SITE.disqus_shortname }}
+	  <script>
+	    var disqus_shortname = '{{ SITE.disqus_shortname }}';
+	      (function(){
+		var dsq = document.createElement('script');
+		dsq.type = 'text/javascript';
+		dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/{{ IF (comment == 'yes') }}embed.js{{ ELSE }}count.js{{ END }}';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+	    </script>
+            {{ END }}
+          <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </section>
+
+    </article>
+
+{{ END }}
+
+</section>
+
+  {{ INCLUDE footer }}
+
