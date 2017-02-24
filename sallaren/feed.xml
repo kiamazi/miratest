@@ -5,8 +5,8 @@
     <description></description>
     <link></link>
     <atom:link href="https:/kiamazi.github.io/miratest/sallaren/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>2017-02-25 01:42:00</pubDate>
-    <lastBuildDate>2017-02-25 01:42:00</lastBuildDate>
+    <pubDate>2017-02-25 02:05:22</pubDate>
+    <lastBuildDate>2017-02-25 02:05:22</lastBuildDate>
     <generator>mira</generator>
 
 
@@ -174,28 +174,24 @@ return rounds.reduce((prev, curr) =&amp;gt; prev + curr, 0);
 &lt;p&gt;A while ago I needed a sim­ple string pad func­tion, and since it’s a freak­ishly sim­ple task, I just wrote a sim­ple
 func­tion:&lt;/p&gt;
 
-&lt;p&gt;```js
-function limit(str, limit = 16, padString = &quot;#&quot;, padPosition = &quot;right&quot;) {
-    const strLength = str.length;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;function limit(str, limit = 16, padString = &quot;#&quot;, padPosition = &quot;right&quot;) {
+    const strLength = str.length;
 
-&lt;pre&gt;&lt;code&gt;if (strLength &amp;gt; limit) {
-    return str.substring(0, limit);
-} else if (strLength &amp;lt; limit) {
-    const padRepeats = padString.repeat(limit - strLength);
-    return (padPosition === &quot;left&quot;) ? padRepeats + str : str + padRepeats;
+    if (strLength &amp;gt; limit) {
+        return str.substring(0, limit);
+    } else if (strLength &amp;lt; limit) {
+        const padRepeats = padString.repeat(limit - strLength);
+        return (padPosition === &quot;left&quot;) ? padRepeats + str : str + padRepeats;
+    }
+    return str;
 }
-return str;
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;}
-```&lt;/p&gt;
 
 &lt;p&gt;Pretty sim­ple, right? And it works too… Until you add in an emoji to your text. Then every­thing falls apart and worlds
 col­lide! How? Simple:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;js
-&quot;💩&quot;.length // 2!
-&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&quot;💩&quot;.length // 2!
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;(If you’re read­ing this on Linux you might ac­tu­ally see 2 bro­ken uni­code char­ac­ters, and the re­sult makes sense un­less
 you have in­stalled an emoji pack­age on your browser or OS)...&lt;/p&gt;

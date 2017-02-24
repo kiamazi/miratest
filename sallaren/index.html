@@ -135,22 +135,19 @@ Here’s the problem:
 A while ago I needed a sim­ple string pad func­tion, and since it’s a freak­ishly sim­ple task, I just wrote a sim­ple
 func­tion:
 
-```js
 function limit(str, limit = 16, padString = "#", padPosition = "right") {
     const strLength = str.length;
 
-if (strLength &gt; limit) {
-    return str.substring(0, limit);
-} else if (strLength &lt; limit) {
-    const padRepeats = padString.repeat(limit - strLength);
-    return (padPosition === "left") ? padRepeats + str : str + padRepeats;
+    if (strLength &gt; limit) {
+        return str.substring(0, limit);
+    } else if (strLength &lt; limit) {
+        const padRepeats = padString.repeat(limit - strLength);
+        return (padPosition === "left") ? padRepeats + str : str + padRepeats;
+    }
+    return str;
 }
-return str;
 
-}
-```
-
-Pretty sim­ple, right? And it works too… Until </p>
+Pretty sim­ple, right? And it </p>
         </section>
 
 	<p class="article-more-link">
