@@ -1,8 +1,12 @@
-title: Javascript’s Unicode Problem
+---
+_index: javascripts-unicode-problem
+author: sallar
 date: 2016-08-16 21:42:20
 tags:
-- Javascript
-- Unicode
+  - Javascript
+  - Unicode
+title: Javascript’s Unicode Problem
+utid: 20160816214220
 ---
 > Disclaimer: A repost of my article for [CafeDev](https://cafedev.org/article/2016/08/javascript-unicode/)
 

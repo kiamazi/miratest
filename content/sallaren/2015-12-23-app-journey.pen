@@ -1,8 +1,12 @@
-title: Making an iOS app using Javascript vs. Swift 
+---
+_index: app-journey
+author: sallar
 date: 2015-12-23 21:35:00
 tags:
-- Javascript
-- Swift
+  - Javascript
+  - Swift
+title: Making an iOS app using Javascript vs. Swift
+utid: 20151223213500
 ---
 We decided to do a small hackaton at [Kiosked](http://www.kiosked.com/) during summer which was all kinds of fun. Couple of colleagues and me decided to make an app for finding the best restaurant to go to for lunch, which as you know isn’t an easy thing to do ;-) Our lunch app was called Lunchify and it would do these things:
 
@@ -14,7 +18,7 @@ We decided to do a small hackaton at [Kiosked](http://www.kiosked.com/) during s
 As a strong believer in Javascript, I suggested we build the app using Javascript so it would be easier to implement and also be cross-platform. The guys worked out the API behind the app and scraped some data from the web to show in the app, and I coded the app using JS, [Cordova](https://cordova.apache.org/) and [Ionic](http://ionicframework.com/) Framework. The whole thing went pretty well and we had a working app by the end of second day. 
 The amount of effort I put into making the app was really minimal and many things were already being handled by Ionic and [AngularJS](https://angularjs.org/), so what I was actually doing was just connecting things together. This is the result:
 
-{% asset_img cordova.jpg Cordova AngularJS %}
+{{ img app-journey/cordova.jpg "Cordova AngularJS" }}
 
 The result was more than OK for what it was (a hackaton project) and everybody was happy with it. But as a perfectionist that I am, I wanted it to be more than that. So I registered a new domain and decided to do a real app to be released in the App Store. I could just continue working on the existing project, but it had a few issues:
 
@@ -33,7 +37,7 @@ At the time, [React Native](https://facebook.github.io/react-native/) was under 
 
 I rebuilt most of what I had done in Cordova using React Native, and while the process wasn’t all sunshine and candies (since React Native was and is in Beta and changes a lot), the resulting app was *native* and smooth. Here it is:
 
-{% asset_img react-native.jpg React Native %}
+{{ img app-journey/react-native.jpg "React Native" }}
 
 Although I put nearly a month of my free time into this, but I wasn’t quite happy with the result. Mainly because:
 
@@ -55,7 +59,7 @@ I never liked Objective-C’s syntax. It’s too verbose in my opinion. But Swif
 
 As I’m writing this post, the app looks like this:
 
-{% asset_img swift.jpg Swift %}
+{{ img app-journey/swift.jpg "Swift" }}
 
 And the source code is [on Github](https://github.com/sallar/lunchify-swift) at your disposal. I’m a rookie Swift developer so excuse any bad practices or repetative code, I will make it better as I go further. 
 I also put the [Cordova](https://github.com/sallar/lunchify-cordova) and [React Native](https://github.com/sallar/lunchify-react-native) source codes on Github if you want to check them out too for any reason. I haven’t cleaned the code up though. 

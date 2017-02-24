@@ -1,11 +1,15 @@
-title: Buttercup 0.1.0-alpha has been released
+---
+_index: buttercup
+author: sallar
 date: 2016-01-30 19:10:12
 tags:
-- Buttercup
-- Javascript
+  - Buttercup
+  - Javascript
+title: Buttercup 0.1.0-alpha has been released
+utid: 20160130191012
 ---
 It’s been couple of months that [Perry](http://perrymitchell.net) and I have been working on our own password manager called [Buttercup](http://buttercup.pw). We released the very first alpha version today, and you can [get it from Github now](https://github.com/buttercup-pw/buttercup/releases/tag/v0.1.0-alpha). Mac and Linux versions are ready at the time of writing this post and a Windows version is underway.
-![Buttercup Main](buttercup-main.png)
+{{ img buttercup/buttercup-main.png "Buttercup Main" }}
 
 ## What’s Buttercup
 The existing solutions out there are quite good, but not exactly what we wanted. We needed a free, well-made, open-source and secure password management solution, so we decided to build our own. We put all of our trust in Javascript and started coding it in Javascript using NodeJS and [Electron](http://electron.atom.io/).
@@ -23,7 +27,8 @@ We’re also planning to add mobile support using [Cordova](https://cordova.apac
 Two of most important features of Buttercup are Cloud-syncing and Importing existing archives from other managers, like Keepass, which are fairly popular. We’re working on these heavily and will release them ASAP.
 
 ## Made with Coffee in Helsinki
-![Helsinki](helsinki.jpg)
+{{ img buttercup/helsinki.jpg "Helsinki" }}
+
 Perry and I have spend a lot of weekends coding and designing Buttercup in cafés in Helsinki, and we hope that you will enjoy using it as much as we enjoyed making it.
 
 ## Get Buttercup

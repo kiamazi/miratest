@@ -1,7 +1,11 @@
-title: Elevator Stops Problem + Solution
+---
+_index: elevator-stops-problem
+author: sallar
 date: 2016-10-01 21:38:00
 tags:
-- Programming
+  - Programming
+title: Elevator Stops Problem + Solution
+utid: 20161001213800
 ---
 Recently I went to a technical interview in a big tech company for the front-end engineering role. Regardless of how I feel about their process and how unrelated the test was to the job, I found one of the questions interesting and thought it would be nice if I post my solution here.
 

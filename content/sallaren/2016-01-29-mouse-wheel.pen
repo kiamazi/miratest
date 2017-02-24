@@ -1,7 +1,11 @@
-title: Developing for The Real Web - Mouse Wheel Programming
+---
+_index: mouse-wheel
+author: sallar
 date: 2016-01-29 18:35:30
 tags:
-- Javascript
+  - Javascript
+title: 'Developing for The Real Web - Mouse Wheel Programming'
+utid: 20160129183530
 ---
 {% blockquote %}
 **tl;dr**: Calculating mouse wheel value across browsers is a real pain in the ass. Avoid it as long as you can.

@@ -1,8 +1,12 @@
-title: Promisified Arrays
+---
+_index: promise-arrays
+author: sallar
 date: 2015-12-16 20:36:48
 tags:
-- Javascript
-- Promise
+  - Javascript
+  - Promise
+title: Promisified Arrays
+utid: 20151216203648
 ---
 I like Javascript [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) a lot, so I’m trying to fit them everywhere in my apps. If you haven’t heard about Promises, or haven’t used them yet, I suggest you check out [this great guide](https://davidwalsh.name/promises) on them.
 

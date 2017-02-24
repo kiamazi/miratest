@@ -1,9 +1,13 @@
-title: Refactoring Buttercup with React/Redux 
+---
+_index: refactoring-buttercup
+author: sallar
 date: 2016-11-20 18:43:00
 tags:
-- Programming
-- Buttercup
-- Javascript
+  - Programming
+  - Buttercup
+  - Javascript
+title: Refactoring Buttercup with React/Redux
+utid: 20161120184300
 ---
 I started refactoring [Buttercup](https://github.com/buttercup-pw/buttercup)’s UI about [8 months ago](https://github.com/buttercup-pw/buttercup/pull/92/commits/839345b5c71e8d213535e56ced6775037654543f) I had no idea how difficult it’s going to be.
 
@@ -29,7 +33,7 @@ After I got comfortable with Redux, I fell in love with it. Not with Redux itsel
 I suggest you look into it for your next project, if you haven’t already.
 
 ## Meet the new Buttercup
-![Buttercup](screen.png)
+{{ img refactoring-buttercup/screen.png "Buttercup" }}
 Perry made it possible to use the `buttercup-core` module in browsers and it actually is faster than it’s NodeJS counterpart, thanks to Chrome’s built-in `crypto` implementation. So in the new Buttercup version, we decided to move the actual Buttercup logic from `main` to `renderer` process, which means it sits right beside React and Redux in the UI process.
 
 You can read all about the new release [in Github Releases page](https://github.com/buttercup-pw/buttercup/releases/tag/v0.3.0-alpha). In short: it’s faster, better and a lot of bugs are fixed. The new Buttercup also uses a lot of native OS functions, so you can expect natural behavior in most places (like right clicks, drag and drop, resize, etc).

@@ -7,34 +7,34 @@
 
 
 ## Site settings
-title: سالار کابلی
+title: Sallar Kaboli
 subtitle:
-description: من سالار کابلی هستم، توسعه‌دهنده نرم‌افزار در کیاسکد. 
-author: سالار کابلی
-language: Farsi
+description: Sallar Kaboli / Exploring JavaScript & Things.
+author: Sallar Kaboli
+language: English
 timezone: Europe/Helsinki
 
-source: http://sallar.me/farsi/
+source: http://sallar.me/
 
  # the base hostname & protocol for your site
-url: https://kiamazi.github.io/miratest/sallarblog/
-root: /miratest/sallarblog/
+url: https://kiamazi.github.io/miratest/sallaren/
+root: /miratest/sallaren/
 
 
 icon: /miratest/static/theme/sallar/img/logo.png
-css: style-rtl.css
+css: style-ltr.css
 # if fill static and imageurl, they will be cretaed in your root
 # change from /MAIN_ROOT/YOUR_MAIN_STATIC_PATH to-> /MAIN_ROOT/FLOOR_ROOT/YOUR_STATIC_PATH
 # and
 # change from /MAIN_ROOT/YOUR_MAIN_Image_PATH to-> /MAIN_ROOT/FLOOR_ROOT/YOUR_Image_PATH
-static: /miratest/static/sallarblog
-imageurl: /miratest/static/sallarblog/img/
+static: /miratest/static/sallaren
+imageurl: /miratest/static/sallaren/img/
 
 ## default post permanent link
 permalink: :year/:month/:day/:title/
 
 ##date format default is gregorian, but you can change it to jalali
-date_format: jalali
+
 
 ## Your local Time Zone
 TimeZone: +03:30
@@ -66,18 +66,8 @@ template: sallar
 
 #this fields are not allowed: archives, static
 lists:
- - categories
+ - tags
 
-namespace:
-  آموزش: learn
-  کتاب: book
-  درباره: about
-  شخصی: personal
-  عمومی: general
-  نمونه کارها: portfolios
-  نمونه کار: portfolios
-  طراحی مجدد: redesign
-  تایپوگرافی: typographi
 
 disqus_shortname: sallar
 
