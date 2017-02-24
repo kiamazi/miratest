@@ -1,0 +1,173 @@
+
+
+
+  <!DOCTYPE html>
+<html lang="English">
+<head>
+
+<meta charset="utf-8">
+
+<title>سالار کابلی - 139207</title>
+
+<meta name="description" content="Exploring Javascript &amp; Things">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Exploring Javascript &amp; Things">
+<meta property="og:type" content="website">
+<meta property="og:title" content="139207">
+<meta property="og:url" content="https:/kiamazi.github.io/miratest/sallarblog">
+<meta property="og:site_name" content="سالار کابلی">
+<meta property="og:description" content="من سالار کابلی هستم، توسعه‌دهنده نرم‌افزار در کیاسکد.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="139207">
+<meta name="twitter:description" content="من سالار کابلی هستم، توسعه‌دهنده نرم‌افزار در کیاسکد.">
+<meta name="twitter:creator" content="@sallar">
+<link rel="alternative" href="/miratest/sallarblog/atom.xml" title="Sallar Kaboli" type="application/atom+xml">
+<link rel="short icon" href="/miratest/static/theme/sallar/img/logo.png">
+<link rel="stylesheet" href="/miratest/static/theme/sallar/css/style-rtl.css" type="text/css">
+
+</head>
+
+
+<body>
+
+<!--
+139207 تیتر خام صفحه
+من سالار کابلی هستم، توسعه‌دهنده نرم‌افزار در کیاسکد. برای صفحه اصلی تیتر، برای پست ها خلاصه مطلب
+
+-->
+
+
+
+    <!-- Header -->
+<header>
+    <nav class="container">
+        <ul>
+            <li><a href="http://kiamazi.github.io/miratest">صفحه اول</a></li>
+            <li><a href="/miratest/sallarblog">بلاگ</a></li>
+            <li><a href="/miratest/sallarblog/contact/">تماس</a></li>
+            <li class="logo"><a href="/">- سالار‌کابلی -</a></li>
+            <li><a href="https://fi.linkedin.com/in/sallarkaboli" target="_blank">لینکدین</a></li>
+            <li><a href="https://github.com/sallar" target="_blank">گیتهاب</a></li>
+            <li><a href="https://twitter.com/sallar" target="_blank">توییتر</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- /Header -->
+
+
+<section id="intro">
+    <p class="container">
+
+        من <strong><a href="http://sallar.me/farsi/">سالار کابلی</a></strong> هستم،<br />
+        توسعه‌دهنده نرم‌افزار در <a href="http://www.kiosked.com" targt="_blank">کیاسکد</a>.
+
+
+    </p>
+</section>
+
+    <!-- content start -->
+
+<section id="content" class="container">
+
+
+    <article id="-رهایی از پیکسل‌ها: طراحی وب و رابط کاربری بدون پیکسل" class="article article-type-" itemscope itemprop="blogPost">
+        <h2 itemprop="name">
+           <a class="archive-article-title" href="/miratest/sallarblog/2013/10/03/using-em-and-rem-units-for-web-design/" target="_blank" itemprop="url">رهایی از پیکسل‌ها: طراحی وب و رابط کاربری بدون پیکسل</a>
+        </h2>
+        <h4><time datetime="2013-10-03 20:40:20" itemprop="datePublished">۱۱مهر۱۳۹۲</time></h4>
+
+        <section class="content">
+            <p>سالهاست که ما در وب و طراحی وب به پیروی از طراحی گرافیک، از واحدهای پیکسلی برای مشخص کردن ابعاد و اندازه‌ها استفاده می‌کنیم. همونطوری که قبلا در مطلب <a href="http://sallar.me/1392/03/16/svg-is-the-future/" title="تصاویر SVG، آینده وب هستند">تصاویر SVG آینده وب</a> هستند گفتم، تکنولوژی داره به سمتی حرکت می‌کنه که توش پیکسل‌ها دائما در حال تغییر هستن. ما سال‌ها از صفحه‌های نمایش با فشردگی ۱ پیکسل استفاده کردیم و بعد با معرفی شدن صفحه‌نمایش رتینا از طرف اپل، این فشردگی به ۲ پیکسل تبدیل شد. به این معنی که تعداد پیکسل‌هایی که در یک اندازه واحد جا می‌گیرن ۲ برابر شد. بعد از صفحه‌نمایش رتینا، شرکت‌های مختلف فشردگی‌های پیکسلی جدید و بالاتری رو معرفی کردند و این مسئله کار رو برای ما طراح‌های وب خیلی سخت کرد؛ چرا که باید طرح‌های ما تو هر دستگاهی با هر سایز صفحه‌نمایش و فشردگی پیکسلی، عالی نمایش داده بشن. (لطفا برای توضیحات بیشتر در این مورد، مقاله‌ای که بالاتر بهش اشاره کردم رو بخونید.)</p>
+
+<!--more-->
+
+<h2>مشکلات طراحی پیکسلی</h2>
+
+<p>بخش زیادی از وب‌سایت‌ها از واحد پیکسل برای تایپوگرافی و تعیین ابعاد استفاده می‌کن. برای مثال این کار خیلی متداول هست:</p>
+
+<pre>font: 14px/22px "Helvetica Neue", Arial, sans-serif;</pre>
+
+<p>این روش به خودی خود ایرادی نداره، ولی وقتی بخوایم در مورد کاربردپذیری (Usability) و دستیابی‌پذیری (Accessibility) در طراحی و یا طراحی واکنش‌گرا (Responsive Design) حرف بزنیم و تصمیم بگیریم، روش تعیین سایز و ابعاد بر اساس پیکسل مشکلات فراوانی داره.</p>
+
+<h3>مشکلات تایپوگرافی</h3>
+
+<p>تقریبا تمام مرورگرها به صورت پیشفرض یک فونت و یک اندازه قلم برای تمام صفحات وب تعیین می‌کنند که اگر صفحه‌ای در وب خودش فونت و سایز رو تعیین نکرده باشه، صفحه رو بشه راحت مشاهده کرد. اکثر مرورگرها برای قلم پیش‌فرض فونت Times و سایز ۱۶ پیکسل رو انتخاب می‌کنند و این به صورت یه استاندارد در اومده؛ ولی نکته مهم در این مورد این هست که کاربری که از اون مرورگر استفاده می‌کنه می‌تونه این پیش‌فرض رو تغییر بده. مثلا کسی که مشکل بینایی داره، می‌تونه به تنظیمات مرورگرش رو باز کنه و به جای ۱۶ پیکسل، ۳۲ پیکسل رو انتخاب کنه، در نتیجه این کار، همه چیز روی وب باید ۲ برابر بشه ولی این اتفاق نمی‌افته چون بیشتر جاها، طراح‌های وب بر اساس پیکسل همه چیز رو تعیین کردند.</p>
+
+<p>تو این حالت کاربر می‌تونه با استفاده از قابلیت بزرگنمایی مرورگرش صفحه رو بزرگ کنه و متن رو مطالعه کنه، اما چون تمام سایزهای موجود در صفحه بر اساس پیکسل هستن، مرورگر سعی‌اش رو می‌کنه که همه چیز رو درست بزرگنمایی بکنه اما این کار همیشه موفق نیست و ممکنه صفحه به هم بریزه.</p>
+
+<h3>مشکلات اجزای رابط کاربری</h3>
+
+<p>اگر موقع طراحی اجزای رابط کاربری (مانند دکمه‌ها، فرم‌ها و ...) از واحدهای پیکسلی استفاده بشه، باز هم مشکلاتی که بالاتر در موردشون حرف زدم اتفاق می‌افتن. اولا با تغییر سایز قلم پیش‌فرض ابعاد رابط کاربری تغییر نمی‌کنه و دوما اگر با قابلیت بزرگنمایی (Zoom) مرورگر این کار انجام بشه، امکان اینکه اجزا به هم بریزند خیلی زیاد هست.</p>
+
+<p>مشکل مهم دیگه‌ای که وجود داره اینه که اگر از پیکسل برای طراحی اجزای رابط کاربری استفاده کنیم، دیگه اون رابط کاربری مقیاس پذیر (Scalable) نیست. برای مثال ما اگر بخوایم ۳ سایز مختلف از یک دکمه یا فرم رو طراحی کنیم، مجبوریم تمام واحدهای پیکسلی رو ۳ بار برای تمام اجزای رابط کاربری تکرار کنیم. مثلا یه دکمه کوچیک، یه معمولی و یه بزرگ طراحی کنیم و هربار اندازه و ابعادش رو پیکسلی مشخص کنیم. این کار اولا خیلی سخت هست و دوما منطقی نیست. چون ما ممکنه به دلایل مختلف بخوایم رابط کاربری‌مون رو برای کاربر تغییر بدیم و اگر بر اساس پیکسل کار کنیم، این کار خیلی سخت خواهد بود.</p>
+
+
+        </section>
+
+	<p class="article-more-link">
+            <a href="/miratest/sallarblog/2013/10/03/using-em-and-rem-units-for-web-design/#more">بیشتر بخوانید</a>
+        </p>
+
+    </article>
+
+
+
+    <article id="-کارگاه آموزش HTML5، CSS3 و تایپوگرافی در وب" class="article article-type-" itemscope itemprop="blogPost">
+        <h2 itemprop="name">
+           <a class="archive-article-title" href="/miratest/sallarblog/2013/10/03/html5-and-css3-workshop/" target="_blank" itemprop="url">کارگاه آموزش HTML5، CSS3 و تایپوگرافی در وب</a>
+        </h2>
+        <h4><time datetime="2013-10-03 13:02:36" itemprop="datePublished">۱۱مهر۱۳۹۲</time></h4>
+
+        <section class="content">
+            <p>دوم و سوم آبان ماه امسال با همکاری آکادمی مجید آنلاین یه کارگاه آموزش HTML5/CSS3 و تایپوگرافی در وب برگزار می‌کنم.
+
+تو این کارگاه ۱۴ ساعته (۲ روز ۷ ساعته) در مورد تغییرات و امکانات جدید HTML5 و CSS3 صحبت می‌کنیم و نحوه استفاده از اون‌ها رو در پروژه‌های واقعی بررسی می‌کنیم. با توجه به علاقه شخصیم به تایپوگرافی، بخشی از این کارگاه رو اختصاص می‌دیم به تایپوگرافی در وب و در مورد تایپوگرافی خوب در زبان فارسی و چگونگی پیاده سازیش در وب بحث می‌کنیم.
+
+ظرفیت این کارگاه ۱۲ نفر هست و اگر قبل از ۲۵ مهر ثبت‌نام کنید، شهریه هر نفر ۲۶۰هزار تومان هست. برای اطلاعات بیشتر و مشاهده سرفصل‌های دوره یه سری به صفحه </p>
+        </section>
+
+	<p class="article-more-link">
+            <a href="/miratest/sallarblog/2013/10/03/html5-and-css3-workshop/#more">بیشتر بخوانید</a>
+        </p>
+
+    </article>
+
+
+</section>
+
+    <!-- Paging -->
+    <section id="pager">
+        <nav class="container">
+          
+
+          
+        </nav>
+    </section>
+    <!-- /Paging -->
+
+
+  <!-- /Content -->
+<!-- Footer -->
+<footer>
+    <section class="copyright">
+        <p class="container">
+            ۱۳۸۴-۱۳۹۲<br />
+            مطالب تحت لیسانس <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" rel="license" target="_blank">کریتیو کامنز</a> منتشر می‌شوند.
+        </p>
+    </section>
+</footer>
+<!-- /Footer -->
+
+<!-- Scripts -->
+<script src="/miratest/static/theme/sallar/js/share-button.js" type="text/javascript"></script>
+<script src="/miratest/static/theme/sallar/js/prettify/prettify.js" type="text/javascript"></script>
+<script src="/miratest/static/theme/sallar/js/run.js" type="text/javascript"></script>
+<!-- /Scripts -->
+
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,186 @@
+
+
+
+
+
+  <!DOCTYPE html>
+<html lang="English">
+<head>
+
+<meta charset="utf-8">
+
+<title>مشکل نمایش وب‌فونت‌های فارسی در کروم ویندوز + یک راه‌حل - سالار کابلی</title>
+
+<meta name="description" content="Exploring Javascript &amp; Things">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Exploring Javascript &amp; Things">
+<meta property="og:type" content="website">
+<meta property="og:title" content="">
+<meta property="og:url" content="https:/kiamazi.github.io/miratest/sallarblog">
+<meta property="og:site_name" content="سالار کابلی">
+<meta property="og:description" content="">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+<meta name="twitter:creator" content="@sallar">
+<link rel="alternative" href="/miratest/sallarblog/atom.xml" title="Sallar Kaboli" type="application/atom+xml">
+<link rel="short icon" href="/miratest/static/theme/sallar/img/logo.png">
+<link rel="stylesheet" href="/miratest/static/theme/sallar/css/style-rtl.css" type="text/css">
+
+</head>
+
+
+<body>
+
+<!--
+ تیتر خام صفحه
+ برای صفحه اصلی تیتر، برای پست ها خلاصه مطلب
+
+-->
+
+
+
+    <!-- Header -->
+<header>
+    <nav class="container">
+        <ul>
+            <li><a href="http://kiamazi.github.io/miratest">صفحه اول</a></li>
+            <li><a href="/miratest/sallarblog">بلاگ</a></li>
+            <li><a href="/miratest/sallarblog/contact/">تماس</a></li>
+            <li class="logo"><a href="/">- سالار‌کابلی -</a></li>
+            <li><a href="https://fi.linkedin.com/in/sallarkaboli" target="_blank">لینکدین</a></li>
+            <li><a href="https://github.com/sallar" target="_blank">گیتهاب</a></li>
+            <li><a href="https://twitter.com/sallar" target="_blank">توییتر</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- /Header -->
+
+    <section id="content" class="container">
+
+    <article id="-مشکل نمایش وب‌فونت‌های فارسی در کروم ویندوز + یک راه‌حل" class="article article-type-" itemscope itemprop="blogPost">
+        <h2 itemprop="name">
+           <a class="archive-article-title" href="/miratest/sallarblog/2013/01/09/persian-webfonts-display-issue-in-chrome-and-a-solution/" target="_blank" itemprop="url">مشکل نمایش وب‌فونت‌های فارسی در کروم ویندوز + یک راه‌حل</a>
+        </h2>
+        <h4><time datetime="2013-01-09 15:46:52" itemprop="datePublished">۲۰دی۱۳۹۱</time></h4>
+
+        <section class="content">
+            <p>مدتی هست که در کارهام از وب‌فونت‌های فارسی استفاده زیادی می‌کنم. فونت‌هایی مثل یکان، زر و میترا (و چند فونت دیگر فارسی) گزینه‌های خوبی برای تایپوگرافی در وب هستن (البته کاربردهای متفاوتی دارن).</p>
+
+<p>اما مشکلی که وجود داره در استفاده از این وب‌فونت‌ها اینه که فونت‌های فارسی به دلیل استاندارد نبودنشون و عدم وجود اطلاعات هینتینگ صحیح در فایل فونت، با مشکل نمایش در ویندوز مواجه می‌شن. البته این مشکل نمایش در مرورگر کروم بسیار شدیدتر از مرورگرهای دیگه هست و در اینترنت اکسپلورر ۹ به بالا بهتر از بقیه، به این دلیل که مایکروسافت در اینترنت اکسپلورر ۹ و ۱۰، <a href="http://blogs.msdn.com/b/mswanson/archive/2010/07/26/ie9-s-stunning-text-rendering-quality.aspx">از سیستم رندر فونت DirectWrite به همراه نسخه بهبود یافته ClearType بهره گرفته</a> که باعث می‌شه فونت‌ها بسیار بهتر دیده بشن از مرورگرهای دیگه. ولی متاسفانه گوگل کروم هنوز از سیستم رندرینگ قبلی ویندوز استفاده می‌کنه و تا زمانی که اطلاعات هینتینگ مناسب در فایل فونت موجود نباشه، نمی‌تونه فونت رو به درستی نمایش بده.</p>
+
+<a name="more"></a>
+
+<p>وقتی که داشتم رو یکی از پروژه‌های جدیدم -<a href="http://negaresh.org">نگارش</a>- کار می‌کردم، و می‌خواستم از فونت زر برای متن و از یکان برای تیترها استفاده کنم، متوجه شدم که فونت زر بسیار بد در ویندوز نمایش داده می‌شه. البته من از نسخه اصلاح شده‌ی زر که توسط دوست خوبم <a href="https://twitter.com/hosseinkiaee">حسین کیایی</a> روش کار شده استفاده کردم، ولی بازهم نتیجه در کروم ویندوز بسیار بد بود. البته سایت <a href="http://irmug.com">Irmug</a> یه سری از فونت‌های فارسی به اسم «<a href="http://j.mp/XjDuQ2">قلم‌های سری ایکس نسخه ۲</a>» رو که برای نمایش بهتر در سیستم‌های مک و یونیکس بهینه سازی شدن برای دانلود رایگان قرار داده، و با تستشون متوجه شدم که نمایششون در ویندوز خیلی بهتر از نسخه‌های معمولیه، ولی متاسانه حجم فایل‌هاشون خیلی زیاده (بالای یک مگابایت) و کم کردن حجمشون با <a href="http://www.fontsquirrel.com/fontface/generator">FontSquirrel</a> باعث شد که اطلاعات اساسی فونت از دست بره، برای همین از همون فونت‌های اصلاح شده توسط حسین عزیز استفاده کردم.</p>
+
+<p>در زیر شما اسکرین شات از یک بخش از متن سایت نگارش رو در اینترنت اکسپلورر۹ در ویندوز، کروم در ویندوز و کروم در مک مشاهده می‌کنید:</p>
+
+<p><img src="http://sallar.me/wp-content/uploads/2013/01/blog1.png" alt="comparison" /></p>
+
+<p>این مشکل راه‌حل‌های متفاوتی داره ولی متاسفانه حساب کردن روی بیشتر اون‌ها امکان پذیر نیست:</p>
+
+<ul>
+<li><em>*اصلاح فونت‌های فارسی و بهینه‌سازی اون‌ها برای وب:
+*</em>هزینه و زمان زیادی نیاز داره. مدتیه که دوستانی مثل <a href="https://twitter.com/hosseinkiaee">حسین کیایی</a> و <a href="http://saleh.soozanchi.ir">صالح سوزنچی</a> در حال تلاش برای بهینه‌سازی فونت‌های فارسی برای وب هستن، و نتایج خوبی هم از کارهاشون به دست اومده، اما تا زمانی که بشه به صورت کامل مشکلات رو حل شده دونست، فاصله زیادی داریم.</li>
+<li><em>*مرورگر کروم سیستم رندرینگ فونت جدید ویندوز۷ رو به کار ببنده:
+*</em>خبرهای متفاوتی از تیم کروم به گوش می‌رسه که در حال بهینه سازی رندرینگ فونت در کروم هستن، اما اگر فرضا اونا این سیستم رو تو جدیدترین نسخه گوگل کروم هم به کار ببندن، تا فراگیر شدن این نسخه و استفاده تموم کاربرا ازش فاصله زیادی داریم.</li>
+<li><em>*استفاده از ترفندهای CSS برای بهبود نمایش فونت‌ها:
+*</em>این راه در حال حاضر قابل پیاده سازیه، اما فقط تا حدودی نمایش فونت رو بهتر می‌کنه تا قابل خوندن باشه. در ادامه‌ی این مطلب این روش رو توضیح می‌دم.</li>
+</ul>
+
+<h2>بهبود نمایش با استفاده از CSS</h2>
+
+<p>وقتی در حال توسعه سایت نگارش بودم، از دوست خوبم <a href="https://twitter.com/arm1ne">آرمین ابراهیمی</a> در مورد نمایش فونت‌ها در ویندوز نظر خواستم، اون هم بعد از چند ساعتی تست و کار کردن روی متدهای مختلف برای بهتر کردن نمایش فونت‌ها، به من پیشنهاد کرد که از خصوصیت <code>-webkit-text-stroke-width</code> در کروم ویندوز استفاده کنم. به این شکل:</p>
+
+<pre>-webkit-font-smoothing: antialiased;
+-webkit-text-stroke-width: 0.3px;</pre>
+
+<p>خط اول مرورگر کروم (و سافاری) رو مجبور می‌کنه که متن رو به صورت Anti-Aliased نمایش بدن (<a href="http://sallar.me/1391/01/25/web-typography-part-one/" title="تایپوگرافی در وب: بخش ۱، مبانی تایپ و نمایش آن">توضیحش رو قبلا دادم</a>)، و خط دوم به مرورگر می‌گه که متون رو با یک حاشیه نازک ۳دهم پیکسلی نمایش بده، البته شما می‌تونید این عدد رو بسته به سلیقه‌تون و اینکه چه مقدار باشه که فونتتون خوب نمایش داده بشه، تغییر بدید.</p>
+
+<p>البته در کد بالا یک مشکل اساسی وجود داره: خط دوم که ما فقط می‌خوایم روی مرورگر کروم ویندوز اعمال بشه، روی تمام مرورگرهایی که از هسته وب‌کیت برای نمایش صفحات وب استفاده می‌کنن اعمال می‌شه، مثل سافاری در تمام سیستم عامل‌ها و موبایل، کروم در مک و لینوکس و ... . و این اتفاق باعث میشه که فونت‌هایی که در پتلفرم‌های دیگه به خوبی نمایش داده می‌شن، دیگه زیبایی اولیه شون رو نداشته باشن.</p>
+
+<p>برای حل این مشکل شما باید با یکی از روش‌های موجود، نسخه کروم در ویندوز رو تشخیص بدید، و بر اساس اون خط دوم کد بالا رو به فایل CSS تون اضافه کنید. یکی ازین راه‌ها استفاده از اسکریپت‌های تشخیص قابلیت‌های مرورگر مثل <a href="http://modernizr.com">Modernizr</a> و یا اسکریپت‌های تشخیص نسخه مرورگر هستن. برای مثال من از اسکریپت <a href="http://rafael.adm.br/css_browser_selector/">CSS Browser Selector</a> استفاده کردم. این اسکریپت، نام و نسخه مرورگر، و سیستم‌عاملی که تحتش اجرا شده رو به صورت کلاس به تگ body اضافه می‌کنه و ما در سی‌اس‌اس می‌تونیم همچین کاری انجام بدیم:</p>
+
+<pre>body{
+    -webkit-font-smoothing: antialiased;
+}
+.win.chrome body{
+    -webkit-text-stroke-width: 0.3px;
+}</pre>
+
+<p>نتیجه این روش تصویر زیره:</p>
+
+<p><img src="http://sallar.me/wp-content/uploads/2013/01/blog2.png" alt="result" /></p>
+
+<p>درسته که این روش هم از لحاظ روش انجام، و هم از لحاظ نتیجه‌ای که ازش حاص می‌شه (تصویر بالا) روش خوبی نیست و مشکلات بسیاری داره، ولی از نظر من تا زمانی که راه‌حلی قطعی برای بهینه‌سازی فونت‌های فارسی ارایه نشه، این یکی از کم دردسرترین روش‌های موجوده و شما می‌تونید توی پروژه‌ی بعدی ازش استفاده کنید، که شاید جهان هم از سلطه فونت نازیبای <strong>تاهوما</strong> خلاص شد :)</p>
+
+<p>موفق باشید،
+سالار.</p>
+        </section>
+
+        <section class="meta">
+            <hr>
+            
+              <span class="hide-on-mobile">
+    منتشر شده در:
+              
+                <a href="/miratest/sallarblog/categories/توسعه-وب/">توسعه وب</a>
+		،&nbsp;
+                <a href="/miratest/sallarblog/categories/learn/">آموزش</a>
+		،&nbsp;
+                <a href="/miratest/sallarblog/categories/typographi/">تایپوگرافی</a>
+		
+
+              </span>
+            
+                <section class="share">
+                    <share-button></share-button>
+                </section>
+        </section>
+
+        <section id="comments">
+          <div id="disqus_thread">
+	  
+	  <script>
+	    var disqus_shortname = 'sallar';
+	      (function(){
+		var dsq = document.createElement('script');
+		dsq.type = 'text/javascript';
+		dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	    })();
+	    </script>
+            
+          <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+        </section>
+
+    </article>
+
+
+
+</section>
+
+  <!-- /Content -->
+<!-- Footer -->
+<footer>
+    <section class="copyright">
+        <p class="container">
+            ۱۳۸۴-۱۳۹۱<br />
+            مطالب تحت لیسانس <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" rel="license" target="_blank">کریتیو کامنز</a> منتشر می‌شوند.
+        </p>
+    </section>
+</footer>
+<!-- /Footer -->
+
+<!-- Scripts -->
+<script src="/miratest/static/theme/sallar/js/share-button.js" type="text/javascript"></script>
+<script src="/miratest/static/theme/sallar/js/prettify/prettify.js" type="text/javascript"></script>
+<script src="/miratest/static/theme/sallar/js/run.js" type="text/javascript"></script>
+<!-- /Scripts -->
+
+</body>
+</html>
+
+
