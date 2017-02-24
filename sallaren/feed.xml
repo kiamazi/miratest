@@ -5,8 +5,8 @@
     <description></description>
     <link></link>
     <atom:link href="https:/kiamazi.github.io/miratest/sallaren/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>2017-02-24 22:44:30</pubDate>
-    <lastBuildDate>2017-02-24 22:44:30</lastBuildDate>
+    <pubDate>2017-02-25 01:42:00</pubDate>
+    <lastBuildDate>2017-02-25 01:42:00</lastBuildDate>
     <generator>mira</generator>
 
 
@@ -300,9 +300,9 @@ you have in­stalled an emoji pack­age on your browser or OS)...&lt;/p&gt;
       
         <item>
           <title>Developing for The Real Web - Mouse Wheel Programming</title>
-          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;{% blockquote %}
-&lt;strong&gt;tl;dr&lt;/strong&gt;: Calculating mouse wheel value across browsers is a real pain in the ass. Avoid it as long as you can.
-{% endblockquote %}&lt;/p&gt;
+          <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;blockquote&gt;
+**tl;dr**: Calculating mouse wheel value across browsers is a real pain in the ass. Avoid it as long as you can.
+&lt;/blockquote&gt;
 
 &lt;p&gt;So nowadays there’s all these talks about React, Redux and so many other cool things to do. But usually at our day jobs,
 we can’t just start using all these modern things. We have IE9 customers to think about and we have to make sure our
@@ -314,11 +314,10 @@ change it’s speed and velocity, and animate an element using that information.
 &lt;p&gt;I started developing this using Chrome on OS X, with Magic Mouse, and everything was smooth and easy. In it’s simplest
 form:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;js
-container.addEventListener(&quot;mousewheel&quot;, (e) =&amp;gt; {
+&lt;pre&gt;&lt;code&gt;container.addEventListener(&quot;mousewheel&quot;, (e) =&amp;gt; {
     el.style.transform = `translate3d(0, ${e.deltaY / 3}px, 0)`;
 });
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;You’d think this would work nicely everywhere, but nope. There are several things wrong with this code:&lt;/p&gt;
 
@@ -332,10 +331,9 @@ container.addEventListener(&quot;mousewheel&quot;, (e) =&amp;gt; {
 
 &lt;p&gt;First, let’s add an event listener for other browsers:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;js
-container.addEventListener(&quot;mousewheel&quot;, handleScroll);
+&lt;pre&gt;&lt;code&gt;container.addEventListener(&quot;mousewheel&quot;, handleScroll);
 container.addEventListener(&quot;DOMMouseScroll&quot;, handleScroll);
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;This will cover IE and couple of other browsers. Then now the real trouble begins:&lt;/p&gt;
 
@@ -350,8 +348,7 @@ container.addEventListener(&quot;DOMMouseScroll&quot;, handleScroll);
 
 &lt;p&gt;My first attempt to solve this was a solution like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;js
-// Determine the speed
+&lt;pre&gt;&lt;code&gt;// Determine the speed
 if (typeof e.deltaY !== &quot;undefined&quot;) {
     travel = 0 - parseInt(e.deltaY / 3, 10);
 } else if (typeof e.wheelDelta !== &quot;undefined&quot;) {
@@ -359,7 +356,7 @@ if (typeof e.deltaY !== &quot;undefined&quot;) {
 } else if (typeof e.detail !== &quot;undefined&quot;) {
     travel = 0 - parseInt(e.detail / 3, 10);
 }
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Which is quite terrible and doesn’t work as expected. The numbers are not the same so the animation speed would be
 really different across browsers. Which is not something that we want.&lt;/p&gt;
@@ -367,45 +364,39 @@ really different across browsers. Which is not something that we want.&lt;/p&gt;
 &lt;p&gt;After some Googling, I came across &lt;a href=&quot;http://phrogz.net/js/wheeldelta.html&quot;&gt;this page&lt;/a&gt; which was mentioned in a
 Stack Overflow issue. I cleaned up the code a bit:&lt;/p&gt;
 
-&lt;p&gt;``` js
-function wheelDistance(evt) {
+&lt;pre&gt;&lt;code&gt;function wheelDistance(evt) {
     if (!evt) {
         evt = window.event;
-    }&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;let w = evt.wheelDelta,
-    d = evt.detail;
-
-if (d) {
-    if (w) {
-        return ((w / d / 40 * d) &amp;gt; 0) ? 1 : -1; // Opera
     }
-    return -d / 3; // Firefox;
+
+    let w = evt.wheelDelta,
+        d = evt.detail;
+
+    if (d) {
+        if (w) {
+            return ((w / d / 40 * d) &amp;gt; 0) ? 1 : -1; // Opera
+        }
+        return -d / 3; // Firefox;
+    }
+
+    return w / 120; // IE, Safari &amp;amp; Chrome
 }
-
-return w / 120; // IE, Safari &amp;amp; Chrome
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;}
-```&lt;/p&gt;
 
 &lt;p&gt;This function tries to solve all issues I mentioned earlier and normalize the output. Then I could just use the output
 and adjust the speed as needed. To solve the &lt;code&gt;transform&lt;/code&gt; and &lt;code&gt;translate3d&lt;/code&gt; issues I added prefixes:&lt;/p&gt;
 
-&lt;p&gt;``` js
-container.addEventListener(&quot;mousewheel&quot;, handleScroll);
-container.addEventListener(&quot;DOMMouseScroll&quot;, handleScroll);&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;container.addEventListener(&quot;mousewheel&quot;, handleScroll);
+container.addEventListener(&quot;DOMMouseScroll&quot;, handleScroll);
 
-&lt;p&gt;function handleScroll(e) {
-    let deltaY = wheelDistance(e);&lt;/p&gt;
+function handleScroll(e) {
+    let deltaY = wheelDistance(e);
 
-&lt;pre&gt;&lt;code&gt;el.style.transform = `translate3d(0, ${deltaY}px, 0)`; // Modern browsers
-el.style.webkitTransform = `translate3d(0, ${deltaY}px, 0)`; // Webkit
-el.style.msTransform = `translate(0, ${deltaY}px)`; // Use 2D transform for IE9
+    el.style.transform = `translate3d(0, ${deltaY}px, 0)`; // Modern browsers
+    el.style.webkitTransform = `translate3d(0, ${deltaY}px, 0)`; // Webkit
+    el.style.msTransform = `translate(0, ${deltaY}px)`; // Use 2D transform for IE9
+}
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;}
-```&lt;/p&gt;
 
 &lt;h2&gt;References&lt;/h2&gt;
 

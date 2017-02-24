@@ -5,8 +5,8 @@
     <description></description>
     <link></link>
     <atom:link href="https:/kiamazi.github.io/miratest/sallarblog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>2017-02-24 22:44:30</pubDate>
-    <lastBuildDate>2017-02-24 22:44:30</lastBuildDate>
+    <pubDate>2017-02-25 01:42:00</pubDate>
+    <lastBuildDate>2017-02-25 01:42:00</lastBuildDate>
     <generator>mira</generator>
 
 
@@ -78,9 +78,9 @@ const arr = [
 
         <category>
           
-            برنامه‌نویسی
-            ,
             جاواسکریپت
+            ,
+            برنامه‌نویسی
             
         </category>
         </item>
@@ -560,11 +560,11 @@ const arr = [
 
         <category>
           
-            طراحی رابط کاربری
-            ,
             تایپوگرافی
             ,
             نمونه کارها
+            ,
+            طراحی رابط کاربری
             
         </category>
         </item>
@@ -773,9 +773,9 @@ Request timeout for icmp_seq 24
 
         <category>
           
-            تایپوگرافی
-            ,
             آموزش
+            ,
+            تایپوگرافی
             
         </category>
         </item>
@@ -919,9 +919,9 @@ Request timeout for icmp_seq 24
           
             نقد
             ,
-            طراحی رابط کاربری
-            ,
             تایپوگرافی
+            ,
+            طراحی رابط کاربری
             
         </category>
         </item>
@@ -1102,9 +1102,9 @@ Request timeout for icmp_seq 24
 
         <category>
           
-            نقد
-            ,
             یاد‌داشت‌ها
+            ,
+            نقد
             
         </category>
         </item>

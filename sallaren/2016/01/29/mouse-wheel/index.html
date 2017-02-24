@@ -75,9 +75,9 @@
 
 	
         <section class="post-content">
-            <a name="more"></a><br><p>{% blockquote %}
-<strong>tl;dr</strong>: Calculating mouse wheel value across browsers is a real pain in the ass. Avoid it as long as you can.
-{% endblockquote %}</p>
+            <a name="more"></a><br><blockquote>
+**tl;dr**: Calculating mouse wheel value across browsers is a real pain in the ass. Avoid it as long as you can.
+</blockquote>
 
 <p>So nowadays there’s all these talks about React, Redux and so many other cool things to do. But usually at our day jobs,
 we can’t just start using all these modern things. We have IE9 customers to think about and we have to make sure our
@@ -89,11 +89,10 @@ change it’s speed and velocity, and animate an element using that information.
 <p>I started developing this using Chrome on OS X, with Magic Mouse, and everything was smooth and easy. In it’s simplest
 form:</p>
 
-<p><code>js
-container.addEventListener("mousewheel", (e) =&gt; {
+<pre><code>container.addEventListener("mousewheel", (e) =&gt; {
     el.style.transform = `translate3d(0, ${e.deltaY / 3}px, 0)`;
 });
-</code></p>
+</code></pre>
 
 <p>You’d think this would work nicely everywhere, but nope. There are several things wrong with this code:</p>
 
@@ -107,10 +106,9 @@ container.addEventListener("mousewheel", (e) =&gt; {
 
 <p>First, let’s add an event listener for other browsers:</p>
 
-<p><code>js
-container.addEventListener("mousewheel", handleScroll);
+<pre><code>container.addEventListener("mousewheel", handleScroll);
 container.addEventListener("DOMMouseScroll", handleScroll);
-</code></p>
+</code></pre>
 
 <p>This will cover IE and couple of other browsers. Then now the real trouble begins:</p>
 
@@ -125,8 +123,7 @@ container.addEventListener("DOMMouseScroll", handleScroll);
 
 <p>My first attempt to solve this was a solution like this:</p>
 
-<p><code>js
-// Determine the speed
+<pre><code>// Determine the speed
 if (typeof e.deltaY !== "undefined") {
     travel = 0 - parseInt(e.deltaY / 3, 10);
 } else if (typeof e.wheelDelta !== "undefined") {
@@ -134,7 +131,7 @@ if (typeof e.deltaY !== "undefined") {
 } else if (typeof e.detail !== "undefined") {
     travel = 0 - parseInt(e.detail / 3, 10);
 }
-</code></p>
+</code></pre>
 
 <p>Which is quite terrible and doesn’t work as expected. The numbers are not the same so the animation speed would be
 really different across browsers. Which is not something that we want.</p>
@@ -142,45 +139,39 @@ really different across browsers. Which is not something that we want.</p>
 <p>After some Googling, I came across <a href="http://phrogz.net/js/wheeldelta.html">this page</a> which was mentioned in a
 Stack Overflow issue. I cleaned up the code a bit:</p>
 
-<p>``` js
-function wheelDistance(evt) {
+<pre><code>function wheelDistance(evt) {
     if (!evt) {
         evt = window.event;
-    }</p>
-
-<pre><code>let w = evt.wheelDelta,
-    d = evt.detail;
-
-if (d) {
-    if (w) {
-        return ((w / d / 40 * d) &gt; 0) ? 1 : -1; // Opera
     }
-    return -d / 3; // Firefox;
+
+    let w = evt.wheelDelta,
+        d = evt.detail;
+
+    if (d) {
+        if (w) {
+            return ((w / d / 40 * d) &gt; 0) ? 1 : -1; // Opera
+        }
+        return -d / 3; // Firefox;
+    }
+
+    return w / 120; // IE, Safari &amp; Chrome
 }
-
-return w / 120; // IE, Safari &amp; Chrome
 </code></pre>
-
-<p>}
-```</p>
 
 <p>This function tries to solve all issues I mentioned earlier and normalize the output. Then I could just use the output
 and adjust the speed as needed. To solve the <code>transform</code> and <code>translate3d</code> issues I added prefixes:</p>
 
-<p>``` js
-container.addEventListener("mousewheel", handleScroll);
-container.addEventListener("DOMMouseScroll", handleScroll);</p>
+<pre><code>container.addEventListener("mousewheel", handleScroll);
+container.addEventListener("DOMMouseScroll", handleScroll);
 
-<p>function handleScroll(e) {
-    let deltaY = wheelDistance(e);</p>
+function handleScroll(e) {
+    let deltaY = wheelDistance(e);
 
-<pre><code>el.style.transform = `translate3d(0, ${deltaY}px, 0)`; // Modern browsers
-el.style.webkitTransform = `translate3d(0, ${deltaY}px, 0)`; // Webkit
-el.style.msTransform = `translate(0, ${deltaY}px)`; // Use 2D transform for IE9
+    el.style.transform = `translate3d(0, ${deltaY}px, 0)`; // Modern browsers
+    el.style.webkitTransform = `translate3d(0, ${deltaY}px, 0)`; // Webkit
+    el.style.msTransform = `translate(0, ${deltaY}px)`; // Use 2D transform for IE9
+}
 </code></pre>
-
-<p>}
-```</p>
 
 <h2>References</h2>
 
