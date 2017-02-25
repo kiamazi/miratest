@@ -44,7 +44,7 @@ date_format: jalali
 TimeZone: +03:30
 
 ## Build settings
-default_body_format: markdown
+default_markup: markdown
 
 ## number of posts will be show in main index page
 post_num: 5

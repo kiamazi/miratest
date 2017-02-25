@@ -21,7 +21,7 @@ permalink: :year/:month/:day/:title/
 #TimeZone: +00:00
 
 ## Build settings
-default_body_format: markdown
+default_markup: markdown
 
 ## number of posts will be show in main index page
 post_num: 3
