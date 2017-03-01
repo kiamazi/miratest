@@ -1,0 +1,25 @@
+
+<!-- if content body show is_less { -->
+{{ IF is_less }}
+
+        <section class="content">
+            {{ body.less }}
+        </section>
+
+	<p class="article-more-link">
+	{{ IF SITE.language == 'Farsi' }}
+            <a href="{{ url }}#more">بیشتر بخوانید</a>
+	{{ ELSIF SITE.language == 'English' }}
+	    <a href="{{ url }}#more">red more</a>
+	{{ END }}
+        </p>
+
+<!-- } elsif content body show is_more { -->
+{{ ELSIF is_more }}
+
+        <section class="content">
+            {{ body.more }}
+        </section>
+
+<!-- } else {do nothing} -->
+{{ END }}

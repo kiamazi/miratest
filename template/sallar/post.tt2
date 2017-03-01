@@ -3,94 +3,19 @@
 {{ HeadDesc = body.less }}
 {{ END }}
 
-  {{ INCLUDE head 
+  {{ INCLUDE _partial/head 
 	TitleContent
 	HeadDesc
   }}
 
 
-    {{ INCLUDE header }}
+    {{ INCLUDE _partial/header }}
 
-    <section id="content" class="container">
-    {{ FOREACH POSTS }}
-	{{ IF SITE.language == 'English' }}
-        <div class="post">
-	{{ END }}
-    <article id="{{ layout }}-{{ title }}" class="article article-type-{{ layout }}" itemscope itemprop="blogPost">
-        <h2 itemprop="name">
-           <a class="archive-article-title" href="{{ url }}" target="_blank" itemprop="url">{{ title }}</a>
-        </h2>
-	{{ IF SITE.language == 'Farsi' }}
-          <h4><time datetime="{{ date }}" itemprop="datePublished">{{ CALENDAR.jday | $FarsiNum }}{{ CALENDAR.jmonth_name }}{{ CALENDAR.jyear | $FarsiNum }}</time></h4>
-	{{ ELSIF SITE.language == 'English' }}
-          <h4><time datetime="{{ date }}" itemprop="datePublished">{{ CALENDAR.day }}{{ CALENDAR.month_name }}{{ CALENDAR.year }}</time></h4>
-	{{ END }}
+    {{ INCLUDE _partial/content
+	is_post = 'true'
+	is_more = 'true'
+    }}
 
-	{{ IF SITE.language == 'Farsi' }}
-        <section class="content">
-            {{ body.more }}
-        </section>
-	{{ ELSIF SITE.language == 'English' }}
-        <section class="post-content">
-            {{ body.more }}
-        </section>
-	{{ END }}
 
-        <section class="meta">
-            <hr>
-
-	{{ IF SITE.language == 'Farsi' }}
-            {{ IF categories }}
-              <span class="hide-on-mobile">
-	      منتشر شده در:
-              {{ FOREACH categories.values }}
-                <a href="{{ url }}">{{ name }}</a>
-		{{ IF (loop.index != loop.max) }}،&nbsp;{{ END }}
-              {{- END }}
-              </span>
-            {{ END }}
-	{{ ELSIF SITE.language == 'English' }}
-            {{ IF tags }}
-              <span class="hide-on-mobile">
-	      tags: 
-              {{ FOREACH tags.values }}
-                <a href="{{ url }}">{{ name }}</a>
-		{{ IF (loop.index != loop.max) }}،&nbsp;{{ END }}
-              {{- END }}
-              </span>
-            {{ END }}
-	{{ END }}
-                <section class="share">
-                    <share-button></share-button>
-                </section>
-        </section>
-
-        <section id="comments">
-          <div id="disqus_thread">
-	  {{ IF SITE.disqus_shortname }}
-	  <script>
-	    var disqus_shortname = '{{ SITE.disqus_shortname }}';
-	      (function(){
-		var dsq = document.createElement('script');
-		dsq.type = 'text/javascript';
-		dsq.async = true;
-		dsq.src = '//' + disqus_shortname + '.disqus.com/{{ IF (comment != 'false') }}embed.js{{ ELSE }}count.js{{ END }}';
-		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	    })();
-	    </script>
-            {{ END }}
-          <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-            </div>
-        </section>
-
-    </article>
-	{{ IF SITE.language == 'English' }}
-        </div>
-	{{ END }}
-
-{{ END }}
-
-</section>
-
-  {{ INCLUDE footer }}
+  {{ INCLUDE _partial/footer }}
 

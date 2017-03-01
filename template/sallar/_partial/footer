@@ -1,0 +1,30 @@
+<!-- /Content -->
+<!-- Footer -->
+<footer>
+    <section class="copyright">
+        <p class="container">
+          {{ IF SITE.language == 'Farsi' }}
+              ۱۳۸۴-{{ FOREACH POSTS }}{{ CALENDAR.jyear | $FarsiNum }}{{ LAST }}{{ END }}<br />
+              مطالب تحت لیسانس <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" rel="license" target="_blank">کریتیو کامنز</a> منتشر می‌شوند.
+          {{ ELSIF SITE.language == 'English' }}
+              2015-{{ FOREACH POSTS }}{{ CALENDAR.year }}{{ LAST }}{{ END }}<br />
+              cc &nbsp; /&nbsp;<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" rel="license" target="_blank">creative commons</a>
+          {{ END }}
+        </p>
+    </section>
+</footer>
+
+
+
+<!-- /Footer -->
+
+<!-- Scripts -->
+
+<script src="{{ MainSTATIC }}/theme/sallar/js/share-button.js" type="text/javascript"></script>
+<script src="{{ MainSTATIC }}/theme/sallar/js/prettify/prettify.js" type="text/javascript"></script>
+<script src="{{ MainSTATIC }}/theme/sallar/js/run.js" type="text/javascript"></script>
+
+<!-- /Scripts -->
+
+</body>
+</html>

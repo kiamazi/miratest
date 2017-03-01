@@ -1,0 +1,39 @@
+<section class="meta">
+  <hr>
+
+  {{ IF SITE.language == 'Farsi' }}
+
+    {{ IF categories }}
+			<span class="hide-on-mobile">
+		  منتشر شده در:
+			{{ FOREACH categories.values }}
+				<a href="{{ url }}">{{ name }}</a>
+				{{ IF (loop.index != loop.max) }}،&nbsp;{{ END }}
+			{{- END }}
+			</span>
+    {{ END }}
+
+
+
+  {{ ELSIF SITE.language == 'English' }}
+
+    {{ IF tags }}
+	<span class="hide-on-mobile">
+	tags: 
+	{{ FOREACH tags.values }}
+	  <a href="{{ url }}">{{ name }}</a>
+	  {{ IF (loop.index != loop.max) }}،&nbsp;{{ END }}
+	{{- END }}
+	</span>
+    {{ END }}
+
+
+
+
+
+  {{ END }}
+
+	<section class="share">
+	  <share-button></share-button>
+	</section>
+</section>

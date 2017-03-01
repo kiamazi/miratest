@@ -1,0 +1,27 @@
+
+<section id="content" class="container">
+{{ FOREACH POSTS }}
+
+    <article id="{{ slug }}" class="article article-type-{{ layout }}" itemscope itemprop="blogPost">
+        <h2 class="title" itemprop="name">
+           <a href="{{ url }}" target="_blank" itemprop="url">{{ title }}</a>
+        </h2>
+
+	{{ INCLUDE _partial/_post/date }}
+
+
+	{{ INCLUDE _partial/_post/body }}
+
+<!-- if is_post { -->
+	{{ IF is_post }}
+	  {{ INCLUDE _partial/_post/meta }}
+	  {{ INCLUDE _partial/_post/comment }}
+	{{ END }}
+<!-- } -->
+
+    </article>
+
+{{ END }}
+</section>
+
+

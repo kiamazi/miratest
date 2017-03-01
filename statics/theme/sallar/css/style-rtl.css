@@ -445,6 +445,10 @@ ol.linenums {
   margin-bottom: 0;
   color: #cccccc; }
 
+ol.linenums code {
+  background: #2d2d2d;
+}
+
 /* IE indents via margin-left */
 li.L0,
 li.L1,

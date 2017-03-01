@@ -1,75 +1,21 @@
 
 
 
-  {{ INCLUDE head 
+  {{ INCLUDE _partial/head 
 	TitleContent =  TITLE 
 	HeadDesc     =  DESCRIPTION
   }}
 
 
-    {{ INCLUDE header }}
+    {{ INCLUDE _partial/header }}
 
-    {{ INCLUDE intro }}
+    {{ INCLUDE _partial/intro }}
 
-    <!-- content start -->
+    {{ INCLUDE _partial/content 
+	is_less = 'true'
+    }}
 
-<section id="content" class="container">
-{{ FOREACH POSTS }}
+    {{ INCLUDE _partial/paging }}
 
-    <article id="{{ layout }}-{{ title }}" class="article article-type-{{ layout }}" itemscope itemprop="blogPost">
-        <h2 itemprop="name">
-           <a class="archive-article-title" href="{{ url }}" target="_blank" itemprop="url">{{ title }}</a>
-        </h2>
-	{{ IF SITE.language == 'Farsi' }}
-          <h4><time datetime="{{ date }}" itemprop="datePublished">{{ CALENDAR.jday | $FarsiNum }}{{ CALENDAR.jmonth_name }}{{ CALENDAR.jyear | $FarsiNum }}</time></h4>
-	{{ ELSIF SITE.language == 'English' }}
-          <h4><time datetime="{{ date }}" itemprop="datePublished">{{ CALENDAR.day }}{{ CALENDAR.month_name }}{{ CALENDAR.year }}</time></h4>
-	{{ END }}
-
-        <section class="content">
-            {{ body.less }}
-        </section>
-
-	<p class="article-more-link">
-	{{ IF SITE.language == 'Farsi' }}
-            <a href="{{ url }}#more">بیشتر بخوانید</a>
-	{{ ELSIF SITE.language == 'English' }}
-	    <a href="{{ url }}#more">red more</a>
-	{{ END }}
-        </p>
-
-    </article>
-
-{{ END }}
-</section>
-
-    <!-- Paging -->
-    <section id="pager">
-        <nav class="container">
-	{{ IF SITE.language == 'Farsi' }}
-          {{ IF next }}
-	    <a class="extend next" rel="next" href="{{ next }}"><i>→</i><span> نوشته‌های کهنه‌تر</span></a>
-          {{- END }}
-
-          {{ IF prev }}
-            <a class="extend prev" rel="prev" href="{{ prev }}"><span>نوشته‌های تازه‌تر </span><i>←</i></a>
-          {{- END }}
-	{{ ELSIF SITE.language == 'English' }}
-          {{ IF next }}
-	    <a class="extend next" rel="next" href="{{ next }}"><i>→</i><span> older posts</span></a>
-          {{- END }}
-
-          {{ IF prev }}
-            <a class="extend prev" rel="prev" href="{{ prev }}"><span>newer post </span><i>←</i></a>
-          {{- END }}
-	{{ END }}
-        </nav>
-    </section>
-    <!-- /Paging -->
-
-
-  {{ INCLUDE footer }}
-
-
-
+    {{ INCLUDE _partial/footer }}
 

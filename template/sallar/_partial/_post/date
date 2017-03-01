@@ -1,0 +1,9 @@
+{{ IF SITE.language == 'Farsi' }}
+
+  <h4 class="time"><time datetime="{{ date }}" itemprop="datePublished">{{ CALENDAR.jday | $FarsiNum }}&nbsp;{{ CALENDAR.jmonth_name }}&nbsp;{{ CALENDAR.jyear | $FarsiNum }}</time></h4>
+
+{{ ELSIF SITE.language == 'English' }}
+
+  <h4 class="time"><time datetime="{{ date }}" itemprop="datePublished">{{ CALENDAR.month_name }}&nbsp;&nbsp;{{ CALENDAR.day }},&nbsp;&nbsp;{{ CALENDAR.year }}</time></h4>
+
+{{ END }}

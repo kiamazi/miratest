@@ -22,77 +22,76 @@ Here’s the problem:
 
 And here’s my solution:
 
-``` js
-/**
- * Remove duplicate items from an array
- * @param {Array} arr
- * @returns {Array}
- */
-function uniq(arr) {
-    return arr.reduce((prev, curr) => {
-        if (prev.indexOf(curr) === -1) {
-            prev = prev.concat(curr);
-        }
-        return prev;
-    }, []);
-}
-
-/**
- * Solution to our problem
- * 
- * @param {Array.<Number>}  A Array of passengers weights
- * @param {Array.<Number>}  B Array of passenger destination floors
- * @param {Number}          M Number of floors in the building 
- * @param {Number}          X Elevator max passenger capacity
- * @param {Number}          Y Elevator max weight capacity
- * @returns {Number}        Number of total stops
- */
-function solution(A, B, M, X, Y) {
-    let trip = 0,
-        tripWeight = 0,
-        rounds = [];
-    
-    for (let i = 0, len = A.length; i < len; i += 1) {
-        // If there's an unclosed trip, let’s see if we can get more people in
-        if (typeof rounds[trip] !== 'undefined') {
-            // Check if we have filled the capacity for the current trip,
-            // if so, then close the existing trip and create a new one
-            if (rounds[trip].length === X || tripWeight + A[i] > Y) {
-                // Increase trip count
-                trip++;
-                // Reset current weight
-                tripWeight = 0;
+    /**
+     * Remove duplicate items from an array
+     * @param {Array} arr
+     * @returns {Array}
+     */
+    function uniq(arr) {
+        return arr.reduce((prev, curr) => {
+            if (prev.indexOf(curr) === -1) {
+                prev = prev.concat(curr);
             }
-        }
-
-        // Create an empty array for the current trip
-        rounds[trip] = rounds[trip] || [];
-        // Push passengers destination to current trip
-        rounds[trip].push(B[i]);  
-        // Increase current load
-        tripWeight += A[i];
+            return prev;
+        }, []);
     }
 
-    // Remove duplicate floors from each trip, since
-    // the elevator will make 1 stop for pessengers that
-    // go to the same floor. Then add 1 (return to ground floor)
-    rounds = rounds.map(round => uniq(round).length + 1);
+    /**
+     * Solution to our problem
+     * 
+     * @param {Array.<Number>}  A Array of passengers weights
+     * @param {Array.<Number>}  B Array of passenger destination floors
+     * @param {Number}          M Number of floors in the building 
+     * @param {Number}          X Elevator max passenger capacity
+     * @param {Number}          Y Elevator max weight capacity
+     * @returns {Number}        Number of total stops
+     */
+    function solution(A, B, M, X, Y) {
+        let trip = 0,
+            tripWeight = 0,
+            rounds = [];
+        
+        for (let i = 0, len = A.length; i < len; i += 1) {
+            // If there's an unclosed trip, let’s see if we can get more people in
+            if (typeof rounds[trip] !== 'undefined') {
+                // Check if we have filled the capacity for the current trip,
+                // if so, then close the existing trip and create a new one
+                if (rounds[trip].length === X || tripWeight + A[i] > Y) {
+                    // Increase trip count
+                    trip++;
+                    // Reset current weight
+                    tripWeight = 0;
+                }
+            }
 
-    // To get number of total stops, we sum up
-    // destination count in each trip.
-    return rounds.reduce((prev, curr) => prev + curr, 0);
-}
+            // Create an empty array for the current trip
+            rounds[trip] = rounds[trip] || [];
+            // Push passengers destination to current trip
+            rounds[trip].push(B[i]);  
+            // Increase current load
+            tripWeight += A[i];
+        }
 
-console.log(
-    solution(
-        [60, 80, 40],   // Weights
-        [2, 3, 5],      // Destinations
-        5,              // Floors
-        2,              // Max passengers
-        200             // Max weight
-    )
-); // -> 5
-```
+        // Remove duplicate floors from each trip, since
+        // the elevator will make 1 stop for pessengers that
+        // go to the same floor. Then add 1 (return to ground floor)
+        rounds = rounds.map(round => uniq(round).length + 1);
+
+        // To get number of total stops, we sum up
+        // destination count in each trip.
+        return rounds.reduce((prev, curr) => prev + curr, 0);
+    }
+
+    console.log(
+        solution(
+            [60, 80, 40],   // Weights
+            [2, 3, 5],      // Destinations
+            5,              // Floors
+            2,              // Max passengers
+            200             // Max weight
+        )
+    ); // -> 5
+
 
 After I successfully submitted the solution, I searched Google to see if this question has been asked before, turns out it’s a common problem that is asked in programming tests and many people have solved it ([for example this one](http://codereview.stackexchange.com/questions/111673/program-to-determine-total-stops-taken-by-elevator)).
 
