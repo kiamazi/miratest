@@ -60,21 +60,28 @@
 <!-- /Header -->
 
 
-    <section id="content" class="container">
     
-	
-        <div class="post">
-	
-    <article id="-Elevator Stops Problem + Solution" class="article article-type-" itemscope itemprop="blogPost">
-        <h2 itemprop="name">
-           <a class="archive-article-title" href="/miratest/sallaren/2016/10/01/elevator-stops-problem/" target="_blank" itemprop="url">Elevator Stops Problem + Solution</a>
+<section id="content" class="container">
+
+
+    <article id="elevator-stops-problem" class="article article-type-" itemscope itemprop="blogPost">
+        <h2 class="title" itemprop="name">
+           <a href="/miratest/sallaren/2016/10/01/elevator-stops-problem/" target="_blank" itemprop="url">Elevator Stops Problem + Solution</a>
         </h2>
-	
-          <h4><time datetime="2016-10-01 21:38:00" itemprop="datePublished">01October2016</time></h4>
-	
 
 	
-        <section class="post-content">
+
+  <h4 class="time"><time datetime="2016-10-01 21:38:00" itemprop="datePublished">October&nbsp;&nbsp;01,&nbsp;&nbsp;2016</time></h4>
+
+
+
+
+
+	
+<!-- if content body show is_less { -->
+
+
+        <section class="content">
             <a name="more"></a><br><p>Recently I went to a technical interview in a big tech company for the front-end engineering role. Regardless of how I feel about their process and how unrelated the test was to the job, I found one of the questions interesting and thought it would be nice if I post my solution here.</p>
 
 <p>Here’s the problem:</p>
@@ -92,26 +99,25 @@
 
 <p>And here’s my solution:</p>
 
-<p>``` js
-/**
+<pre><code>/**
  * Remove duplicate items from an array
  * @param {Array} arr
  * @returns {Array}
  */
 function uniq(arr) {
-    return arr.reduce((prev, curr) => {
+    return arr.reduce((prev, curr) =&gt; {
         if (prev.indexOf(curr) === -1) {
             prev = prev.concat(curr);
         }
         return prev;
     }, []);
-}</p>
+}
 
-<p>/**
+/**
  * Solution to our problem
  * 
- * @param {Array.<Number>}  A Array of passengers weights
- * @param {Array.<Number>}  B Array of passenger destination floors
+ * @param {Array.&lt;Number&gt;}  A Array of passengers weights
+ * @param {Array.&lt;Number&gt;}  B Array of passenger destination floors
  * @param {Number}          M Number of floors in the building 
  * @param {Number}          X Elevator max passenger capacity
  * @param {Number}          Y Elevator max weight capacity
@@ -120,42 +126,40 @@ function uniq(arr) {
 function solution(A, B, M, X, Y) {
     let trip = 0,
         tripWeight = 0,
-        rounds = [];</p>
+        rounds = [];
 
-<pre><code>for (let i = 0, len = A.length; i &lt; len; i += 1) {
-    // If there's an unclosed trip, let’s see if we can get more people in
-    if (typeof rounds[trip] !== 'undefined') {
-        // Check if we have filled the capacity for the current trip,
-        // if so, then close the existing trip and create a new one
-        if (rounds[trip].length === X || tripWeight + A[i] &gt; Y) {
-            // Increase trip count
-            trip++;
-            // Reset current weight
-            tripWeight = 0;
+    for (let i = 0, len = A.length; i &lt; len; i += 1) {
+        // If there's an unclosed trip, let’s see if we can get more people in
+        if (typeof rounds[trip] !== 'undefined') {
+            // Check if we have filled the capacity for the current trip,
+            // if so, then close the existing trip and create a new one
+            if (rounds[trip].length === X || tripWeight + A[i] &gt; Y) {
+                // Increase trip count
+                trip++;
+                // Reset current weight
+                tripWeight = 0;
+            }
         }
+
+        // Create an empty array for the current trip
+        rounds[trip] = rounds[trip] || [];
+        // Push passengers destination to current trip
+        rounds[trip].push(B[i]);  
+        // Increase current load
+        tripWeight += A[i];
     }
 
-    // Create an empty array for the current trip
-    rounds[trip] = rounds[trip] || [];
-    // Push passengers destination to current trip
-    rounds[trip].push(B[i]);  
-    // Increase current load
-    tripWeight += A[i];
+    // Remove duplicate floors from each trip, since
+    // the elevator will make 1 stop for pessengers that
+    // go to the same floor. Then add 1 (return to ground floor)
+    rounds = rounds.map(round =&gt; uniq(round).length + 1);
+
+    // To get number of total stops, we sum up
+    // destination count in each trip.
+    return rounds.reduce((prev, curr) =&gt; prev + curr, 0);
 }
 
-// Remove duplicate floors from each trip, since
-// the elevator will make 1 stop for pessengers that
-// go to the same floor. Then add 1 (return to ground floor)
-rounds = rounds.map(round =&gt; uniq(round).length + 1);
-
-// To get number of total stops, we sum up
-// destination count in each trip.
-return rounds.reduce((prev, curr) =&gt; prev + curr, 0);
-</code></pre>
-
-<p>}</p>
-
-<p>console.log(
+console.log(
     solution(
         [60, 80, 40],   // Weights
         [2, 3, 5],      // Destinations
@@ -163,67 +167,87 @@ return rounds.reduce((prev, curr) =&gt; prev + curr, 0);
         2,              // Max passengers
         200             // Max weight
     )
-); // -> 5
-```</p>
+); // -&gt; 5
+</code></pre>
 
 <p>After I successfully submitted the solution, I searched Google to see if this question has been asked before, turns out it’s a common problem that is asked in programming tests and many people have solved it (<a href="http://codereview.stackexchange.com/questions/111673/program-to-determine-total-stops-taken-by-elevator">for example this one</a>).</p>
 
 <p>I hope this solution comes in handy for anybody who's willing to cheat a programming test. Hope you don’t though :-)</p>
         </section>
-	
 
-        <section class="meta">
-            <hr>
+<!-- } else {do nothing} -->
 
-	
-            
-              <span class="hide-on-mobile">
-	      tags: 
-              
-                <a href="/miratest/sallaren/tags/Programming/">Programming</a>
-		
-              </span>
-            
-	
-                <section class="share">
-                    <share-button></share-button>
-                </section>
-        </section>
 
-        <section id="comments">
-          <div id="disqus_thread">
+
+<!-- if is_post { -->
+	
+	  <section class="meta">
+  <hr>
+
+  
+
+    
+	<span class="hide-on-mobile">
+	tags: 
+	
+	  <a href="/miratest/sallaren/tags/Programming/">Programming</a>
 	  
-	  <script>
-	    var disqus_shortname = 'sallar';
-	      (function(){
+	</span>
+    
+
+
+
+
+
+  
+
+	<section class="share">
+	  <share-button></share-button>
+	</section>
+</section>
+
+	  
+<section id="comments">
+  <div id="disqus_thread">
+    
+    <script>
+	var disqus_shortname = 'sallar';
+	(function(){
 		var dsq = document.createElement('script');
 		dsq.type = 'text/javascript';
 		dsq.async = true;
 		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	    })();
-	    </script>
-            
-          <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-            </div>
-        </section>
+	})();
+    </script>
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+	
+<!-- } -->
 
     </article>
-	
-        </div>
-	
-
 
 
 </section>
 
+
+
+
+
   <!-- /Content -->
 <!-- Footer -->
-
-<footer class="blog-footer">
-    <a href="/miratest/sallaren" class="logo"></a>
-    2015-2016<br />
-    cc &nbsp; /&nbsp;<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" rel="license" target="_blank">creative commons</a>
+<footer>
+    <section class="copyright">
+        <p class="container">
+          
+              2015-2016<br />
+              cc &nbsp; /&nbsp;<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" rel="license" target="_blank">creative commons</a>
+          
+        </p>
+    </section>
 </footer>
 
 
@@ -231,6 +255,12 @@ return rounds.reduce((prev, curr) =&gt; prev + curr, 0);
 <!-- /Footer -->
 
 <!-- Scripts -->
+
+<script src="/miratest/static/theme/sallar/js/share-button.js" type="text/javascript"></script>
+<script src="/miratest/static/theme/sallar/js/prettify/prettify.js" type="text/javascript"></script>
+
+
+<script src="/miratest/static/theme/sallar/js/run-en.js" type="text/javascript"></script>
 
 <!-- /Scripts -->
 

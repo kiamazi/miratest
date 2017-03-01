@@ -59,18 +59,27 @@
 <!-- /Header -->
 
 
-    <section id="content" class="container">
     
-	
-    <article id="-چرا من نمینویسم" class="article article-type-" itemscope itemprop="blogPost">
-        <h2 itemprop="name">
-           <a class="archive-article-title" href="/miratest/sallarblog/2010/07/13/why-i-refuse-to-write/" target="_blank" itemprop="url">چرا من نمینویسم</a>
+<section id="content" class="container">
+
+
+    <article id="why-i-refuse-to-write" class="article article-type-" itemscope itemprop="blogPost">
+        <h2 class="title" itemprop="name">
+           <a href="/miratest/sallarblog/2010/07/13/why-i-refuse-to-write/" target="_blank" itemprop="url">چرا من نمینویسم</a>
         </h2>
-	
-          <h4><time datetime="2010-07-13 02:56:54" itemprop="datePublished">۲۲تیر۱۳۸۹</time></h4>
-	
 
 	
+
+  <h4 class="time"><time datetime="2010-07-13 02:56:54" itemprop="datePublished">۲۲&nbsp;تیر&nbsp;۱۳۸۹</time></h4>
+
+
+
+
+
+	
+<!-- if content body show is_less { -->
+
+
         <section class="content">
             <a name="more"></a><br><p>اینجا نمینویسم، شاید چون اینجا مخاطب خاص دارد و مخاطب خاص ِ مورد نظر از من انتظار خاص نوشتن دارد، نوشتنم نمی‌آید‌! در عوض میروم جای ِ دیگر مینویسم، جایی که شاید مخاطب خاصش همان کسانی هستند که از مخاطبان خاص فراریند. جایی مینویسم که کسی از من انتظار خاص بودن ندارد و لزومی ندارد که چیز برجسته و مهمی بنویسم تا چشم براه سه تا کامنت کذایی باشم.
 میروم آنجا، آنچه میخواهم دل ِ تنگم مینویسم، آن هایی که دوست دارند لایک میکنند ، آنها که میخواهند انتقاد. کسی هم نمیشناسد مرا با مشخصات کامل سه جلده‌ام.</p>
@@ -87,62 +96,80 @@
 
 <p>بدرود، سالار.</p>
         </section>
-	
 
-        <section class="meta">
-            <hr>
+<!-- } else {do nothing} -->
 
-	
-            
-              <span class="hide-on-mobile">
-	      منتشر شده در:
-              
-                <a href="/miratest/sallarblog/categories/یاد‌داشت‌ها/">یاد‌داشت‌ها</a>
-		
-              </span>
-            
-	
-                <section class="share">
-                    <share-button></share-button>
-                </section>
-        </section>
 
-        <section id="comments">
-          <div id="disqus_thread">
+
+<!-- if is_post { -->
+	
+	  <section class="meta">
+  <hr>
+
+  
+
+    
+			<span class="hide-on-mobile">
+		  منتشر شده در:
+			
+				<a href="/miratest/sallarblog/categories/یاد‌داشت‌ها/">یاد‌داشت‌ها</a>
+				
+			</span>
+    
+
+
+
+  
+
+	<section class="share">
+	  <share-button></share-button>
+	</section>
+</section>
+
 	  
-	  <script>
-	    var disqus_shortname = 'sallar';
-	      (function(){
+<section id="comments">
+  <div id="disqus_thread">
+    
+    <script>
+	var disqus_shortname = 'sallar';
+	(function(){
 		var dsq = document.createElement('script');
 		dsq.type = 'text/javascript';
 		dsq.async = true;
 		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	    })();
-	    </script>
-            
-          <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-            </div>
-        </section>
+	})();
+    </script>
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+	
+<!-- } -->
 
     </article>
-	
-
 
 
 </section>
 
+
+
+
+
   <!-- /Content -->
 <!-- Footer -->
-
 <footer>
     <section class="copyright">
         <p class="container">
-            ۱۳۸۴-۱۳۸۹<br />
-            مطالب تحت لیسانس <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" rel="license" target="_blank">کریتیو کامنز</a> منتشر می‌شوند.
+          
+              ۱۳۸۴-۱۳۸۹<br />
+              مطالب تحت لیسانس <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" rel="license" target="_blank">کریتیو کامنز</a> منتشر می‌شوند.
+          
         </p>
     </section>
 </footer>
+
 
 
 <!-- /Footer -->
@@ -151,7 +178,9 @@
 
 <script src="/miratest/static/theme/sallar/js/share-button.js" type="text/javascript"></script>
 <script src="/miratest/static/theme/sallar/js/prettify/prettify.js" type="text/javascript"></script>
-<script src="/miratest/static/theme/sallar/js/run.js" type="text/javascript"></script>
+
+
+<script src="/miratest/static/theme/sallar/js/run-fa.js" type="text/javascript"></script>
 
 <!-- /Scripts -->
 

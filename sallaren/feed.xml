@@ -5,8 +5,8 @@
     <description></description>
     <link></link>
     <atom:link href="https:/kiamazi.github.io/miratest/sallaren/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>2017-02-25 02:05:22</pubDate>
-    <lastBuildDate>2017-02-25 02:05:22</lastBuildDate>
+    <pubDate>2017-03-01 06:28:55</pubDate>
+    <lastBuildDate>2017-03-01 06:28:55</lastBuildDate>
     <generator>mira</generator>
 
 
@@ -78,26 +78,25 @@ Perry made it possible to use the &lt;code&gt;buttercup-core&lt;/code&gt; module
 
 &lt;p&gt;And here’s my solution:&lt;/p&gt;
 
-&lt;p&gt;``` js
-/**
+&lt;pre&gt;&lt;code&gt;/**
  * Remove duplicate items from an array
  * @param {Array} arr
  * @returns {Array}
  */
 function uniq(arr) {
-    return arr.reduce((prev, curr) =&gt; {
+    return arr.reduce((prev, curr) =&amp;gt; {
         if (prev.indexOf(curr) === -1) {
             prev = prev.concat(curr);
         }
         return prev;
     }, []);
-}&lt;/p&gt;
+}
 
-&lt;p&gt;/**
+/**
  * Solution to our problem
  * 
- * @param {Array.&lt;Number&gt;}  A Array of passengers weights
- * @param {Array.&lt;Number&gt;}  B Array of passenger destination floors
+ * @param {Array.&amp;lt;Number&amp;gt;}  A Array of passengers weights
+ * @param {Array.&amp;lt;Number&amp;gt;}  B Array of passenger destination floors
  * @param {Number}          M Number of floors in the building 
  * @param {Number}          X Elevator max passenger capacity
  * @param {Number}          Y Elevator max weight capacity
@@ -106,42 +105,40 @@ function uniq(arr) {
 function solution(A, B, M, X, Y) {
     let trip = 0,
         tripWeight = 0,
-        rounds = [];&lt;/p&gt;
+        rounds = [];
 
-&lt;pre&gt;&lt;code&gt;for (let i = 0, len = A.length; i &amp;lt; len; i += 1) {
-    // If there's an unclosed trip, let’s see if we can get more people in
-    if (typeof rounds[trip] !== 'undefined') {
-        // Check if we have filled the capacity for the current trip,
-        // if so, then close the existing trip and create a new one
-        if (rounds[trip].length === X || tripWeight + A[i] &amp;gt; Y) {
-            // Increase trip count
-            trip++;
-            // Reset current weight
-            tripWeight = 0;
+    for (let i = 0, len = A.length; i &amp;lt; len; i += 1) {
+        // If there's an unclosed trip, let’s see if we can get more people in
+        if (typeof rounds[trip] !== 'undefined') {
+            // Check if we have filled the capacity for the current trip,
+            // if so, then close the existing trip and create a new one
+            if (rounds[trip].length === X || tripWeight + A[i] &amp;gt; Y) {
+                // Increase trip count
+                trip++;
+                // Reset current weight
+                tripWeight = 0;
+            }
         }
+
+        // Create an empty array for the current trip
+        rounds[trip] = rounds[trip] || [];
+        // Push passengers destination to current trip
+        rounds[trip].push(B[i]);  
+        // Increase current load
+        tripWeight += A[i];
     }
 
-    // Create an empty array for the current trip
-    rounds[trip] = rounds[trip] || [];
-    // Push passengers destination to current trip
-    rounds[trip].push(B[i]);  
-    // Increase current load
-    tripWeight += A[i];
+    // Remove duplicate floors from each trip, since
+    // the elevator will make 1 stop for pessengers that
+    // go to the same floor. Then add 1 (return to ground floor)
+    rounds = rounds.map(round =&amp;gt; uniq(round).length + 1);
+
+    // To get number of total stops, we sum up
+    // destination count in each trip.
+    return rounds.reduce((prev, curr) =&amp;gt; prev + curr, 0);
 }
 
-// Remove duplicate floors from each trip, since
-// the elevator will make 1 stop for pessengers that
-// go to the same floor. Then add 1 (return to ground floor)
-rounds = rounds.map(round =&amp;gt; uniq(round).length + 1);
-
-// To get number of total stops, we sum up
-// destination count in each trip.
-return rounds.reduce((prev, curr) =&amp;gt; prev + curr, 0);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;}&lt;/p&gt;
-
-&lt;p&gt;console.log(
+console.log(
     solution(
         [60, 80, 40],   // Weights
         [2, 3, 5],      // Destinations
@@ -149,8 +146,8 @@ return rounds.reduce((prev, curr) =&amp;gt; prev + curr, 0);
         2,              // Max passengers
         200             // Max weight
     )
-); // -&gt; 5
-```&lt;/p&gt;
+); // -&amp;gt; 5
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;After I successfully submitted the solution, I searched Google to see if this question has been asked before, turns out it’s a common problem that is asked in programming tests and many people have solved it (&lt;a href=&quot;http://codereview.stackexchange.com/questions/111673/program-to-determine-total-stops-taken-by-elevator&quot;&gt;for example this one&lt;/a&gt;).&lt;/p&gt;
 
@@ -500,26 +497,24 @@ I also put the &lt;a href=&quot;https://github.com/sallar/lunchify-cordova&quot;
 
 &lt;p&gt;I also like ES5 array functions and in my opinion they’re a few of the best additions to the language. My favorites are &lt;code&gt;filter&lt;/code&gt; and &lt;code&gt;map&lt;/code&gt;. The problem with these functions is they are synchronous, and I find myself trying to do something like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;js
-var result = arr.map(function(item) {
+&lt;pre&gt;&lt;code&gt;var result = arr.map(function(item) {
     // Do something Async here.
 });
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Which clearly isn’t going to work out since the callback function passed to &lt;code&gt;map&lt;/code&gt; needs to have a return value. A possible solution to this is turn each array item into a &lt;code&gt;Promise&lt;/code&gt; object and wait for all promises to resolve using &lt;code&gt;Promise.all&lt;/code&gt;. Something like:&lt;/p&gt;
 
-&lt;p&gt;``` js
-var arr = [1, 2, 3];
+&lt;pre&gt;&lt;code&gt;var arr = [1, 2, 3];
 var promisified = arr.map(function(item) {
     return new Promise(function(resolve) {
         resolve(item * 10);
     });
-});&lt;/p&gt;
+});
 
-&lt;p&gt;Promise.all(promisified).then(function(result) {
+Promise.all(promisified).then(function(result) {
     console.log(result); // [10, 20, 30];
 });
-```&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;This solution is alright, until you need to do it repeatedly then it will get verbose pretty fast. So &lt;a href=&quot;https://github.com/sallar/promise-arrays&quot;&gt;I made a small helper library&lt;/a&gt; to do it.&lt;/p&gt;
 
@@ -527,20 +522,19 @@ var promisified = arr.map(function(item) {
 
 &lt;p&gt;This super small library provides async versions of &lt;code&gt;map&lt;/code&gt; and &lt;code&gt;filter&lt;/code&gt; which return a &lt;code&gt;Promise&lt;/code&gt; with the result. Take this example:&lt;/p&gt;
 
-&lt;p&gt;``` js
-var PromiseArrays = require('promise-arrays');
-var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var PromiseArrays = require('promise-arrays');
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-&lt;p&gt;PromiseArrays.filter(arr, function(item) {
+PromiseArrays.filter(arr, function(item) {
     return new Promise(function(resolve) {
         window.setTimeout(function() {
-            resolve(item &gt; 3 &amp;amp;&amp;amp; item &amp;lt; 8);
+            resolve(item &amp;gt; 3 &amp;amp;&amp;amp; item &amp;lt; 8);
         }, 100);
     });
 }).then(function(result) {
     console.log(result); // [4, 5, 6, 7] after about ~100ms.
 });
-```&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;It’s possible to return a new &lt;code&gt;Promise&lt;/code&gt; or a normal value from the callback.&lt;/p&gt;
 

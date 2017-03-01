@@ -60,45 +60,50 @@
 <!-- /Header -->
 
 
-    <section id="content" class="container">
     
-	
-        <div class="post">
-	
-    <article id="-Promisified Arrays" class="article article-type-" itemscope itemprop="blogPost">
-        <h2 itemprop="name">
-           <a class="archive-article-title" href="/miratest/sallaren/2015/12/16/promise-arrays/" target="_blank" itemprop="url">Promisified Arrays</a>
+<section id="content" class="container">
+
+
+    <article id="promise-arrays" class="article article-type-" itemscope itemprop="blogPost">
+        <h2 class="title" itemprop="name">
+           <a href="/miratest/sallaren/2015/12/16/promise-arrays/" target="_blank" itemprop="url">Promisified Arrays</a>
         </h2>
-	
-          <h4><time datetime="2015-12-16 20:36:48" itemprop="datePublished">16December2015</time></h4>
-	
 
 	
-        <section class="post-content">
+
+  <h4 class="time"><time datetime="2015-12-16 20:36:48" itemprop="datePublished">December&nbsp;&nbsp;16,&nbsp;&nbsp;2015</time></h4>
+
+
+
+
+
+	
+<!-- if content body show is_less { -->
+
+
+        <section class="content">
             <a name="more"></a><br><p>I like Javascript <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promises</a> a lot, so I’m trying to fit them everywhere in my apps. If you haven’t heard about Promises, or haven’t used them yet, I suggest you check out <a href="https://davidwalsh.name/promises">this great guide</a> on them.</p>
 
 <p>I also like ES5 array functions and in my opinion they’re a few of the best additions to the language. My favorites are <code>filter</code> and <code>map</code>. The problem with these functions is they are synchronous, and I find myself trying to do something like this:</p>
 
-<p><code>js
-var result = arr.map(function(item) {
+<pre><code>var result = arr.map(function(item) {
     // Do something Async here.
 });
-</code></p>
+</code></pre>
 
 <p>Which clearly isn’t going to work out since the callback function passed to <code>map</code> needs to have a return value. A possible solution to this is turn each array item into a <code>Promise</code> object and wait for all promises to resolve using <code>Promise.all</code>. Something like:</p>
 
-<p>``` js
-var arr = [1, 2, 3];
+<pre><code>var arr = [1, 2, 3];
 var promisified = arr.map(function(item) {
     return new Promise(function(resolve) {
         resolve(item * 10);
     });
-});</p>
+});
 
-<p>Promise.all(promisified).then(function(result) {
+Promise.all(promisified).then(function(result) {
     console.log(result); // [10, 20, 30];
 });
-```</p>
+</code></pre>
 
 <p>This solution is alright, until you need to do it repeatedly then it will get verbose pretty fast. So <a href="https://github.com/sallar/promise-arrays">I made a small helper library</a> to do it.</p>
 
@@ -106,81 +111,100 @@ var promisified = arr.map(function(item) {
 
 <p>This super small library provides async versions of <code>map</code> and <code>filter</code> which return a <code>Promise</code> with the result. Take this example:</p>
 
-<p>``` js
-var PromiseArrays = require('promise-arrays');
-var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];</p>
+<pre><code>var PromiseArrays = require('promise-arrays');
+var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-<p>PromiseArrays.filter(arr, function(item) {
+PromiseArrays.filter(arr, function(item) {
     return new Promise(function(resolve) {
         window.setTimeout(function() {
-            resolve(item > 3 &amp;&amp; item &lt; 8);
+            resolve(item &gt; 3 &amp;&amp; item &lt; 8);
         }, 100);
     });
 }).then(function(result) {
     console.log(result); // [4, 5, 6, 7] after about ~100ms.
 });
-```</p>
+</code></pre>
 
 <p>It’s possible to return a new <code>Promise</code> or a normal value from the callback.</p>
 
 <p><code>promise-arrays</code> is available to use with Node.JS, UMD and browser globals. <a href="https://github.com/sallar/promise-arrays">Check it out on Github</a> and please report any issues. All suggestions are also welcome :-)</p>
         </section>
-	
 
-        <section class="meta">
-            <hr>
+<!-- } else {do nothing} -->
 
-	
-            
-              <span class="hide-on-mobile">
-	      tags: 
-              
-                <a href="/miratest/sallaren/tags/Javascript/">Javascript</a>
-		،&nbsp;
-                <a href="/miratest/sallaren/tags/Promise/">Promise</a>
-		
-              </span>
-            
-	
-                <section class="share">
-                    <share-button></share-button>
-                </section>
-        </section>
 
-        <section id="comments">
-          <div id="disqus_thread">
+
+<!-- if is_post { -->
+	
+	  <section class="meta">
+  <hr>
+
+  
+
+    
+	<span class="hide-on-mobile">
+	tags: 
+	
+	  <a href="/miratest/sallaren/tags/Promise/">Promise</a>
+	  ،&nbsp;
+	  <a href="/miratest/sallaren/tags/Javascript/">Javascript</a>
 	  
-	  <script>
-	    var disqus_shortname = 'sallar';
-	      (function(){
+	</span>
+    
+
+
+
+
+
+  
+
+	<section class="share">
+	  <share-button></share-button>
+	</section>
+</section>
+
+	  
+<section id="comments">
+  <div id="disqus_thread">
+    
+    <script>
+	var disqus_shortname = 'sallar';
+	(function(){
 		var dsq = document.createElement('script');
 		dsq.type = 'text/javascript';
 		dsq.async = true;
 		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	    })();
-	    </script>
-            
-          <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-            </div>
-        </section>
+	})();
+    </script>
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+	
+<!-- } -->
 
     </article>
-	
-        </div>
-	
-
 
 
 </section>
 
+
+
+
+
   <!-- /Content -->
 <!-- Footer -->
-
-<footer class="blog-footer">
-    <a href="/miratest/sallaren" class="logo"></a>
-    2015-2015<br />
-    cc &nbsp; /&nbsp;<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" rel="license" target="_blank">creative commons</a>
+<footer>
+    <section class="copyright">
+        <p class="container">
+          
+              2015-2015<br />
+              cc &nbsp; /&nbsp;<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" rel="license" target="_blank">creative commons</a>
+          
+        </p>
+    </section>
 </footer>
 
 
@@ -188,6 +212,12 @@ var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];</p>
 <!-- /Footer -->
 
 <!-- Scripts -->
+
+<script src="/miratest/static/theme/sallar/js/share-button.js" type="text/javascript"></script>
+<script src="/miratest/static/theme/sallar/js/prettify/prettify.js" type="text/javascript"></script>
+
+
+<script src="/miratest/static/theme/sallar/js/run-en.js" type="text/javascript"></script>
 
 <!-- /Scripts -->
 

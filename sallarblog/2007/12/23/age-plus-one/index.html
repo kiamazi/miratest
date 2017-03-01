@@ -59,18 +59,27 @@
 <!-- /Header -->
 
 
-    <section id="content" class="container">
     
-	
-    <article id="-$سن + 1!" class="article article-type-" itemscope itemprop="blogPost">
-        <h2 itemprop="name">
-           <a class="archive-article-title" href="/miratest/sallarblog/2007/12/23/age-plus-one/" target="_blank" itemprop="url">$سن + 1!</a>
+<section id="content" class="container">
+
+
+    <article id="age-plus-one" class="article article-type-" itemscope itemprop="blogPost">
+        <h2 class="title" itemprop="name">
+           <a href="/miratest/sallarblog/2007/12/23/age-plus-one/" target="_blank" itemprop="url">$سن + 1!</a>
         </h2>
-	
-          <h4><time datetime="2007-12-23 17:06:15" itemprop="datePublished">۰۲دی۱۳۸۶</time></h4>
-	
 
 	
+
+  <h4 class="time"><time datetime="2007-12-23 17:06:15" itemprop="datePublished">۰۲&nbsp;دی&nbsp;۱۳۸۶</time></h4>
+
+
+
+
+
+	
+<!-- if content body show is_less { -->
+
+
         <section class="content">
             <a name="more"></a><br><p>تولد تولد تولدت مبارك! بيا شمعا رو فوت كن كه صد سال مجبوري زنده باشي!
 امروز تولدمه...!‌ آه..!‌ چه روز خجسته‌اي!</p>
@@ -91,62 +100,80 @@ die();
 
 <p>بدرود</p>
         </section>
-	
 
-        <section class="meta">
-            <hr>
+<!-- } else {do nothing} -->
 
-	
-            
-              <span class="hide-on-mobile">
-	      منتشر شده در:
-              
-                <a href="/miratest/sallarblog/categories/general/">عمومی</a>
-		
-              </span>
-            
-	
-                <section class="share">
-                    <share-button></share-button>
-                </section>
-        </section>
 
-        <section id="comments">
-          <div id="disqus_thread">
+
+<!-- if is_post { -->
+	
+	  <section class="meta">
+  <hr>
+
+  
+
+    
+			<span class="hide-on-mobile">
+		  منتشر شده در:
+			
+				<a href="/miratest/sallarblog/categories/general/">عمومی</a>
+				
+			</span>
+    
+
+
+
+  
+
+	<section class="share">
+	  <share-button></share-button>
+	</section>
+</section>
+
 	  
-	  <script>
-	    var disqus_shortname = 'sallar';
-	      (function(){
+<section id="comments">
+  <div id="disqus_thread">
+    
+    <script>
+	var disqus_shortname = 'sallar';
+	(function(){
 		var dsq = document.createElement('script');
 		dsq.type = 'text/javascript';
 		dsq.async = true;
 		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
 		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	    })();
-	    </script>
-            
-          <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-            </div>
-        </section>
+	})();
+    </script>
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+	
+<!-- } -->
 
     </article>
-	
-
 
 
 </section>
 
+
+
+
+
   <!-- /Content -->
 <!-- Footer -->
-
 <footer>
     <section class="copyright">
         <p class="container">
-            ۱۳۸۴-۱۳۸۶<br />
-            مطالب تحت لیسانس <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" rel="license" target="_blank">کریتیو کامنز</a> منتشر می‌شوند.
+          
+              ۱۳۸۴-۱۳۸۶<br />
+              مطالب تحت لیسانس <a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" rel="license" target="_blank">کریتیو کامنز</a> منتشر می‌شوند.
+          
         </p>
     </section>
 </footer>
+
 
 
 <!-- /Footer -->
@@ -155,7 +182,9 @@ die();
 
 <script src="/miratest/static/theme/sallar/js/share-button.js" type="text/javascript"></script>
 <script src="/miratest/static/theme/sallar/js/prettify/prettify.js" type="text/javascript"></script>
-<script src="/miratest/static/theme/sallar/js/run.js" type="text/javascript"></script>
+
+
+<script src="/miratest/static/theme/sallar/js/run-fa.js" type="text/javascript"></script>
 
 <!-- /Scripts -->
 
