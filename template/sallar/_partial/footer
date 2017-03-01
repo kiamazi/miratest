@@ -22,8 +22,12 @@
 
 <script src="{{ MainSTATIC }}/theme/sallar/js/share-button.js" type="text/javascript"></script>
 <script src="{{ MainSTATIC }}/theme/sallar/js/prettify/prettify.js" type="text/javascript"></script>
-<script src="{{ MainSTATIC }}/theme/sallar/js/run.js" type="text/javascript"></script>
 
+{{ IF SITE.language == 'Farsi' }}
+<script src="{{ MainSTATIC }}/theme/sallar/js/run-fa.js" type="text/javascript"></script>
+{{ ELSIF SITE.language == 'English' }}
+<script src="{{ MainSTATIC }}/theme/sallar/js/run-en.js" type="text/javascript"></script>
+{{ END }}
 <!-- /Scripts -->
 
 </body>
