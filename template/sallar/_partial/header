@@ -24,7 +24,7 @@
             <li class="nav-list-item"><a href="{{ ROOT}}/atom.xml" target="_self" class="nav-list-link">Rss</a></li>
             <li class="nav-list-item"><a href="https://twitter.com/sallar" target="_blank" class="nav-list-link">Twitter</a></li>
             <li class="nav-list-item"><a href="https://github.com/sallar" target="_blank" class="nav-list-link">Github</a></li>
-            <li class="nav-list-item"><a href="{{ ROOT }}/sallarblog/" target="_self" class="nav-list-link">Persian</a></li>
+            <li class="nav-list-item"><a href="{{ MainROOT }}/sallarblog/" target="_self" class="nav-list-link">Persian</a></li>
 	</ul>
 
 </header>
