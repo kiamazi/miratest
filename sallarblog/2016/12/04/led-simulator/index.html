@@ -1,7 +1,5 @@
 
-
-
-
+  
 
   <!DOCTYPE html>
 <html lang="English">
@@ -11,19 +9,25 @@
 
 <title>شبیه ساز ماتریکس LED - سالار کابلی</title>
 
+
+
 <meta name="description" content="Exploring Javascript &amp; Things">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Exploring Javascript &amp; Things">
 <meta property="og:type" content="website">
-<meta property="og:title" content="">
-<meta property="og:url" content="https:/kiamazi.github.io/miratest/sallarblog">
+<meta property="og:title" content="شبیه ساز ماتریکس LED">
+<meta property="og:url" content="https://kiamazi.github.io/miratest/sallarblog">
 <meta property="og:site_name" content="سالار کابلی">
-<meta property="og:description" content="">
+<meta property="og:description" content="&lt;p&gt;چند وقت پیش یه &lt;a href=&quot;http://lametric.com/&quot;&gt;دستگاه جذاب&lt;/a&gt; دیدم که برای &lt;a href=&quot;https://twitter.com/idreams_ir&quot;&gt;رامین&lt;/a&gt; فرستادم و ازش پرسیدم آیا همچین نوع صفحه نمایشی بیرون هست که بخوام براش برنامه‌نویسم خودم و این دستگاه رو نخرم؟ رامین پیشنهاد داد که یه &lt;a href=&quot;https://www.adafruit.com/products/420&quot;&gt;صفحه 32x16 ماتریکسی RGB&lt;/a&gt; بگیرم و از اون شروع کنم ساختن چیزی که میخوام. اما با توجه به اینکه از خرید تا رسیدنش دستم کمی طول می‌کشید، تاب نیاوردم و تصمیم گرفتم شبیه ساز همین صفحه رو با جاواسکریپت بسازم.&lt;/p&gt;
+
+">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="">
-<meta name="twitter:description" content="">
-<meta name="twitter:creator" content="@sallar">
-<link rel="alternative" href="/miratest/sallarblog/atom.xml" title="Sallar Kaboli" type="application/atom+xml">
+<meta name="twitter:title" content="شبیه ساز ماتریکس LED">
+<meta name="twitter:description" content="&lt;p&gt;چند وقت پیش یه &lt;a href=&quot;http://lametric.com/&quot;&gt;دستگاه جذاب&lt;/a&gt; دیدم که برای &lt;a href=&quot;https://twitter.com/idreams_ir&quot;&gt;رامین&lt;/a&gt; فرستادم و ازش پرسیدم آیا همچین نوع صفحه نمایشی بیرون هست که بخوام براش برنامه‌نویسم خودم و این دستگاه رو نخرم؟ رامین پیشنهاد داد که یه &lt;a href=&quot;https://www.adafruit.com/products/420&quot;&gt;صفحه 32x16 ماتریکسی RGB&lt;/a&gt; بگیرم و از اون شروع کنم ساختن چیزی که میخوام. اما با توجه به اینکه از خرید تا رسیدنش دستم کمی طول می‌کشید، تاب نیاوردم و تصمیم گرفتم شبیه ساز همین صفحه رو با جاواسکریپت بسازم.&lt;/p&gt;
+
+">
+
+<link rel="alternative" href="/miratest/sallarblog/atom.xml" title="سالار کابلی" type="application/atom+xml">
 <link rel="short icon" href="/miratest/static/theme/sallar/img/logo.png">
 <link rel="stylesheet" href="/miratest/static/theme/sallar/css/style-rtl.css" type="text/css">
 
@@ -31,12 +35,6 @@
 
 
 <body>
-
-<!--
- تیتر خام صفحه
- برای صفحه اصلی تیتر، برای پست ها خلاصه مطلب
-
--->
 
 
 
@@ -46,12 +44,12 @@
     <nav class="container">
         <ul>
             <li><a href="/miratest/">صفحه اول</a></li>
-            <li><a href="/miratest/sallarblog/">بلاگ</a></li>
+            <li><a href="/miratest/sallarblog/feed.xml" target="_self">فید</a></li>
             <li><a href="/miratest/sallarblog/contact/">تماس</a></li>
-            <li class="logo"><a href="http://kiamazi.github.io/miratest">- سالار‌کابلی -</a></li>
-            <li><a href="https://fi.linkedin.com/in/sallarkaboli" target="_blank">لینکدین</a></li>
-            <li><a href="https://github.com/sallar" target="_blank">گیتهاب</a></li>
-            <li><a href="https://twitter.com/sallar" target="_blank">توییتر</a></li>
+            <li class="logo"><a href="/miratest/">سالار کابلی</a></li>
+            <li><a href="https://en.linkedin.com/in/USER" target="_blank">لینکدین</a></li>
+            <li><a href="https://github.com/USER" target="_blank">گیتهاب</a></li>
+            <li><a href="https://twitter.com/USER" target="_blank">توییتر</a></li>
         </ul>
     </nav>
 </header>
@@ -70,7 +68,7 @@
 
 	
 
-  <h4 class="time"><time datetime="2016-12-04 18:30:00" itemprop="datePublished">۱۴&nbsp;آذر&nbsp;۱۳۹۵</time></h4>
+  <h4 class="time"><time datetime="2016-12-04 18:30:00" itemprop="datePublished">یک‌شنبه، ۱۴&nbsp;آذر&nbsp;۱۳۹۵</time></h4>
 
 
 
@@ -126,11 +124,11 @@ const arr = [
 
 <p>شیش تا عدد هگزادسیمال (مبنای ۱۶). حالا این رو چطور رسم کنیم؟ اول اون عددای هگزادسیمال رو تبدیل به باینری می‌کنیم (مبنای دو). توی جاواسکریپت این کار به این سادگی انجام می‌گیره. ولی ما نیاز به یه بایت اطلاعات داریم و این تبدیل شامل صفرهای اول بایت نمیشه پس باید خودمون صفرهاشو بذاریم. هرکدوم از این صفر و یک‌ ها در این بایت، اطلاعات ۸ پیکسل تو ستون اول گلیف ما هستن. و اگر شیش تا از این ستون‌ها رو کنار هم بذاریم حرف A شکل می‌گیره. نکته دیگه اینه که میکروکنترلرها از پایین به بالا می‌چینن ولی ما از بالا به پایین، برای همین باید اون بایت رو برعکس کنیم.</p>
 
-<p><img src="/miratest/static/sallarblog/img/led-simulator/drawing.png" alt="drawing" title="نقشه" ></p>
+<p>{{ img led-simulator/drawing.png "drawing" "نقشه" }}</p>
 
 <p>موضوع بعدی اینه که چطوری اطلاعات هر حرف رو از توی فونت پیدا کنیم؟ آرایه اصلی فونت به ترتیب عدد یونیکد هر حرف ذخیره شده. مثلا گلیف فاصله (کد یونیکد ۳۲) اولیه (صفرمی در واقع)، علامت تعجب (کد ۳۳) دومی (اولی در واقع) و الی آخر. پس برای پیدا کردن گلیف، باید کد یونیکد هر حرف رو به دست بیاریم، ازش ۳۲ تا کم کنیم و اون عدد نهایی، ایندکس گلیف تو آرایه فونته. بعد به ترتیب اینا رو کنار هم با فرمولی که توی بخش بالا گفتم رسم می‌کنیم :)‌</p>
 
-<p><img src="/miratest/static/sallarblog/img/led-simulator/simulator.png" ></p>
+<p><img src="/miratest/sallarblog/img/led-simulator/simulator.png" ></p>
 
 <h2>ابزار</h2>
 
@@ -156,9 +154,9 @@ const arr = [
 			<span class="hide-on-mobile">
 		  منتشر شده در:
 			
-				<a href="/miratest/sallarblog/categories/جاواسکریپت/">جاواسکریپت</a>
-				،&nbsp;
 				<a href="/miratest/sallarblog/categories/برنامه‌نویسی/">برنامه‌نویسی</a>
+				،&nbsp;
+				<a href="/miratest/sallarblog/categories/جاواسکریپت/">جاواسکریپت</a>
 				
 			</span>
     

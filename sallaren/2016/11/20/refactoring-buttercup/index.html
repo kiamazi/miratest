@@ -1,7 +1,5 @@
 
-
-
-
+  
 
   <!DOCTYPE html>
 <html lang="English">
@@ -11,18 +9,32 @@
 
 <title>Refactoring Buttercup with React/Redux - Sallar Kaboli</title>
 
+
+
 <meta name="description" content="Exploring Javascript &amp; Things">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Exploring Javascript &amp; Things">
 <meta property="og:type" content="website">
-<meta property="og:title" content="">
-<meta property="og:url" content="https:/kiamazi.github.io/miratest/sallaren">
+<meta property="og:title" content="Refactoring Buttercup with React/Redux">
+<meta property="og:url" content="https://kiamazi.github.io/miratest/sallaren">
 <meta property="og:site_name" content="Sallar Kaboli">
-<meta property="og:description" content="">
+<meta property="og:description" content="&lt;p&gt;I started refactoring Buttercup’s UI about 8 months ago I had no idea how difficult it’s going to be.
+
+Why I Refactored
+
+Back in 2015 when Perry and I started making Buttercup, I decided to use BackboneJS for coding the front-end part of things, and it went well for a while. But I quickly realized BackboneJS is not suitable for what Buttercup wants to achieve. Backbone does not scale well in large applications IMO. To name a few issues we had:
+
+Very manual way of rendering and re-rendering. Rendering in BackboneJS is done by replacing the dom contents manually using a jQuery method ($(...).htm&lt;/p&gt;">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="">
-<meta name="twitter:description" content="">
-<meta name="twitter:creator" content="@sallar">
+<meta name="twitter:title" content="Refactoring Buttercup with React/Redux">
+<meta name="twitter:description" content="&lt;p&gt;I started refactoring Buttercup’s UI about 8 months ago I had no idea how difficult it’s going to be.
+
+Why I Refactored
+
+Back in 2015 when Perry and I started making Buttercup, I decided to use BackboneJS for coding the front-end part of things, and it went well for a while. But I quickly realized BackboneJS is not suitable for what Buttercup wants to achieve. Backbone does not scale well in large applications IMO. To name a few issues we had:
+
+Very manual way of rendering and re-rendering. Rendering in BackboneJS is done by replacing the dom contents manually using a jQuery method ($(...).htm&lt;/p&gt;">
+
 <link rel="alternative" href="/miratest/sallaren/atom.xml" title="Sallar Kaboli" type="application/atom+xml">
 <link rel="short icon" href="/miratest/static/theme/sallar/img/logo.png">
 <link rel="stylesheet" href="/miratest/static/theme/sallar/css/style-ltr.css" type="text/css">
@@ -31,12 +43,6 @@
 
 
 <body>
-
-<!--
- تیتر خام صفحه
- برای صفحه اصلی تیتر، برای پست ها خلاصه مطلب
-
--->
 
 
 
@@ -48,10 +54,10 @@
 
         <ul class="nav nav-list">
             <li class="nav-list-item"><a href="/miratest/sallaren/" target="_self" class="nav-list-link">Blog</a></li>
-            <li class="nav-list-item"><a href="https://sallar.me/about/" target="_self" class="nav-list-link">About</a></li>
-            <li class="nav-list-item"><a href="/miratest/sallaren/atom.xml" target="_self" class="nav-list-link">Rss</a></li>
-            <li class="nav-list-item"><a href="https://twitter.com/sallar" target="_blank" class="nav-list-link">Twitter</a></li>
-            <li class="nav-list-item"><a href="https://github.com/sallar" target="_blank" class="nav-list-link">Github</a></li>
+            <li class="nav-list-item"><a href="/miratest/sallaren/about/" target="_self" class="nav-list-link">About</a></li>
+            <li class="nav-list-item"><a href="/miratest/sallaren/feed.xml" target="_self" class="nav-list-link">Rss</a></li>
+            <li class="nav-list-item"><a href="https://twitter.com/USER" target="_blank" class="nav-list-link">Twitter</a></li>
+            <li class="nav-list-item"><a href="https://github.com/USER" target="_blank" class="nav-list-link">Github</a></li>
             <li class="nav-list-item"><a href="/miratest/sallarblog/" target="_self" class="nav-list-link">Persian</a></li>
 	</ul>
 
@@ -71,7 +77,7 @@
 
 	
 
-  <h4 class="time"><time datetime="2016-11-20 18:43:00" itemprop="datePublished">November&nbsp;&nbsp;20,&nbsp;&nbsp;2016</time></h4>
+  <h4 class="time"><time datetime="2016-11-20 18:43:00" itemprop="datePublished">Sunday, November&nbsp;&nbsp;20,&nbsp;&nbsp;2016</time></h4>
 
 
 
@@ -112,7 +118,7 @@
 
 <h2>Meet the new Buttercup</h2>
 
-<p><img src="/miratest/static/sallaren/img/refactoring-buttercup/screen.png" alt="Buttercup" title="Buttercup" >
+<p><img src="/miratest/sallaren/img/refactoring-buttercup/screen.png" alt="Buttercup" title="Buttercup" >
 Perry made it possible to use the <code>buttercup-core</code> module in browsers and it actually is faster than it’s NodeJS counterpart, thanks to Chrome’s built-in <code>crypto</code> implementation. So in the new Buttercup version, we decided to move the actual Buttercup logic from <code>main</code> to <code>renderer</code> process, which means it sits right beside React and Redux in the UI process.</p>
 
 <p>You can read all about the new release <a href="https://github.com/buttercup-pw/buttercup/releases/tag/v0.3.0-alpha">in Github Releases page</a>. In short: it’s faster, better and a lot of bugs are fixed. The new Buttercup also uses a lot of native OS functions, so you can expect natural behavior in most places (like right clicks, drag and drop, resize, etc).</p>
@@ -135,11 +141,11 @@ Perry made it possible to use the <code>buttercup-core</code> module in browsers
 	<span class="hide-on-mobile">
 	tags: 
 	
-	  <a href="/miratest/sallaren/tags/Buttercup/">Buttercup</a>
-	  ،&nbsp;
 	  <a href="/miratest/sallaren/tags/Javascript/">Javascript</a>
 	  ،&nbsp;
 	  <a href="/miratest/sallaren/tags/Programming/">Programming</a>
+	  ،&nbsp;
+	  <a href="/miratest/sallaren/tags/Buttercup/">Buttercup</a>
 	  
 	</span>
     

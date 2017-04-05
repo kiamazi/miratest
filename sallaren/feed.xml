@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title></title>
-    <description></description>
-    <link></link>
-    <atom:link href="https:/kiamazi.github.io/miratest/sallaren/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>2017-03-01 09:51:19</pubDate>
-    <lastBuildDate>2017-03-01 09:51:19</lastBuildDate>
+    <title>Sallar Kaboli</title>
+    <description>Sallar Kaboli / Exploring JavaScript &amp; Things.</description>
+    <link>https://kiamazi.github.io/miratest/sallaren</link>
+    <atom:link href="https://kiamazi.github.io/miratest/sallaren/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>2017-04-06 03:47:07</pubDate>
+    <lastBuildDate>2017-04-06 03:47:07</lastBuildDate>
     <generator>mira</generator>
 
 
@@ -43,7 +43,7 @@
 
 &lt;h2&gt;Meet the new Buttercup&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;/miratest/static/sallaren/img/refactoring-buttercup/screen.png&quot; alt=&quot;Buttercup&quot; title=&quot;Buttercup&quot; &gt;
+&lt;p&gt;&lt;img src=&quot;/miratest/sallaren/img/refactoring-buttercup/screen.png&quot; alt=&quot;Buttercup&quot; title=&quot;Buttercup&quot; &gt;
 Perry made it possible to use the &lt;code&gt;buttercup-core&lt;/code&gt; module in browsers and it actually is faster than it’s NodeJS counterpart, thanks to Chrome’s built-in &lt;code&gt;crypto&lt;/code&gt; implementation. So in the new Buttercup version, we decided to move the actual Buttercup logic from &lt;code&gt;main&lt;/code&gt; to &lt;code&gt;renderer&lt;/code&gt; process, which means it sits right beside React and Redux in the UI process.&lt;/p&gt;
 
 &lt;p&gt;You can read all about the new release &lt;a href=&quot;https://github.com/buttercup-pw/buttercup/releases/tag/v0.3.0-alpha&quot;&gt;in Github Releases page&lt;/a&gt;. In short: it’s faster, better and a lot of bugs are fixed. The new Buttercup also uses a lot of native OS functions, so you can expect natural behavior in most places (like right clicks, drag and drop, resize, etc).&lt;/p&gt;
@@ -53,10 +53,7 @@ Perry made it possible to use the &lt;code&gt;buttercup-core&lt;/code&gt; module
           <link>/miratest/sallaren/2016/11/20/refactoring-buttercup/</link>
           <guid isPermaLink="true">/miratest/sallaren/2016/11/20/refactoring-buttercup/</guid>
 
-
-        <category>
-          
-        </category>
+		
         </item>
       
         <item>
@@ -70,7 +67,7 @@ Perry made it possible to use the &lt;code&gt;buttercup-core&lt;/code&gt; module
   
   &lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt;&lt;/p&gt;
   
-  &lt;p&gt;Let Array &lt;code&gt;A&lt;/code&gt; be the weight of each person &lt;code&gt;A = [60, 80, 40]&lt;/code&gt;. 
+  &lt;p&gt;Let Array &lt;code&gt;A&lt;/code&gt; be the weight of each person &lt;code&gt;A = [60, 80, 40]&lt;/code&gt;.
   Let Array &lt;code&gt;B&lt;/code&gt; be the floors where each person needs to be dropped off &lt;code&gt;B = [2, 3, 5]&lt;/code&gt;.&lt;/p&gt;
   
   &lt;p&gt;The building has 5 floors, maximum of 2 persons are allowed in the elevator at a time with max weight capacity being 200. For this example, the elevator would take total of 5 stops in floors: &lt;strong&gt;2&lt;/strong&gt;, &lt;strong&gt;3&lt;/strong&gt;, &lt;strong&gt;G&lt;/strong&gt;, &lt;strong&gt;5&lt;/strong&gt; and finally &lt;strong&gt;G&lt;/strong&gt;.&lt;/p&gt;
@@ -94,10 +91,10 @@ function uniq(arr) {
 
 /**
  * Solution to our problem
- * 
+ *
  * @param {Array.&amp;lt;Number&amp;gt;}  A Array of passengers weights
  * @param {Array.&amp;lt;Number&amp;gt;}  B Array of passenger destination floors
- * @param {Number}          M Number of floors in the building 
+ * @param {Number}          M Number of floors in the building
  * @param {Number}          X Elevator max passenger capacity
  * @param {Number}          Y Elevator max weight capacity
  * @returns {Number}        Number of total stops
@@ -123,7 +120,7 @@ function solution(A, B, M, X, Y) {
         // Create an empty array for the current trip
         rounds[trip] = rounds[trip] || [];
         // Push passengers destination to current trip
-        rounds[trip].push(B[i]);  
+        rounds[trip].push(B[i]);
         // Increase current load
         tripWeight += A[i];
     }
@@ -156,10 +153,7 @@ console.log(
           <link>/miratest/sallaren/2016/10/01/elevator-stops-problem/</link>
           <guid isPermaLink="true">/miratest/sallaren/2016/10/01/elevator-stops-problem/</guid>
 
-
-        <category>
-          
-        </category>
+		
         </item>
       
         <item>
@@ -198,10 +192,7 @@ you have in­stalled an emoji pack­age on your browser or OS)...&lt;/p&gt;
           <link>/miratest/sallaren/2016/08/16/javascripts-unicode-problem/</link>
           <guid isPermaLink="true">/miratest/sallaren/2016/08/16/javascripts-unicode-problem/</guid>
 
-
-        <category>
-          
-        </category>
+		
         </item>
       
         <item>
@@ -239,16 +230,13 @@ you have in­stalled an emoji pack­age on your browser or OS)...&lt;/p&gt;
           <link>/miratest/sallaren/2016/04/11/open-source/</link>
           <guid isPermaLink="true">/miratest/sallaren/2016/04/11/open-source/</guid>
 
-
-        <category>
-          
-        </category>
+		
         </item>
       
         <item>
           <title>Buttercup 0.1.0-alpha has been released</title>
           <description>&lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;p&gt;It’s been couple of months that &lt;a href=&quot;http://perrymitchell.net&quot;&gt;Perry&lt;/a&gt; and I have been working on our own password manager called &lt;a href=&quot;http://buttercup.pw&quot;&gt;Buttercup&lt;/a&gt;. We released the very first alpha version today, and you can &lt;a href=&quot;https://github.com/buttercup-pw/buttercup/releases/tag/v0.1.0-alpha&quot;&gt;get it from Github now&lt;/a&gt;. Mac and Linux versions are ready at the time of writing this post and a Windows version is underway.
-&lt;img src=&quot;/miratest/static/sallaren/img/buttercup/buttercup-main.png&quot; alt=&quot;Buttercup Main&quot; title=&quot;Buttercup Main&quot; &gt;&lt;/p&gt;
+&lt;img src=&quot;/miratest/sallaren/img/buttercup/buttercup-main.png&quot; alt=&quot;Buttercup Main&quot; title=&quot;Buttercup Main&quot; &gt;&lt;/p&gt;
 
 &lt;h2&gt;What’s Buttercup&lt;/h2&gt;
 
@@ -272,7 +260,7 @@ you have in­stalled an emoji pack­age on your browser or OS)...&lt;/p&gt;
 
 &lt;h2&gt;Made with Coffee in Helsinki&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;/miratest/static/sallaren/img/buttercup/helsinki.jpg&quot; alt=&quot;Helsinki&quot; title=&quot;Helsinki&quot; &gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/miratest/sallaren/img/buttercup/helsinki.jpg&quot; alt=&quot;Helsinki&quot; title=&quot;Helsinki&quot; &gt;&lt;/p&gt;
 
 &lt;p&gt;Perry and I have spend a lot of weekends coding and designing Buttercup in cafés in Helsinki, and we hope that you will enjoy using it as much as we enjoyed making it.&lt;/p&gt;
 
@@ -285,10 +273,7 @@ you have in­stalled an emoji pack­age on your browser or OS)...&lt;/p&gt;
           <link>/miratest/sallaren/2016/01/30/buttercup/</link>
           <guid isPermaLink="true">/miratest/sallaren/2016/01/30/buttercup/</guid>
 
-
-        <category>
-          
-        </category>
+		
         </item>
       
         <item>
@@ -401,10 +386,7 @@ function handleScroll(e) {
           <link>/miratest/sallaren/2016/01/29/mouse-wheel/</link>
           <guid isPermaLink="true">/miratest/sallaren/2016/01/29/mouse-wheel/</guid>
 
-
-        <category>
-          
-        </category>
+		
         </item>
       
         <item>
@@ -419,10 +401,10 @@ function handleScroll(e) {
 
 &lt;h2&gt;Cordova/AngularJS&lt;/h2&gt;
 
-&lt;p&gt;As a strong believer in Javascript, I suggested we build the app using Javascript so it would be easier to implement and also be cross-platform. The guys worked out the API behind the app and scraped some data from the web to show in the app, and I coded the app using JS, &lt;a href=&quot;https://cordova.apache.org/&quot;&gt;Cordova&lt;/a&gt; and &lt;a href=&quot;http://ionicframework.com/&quot;&gt;Ionic&lt;/a&gt; Framework. The whole thing went pretty well and we had a working app by the end of second day. 
+&lt;p&gt;As a strong believer in Javascript, I suggested we build the app using Javascript so it would be easier to implement and also be cross-platform. The guys worked out the API behind the app and scraped some data from the web to show in the app, and I coded the app using JS, &lt;a href=&quot;https://cordova.apache.org/&quot;&gt;Cordova&lt;/a&gt; and &lt;a href=&quot;http://ionicframework.com/&quot;&gt;Ionic&lt;/a&gt; Framework. The whole thing went pretty well and we had a working app by the end of second day.
 The amount of effort I put into making the app was really minimal and many things were already being handled by Ionic and &lt;a href=&quot;https://angularjs.org/&quot;&gt;AngularJS&lt;/a&gt;, so what I was actually doing was just connecting things together. This is the result:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/miratest/static/sallaren/img/app-journey/cordova.jpg&quot; alt=&quot;Cordova AngularJS&quot; title=&quot;Cordova AngularJS&quot; &gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/miratest/sallaren/img/app-journey/cordova.jpg&quot; alt=&quot;Cordova AngularJS&quot; title=&quot;Cordova AngularJS&quot; &gt;&lt;/p&gt;
 
 &lt;p&gt;The result was more than OK for what it was (a hackaton project) and everybody was happy with it. But as a perfectionist that I am, I wanted it to be more than that. So I registered a new domain and decided to do a real app to be released in the App Store. I could just continue working on the existing project, but it had a few issues:&lt;/p&gt;
 
@@ -446,7 +428,7 @@ The amount of effort I put into making the app was really minimal and many thing
 
 &lt;p&gt;I rebuilt most of what I had done in Cordova using React Native, and while the process wasn’t all sunshine and candies (since React Native was and is in Beta and changes a lot), the resulting app was &lt;em&gt;native&lt;/em&gt; and smooth. Here it is:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/miratest/static/sallaren/img/app-journey/react-native.jpg&quot; alt=&quot;React Native&quot; title=&quot;React Native&quot; &gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/miratest/sallaren/img/app-journey/react-native.jpg&quot; alt=&quot;React Native&quot; title=&quot;React Native&quot; &gt;&lt;/p&gt;
 
 &lt;p&gt;Although I put nearly a month of my free time into this, but I wasn’t quite happy with the result. Mainly because:&lt;/p&gt;
 
@@ -460,7 +442,7 @@ The amount of effort I put into making the app was really minimal and many thing
 
 &lt;h2&gt;Swift&lt;/h2&gt;
 
-&lt;p&gt;OK, at this point I had two options. Choose between React Native and AngularJS/Cordova, or just give up and forget about the project. It was a nice experiment after all. Then I thought of a third option: Learn &lt;a href=&quot;https://swift.org/&quot;&gt;Swift&lt;/a&gt; and build the app with that. How hard could it possibly be? Turns out: Not hard at all. 
+&lt;p&gt;OK, at this point I had two options. Choose between React Native and AngularJS/Cordova, or just give up and forget about the project. It was a nice experiment after all. Then I thought of a third option: Learn &lt;a href=&quot;https://swift.org/&quot;&gt;Swift&lt;/a&gt; and build the app with that. How hard could it possibly be? Turns out: Not hard at all.
 I never liked Objective-C’s syntax. It’s too verbose in my opinion. But Swift on the other hand looked really clean and had a modern syntax, much like the languages I’m already familiar with. So I followed some online courses, read the Swift docs and a book, and then started coding the same thing in XCode. Pros:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -473,10 +455,10 @@ I never liked Objective-C’s syntax. It’s too verbose in my opinion. But Swif
 
 &lt;p&gt;As I’m writing this post, the app looks like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/miratest/static/sallaren/img/app-journey/swift.jpg&quot; alt=&quot;Swift&quot; title=&quot;Swift&quot; &gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/miratest/sallaren/img/app-journey/swift.jpg&quot; alt=&quot;Swift&quot; title=&quot;Swift&quot; &gt;&lt;/p&gt;
 
-&lt;p&gt;And the source code is &lt;a href=&quot;https://github.com/sallar/lunchify-swift&quot;&gt;on Github&lt;/a&gt; at your disposal. I’m a rookie Swift developer so excuse any bad practices or repetative code, I will make it better as I go further. 
-I also put the &lt;a href=&quot;https://github.com/sallar/lunchify-cordova&quot;&gt;Cordova&lt;/a&gt; and &lt;a href=&quot;https://github.com/sallar/lunchify-react-native&quot;&gt;React Native&lt;/a&gt; source codes on Github if you want to check them out too for any reason. I haven’t cleaned the code up though. &lt;/p&gt;
+&lt;p&gt;And the source code is &lt;a href=&quot;https://github.com/sallar/lunchify-swift&quot;&gt;on Github&lt;/a&gt; at your disposal. I’m a rookie Swift developer so excuse any bad practices or repetative code, I will make it better as I go further.
+I also put the &lt;a href=&quot;https://github.com/sallar/lunchify-cordova&quot;&gt;Cordova&lt;/a&gt; and &lt;a href=&quot;https://github.com/sallar/lunchify-react-native&quot;&gt;React Native&lt;/a&gt; source codes on Github if you want to check them out too for any reason. I haven’t cleaned the code up though.&lt;/p&gt;
 
 &lt;h2&gt;Now What?&lt;/h2&gt;
 
@@ -485,10 +467,7 @@ I also put the &lt;a href=&quot;https://github.com/sallar/lunchify-cordova&quot;
           <link>/miratest/sallaren/2015/12/23/app-journey/</link>
           <guid isPermaLink="true">/miratest/sallaren/2015/12/23/app-journey/</guid>
 
-
-        <category>
-          
-        </category>
+		
         </item>
       
         <item>
@@ -543,10 +522,7 @@ PromiseArrays.filter(arr, function(item) {
           <link>/miratest/sallaren/2015/12/16/promise-arrays/</link>
           <guid isPermaLink="true">/miratest/sallaren/2015/12/16/promise-arrays/</guid>
 
-
-        <category>
-          
-        </category>
+		
         </item>
       
 

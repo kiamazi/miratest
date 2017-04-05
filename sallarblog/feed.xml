@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title></title>
-    <description></description>
-    <link></link>
-    <atom:link href="https:/kiamazi.github.io/miratest/sallarblog/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>2017-03-01 09:51:19</pubDate>
-    <lastBuildDate>2017-03-01 09:51:19</lastBuildDate>
+    <title>سالار کابلی</title>
+    <description>من سالار کابلی هستم، توسعه‌دهنده نرم‌افزار در کیاسکد.</description>
+    <link>https://kiamazi.github.io/miratest/sallarblog</link>
+    <atom:link href="https://kiamazi.github.io/miratest/sallarblog/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>2017-04-06 03:47:07</pubDate>
+    <lastBuildDate>2017-04-06 03:47:07</lastBuildDate>
     <generator>mira</generator>
 
 
@@ -58,11 +58,11 @@ const arr = [
 
 &lt;p&gt;شیش تا عدد هگزادسیمال (مبنای ۱۶). حالا این رو چطور رسم کنیم؟ اول اون عددای هگزادسیمال رو تبدیل به باینری می‌کنیم (مبنای دو). توی جاواسکریپت این کار به این سادگی انجام می‌گیره. ولی ما نیاز به یه بایت اطلاعات داریم و این تبدیل شامل صفرهای اول بایت نمیشه پس باید خودمون صفرهاشو بذاریم. هرکدوم از این صفر و یک‌ ها در این بایت، اطلاعات ۸ پیکسل تو ستون اول گلیف ما هستن. و اگر شیش تا از این ستون‌ها رو کنار هم بذاریم حرف A شکل می‌گیره. نکته دیگه اینه که میکروکنترلرها از پایین به بالا می‌چینن ولی ما از بالا به پایین، برای همین باید اون بایت رو برعکس کنیم.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/miratest/static/sallarblog/img/led-simulator/drawing.png&quot; alt=&quot;drawing&quot; title=&quot;نقشه&quot; &gt;&lt;/p&gt;
+&lt;p&gt;{{ img led-simulator/drawing.png &quot;drawing&quot; &quot;نقشه&quot; }}&lt;/p&gt;
 
 &lt;p&gt;موضوع بعدی اینه که چطوری اطلاعات هر حرف رو از توی فونت پیدا کنیم؟ آرایه اصلی فونت به ترتیب عدد یونیکد هر حرف ذخیره شده. مثلا گلیف فاصله (کد یونیکد ۳۲) اولیه (صفرمی در واقع)، علامت تعجب (کد ۳۳) دومی (اولی در واقع) و الی آخر. پس برای پیدا کردن گلیف، باید کد یونیکد هر حرف رو به دست بیاریم، ازش ۳۲ تا کم کنیم و اون عدد نهایی، ایندکس گلیف تو آرایه فونته. بعد به ترتیب اینا رو کنار هم با فرمولی که توی بخش بالا گفتم رسم می‌کنیم :)‌&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/miratest/static/sallarblog/img/led-simulator/simulator.png&quot; &gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/miratest/sallarblog/img/led-simulator/simulator.png&quot; &gt;&lt;/p&gt;
 
 &lt;h2&gt;ابزار&lt;/h2&gt;
 
@@ -75,14 +75,7 @@ const arr = [
           <link>/miratest/sallarblog/2016/12/04/led-simulator/</link>
           <guid isPermaLink="true">/miratest/sallarblog/2016/12/04/led-simulator/</guid>
 
-
-        <category>
-          
-            جاواسکریپت
-            ,
-            برنامه‌نویسی
-            
-        </category>
+		
         </item>
       
         <item>
@@ -152,12 +145,7 @@ const arr = [
           <link>/miratest/sallarblog/2016/09/28/taxes-in-finland/</link>
           <guid isPermaLink="true">/miratest/sallarblog/2016/09/28/taxes-in-finland/</guid>
 
-
-        <category>
-          
-            فنلاند
-            
-        </category>
+		
         </item>
       
         <item>
@@ -167,7 +155,7 @@ const arr = [
 &lt;p&gt;مهمترین چیزی که بهش رسیدم اینه که فقط خوب یا عالی بودن در انجام یه کاری کافی نیست برای موفق شدن. من مدت‌های طولانی فکر می‌کردم اینکه تمام توان و انرژیم رو برای انجام یه پروژه یا کار می‌ذارم کافیه. ولی بعد از چند ماه کار اینجا متوجه شدم این اصلا کافی نیست و چیزهای خیلی مهم‌تری، یا به همون اهمیت تاثیر دارن توی پیشرفت در کار.
 &lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/miratest/static/sallarblog/img/teamwork/sallars-desk.jpg&quot; alt=&quot;My Desk @ Kiosked&quot; title=&quot;میز کار&quot; &gt;&lt;/p&gt;
+&lt;p&gt;{{ img teamwork/sallars-desk.jpg &quot;My Desk @ Kiosked&quot; &quot;میز کار&quot; }}&lt;/p&gt;
 
 &lt;h3&gt;وقت شناسی&lt;/h3&gt;
 
@@ -202,12 +190,7 @@ const arr = [
           <link>/miratest/sallarblog/2016/09/03/teamwork/</link>
           <guid isPermaLink="true">/miratest/sallarblog/2016/09/03/teamwork/</guid>
 
-
-        <category>
-          
-            عمومی
-            
-        </category>
+		
         </item>
       
         <item>
@@ -232,12 +215,7 @@ const arr = [
           <link>/miratest/sallarblog/2016/07/15/11-years/</link>
           <guid isPermaLink="true">/miratest/sallarblog/2016/07/15/11-years/</guid>
 
-
-        <category>
-          
-            عمومی
-            
-        </category>
+		
         </item>
       
         <item>
@@ -270,12 +248,7 @@ const arr = [
           <link>/miratest/sallarblog/2016/05/20/the-bubble/</link>
           <guid isPermaLink="true">/miratest/sallarblog/2016/05/20/the-bubble/</guid>
 
-
-        <category>
-          
-            عمومی
-            
-        </category>
+		
         </item>
       
         <item>
@@ -285,13 +258,13 @@ const arr = [
 &lt;p&gt;من مسئولیت نوشتن اپ رو به عهده گرفتم و اون رو با استفاده از Ionic Framework پیاده سازی کردم و یکی از همکارهام هم دیتای اپ رو توی Firebase ذخیره کرد (با استفاده از یه crawler ساده). اپی که تولید شد توی اون دو روز ساده ولی کاربردی بود و کارش رو به درستی (تقریبا) انجام میداد.
 &lt;a name=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/miratest/static/sallarblog/img/developing-for-ios/cordova.jpg&quot; alt=&quot;Cordova AngularJS&quot; title=&quot;آنگولار&quot; &gt;&lt;/p&gt;
+&lt;p&gt;{{ img developing-for-ios/cordova.jpg &quot;Cordova AngularJS&quot; &quot;آنگولار&quot; }}&lt;/p&gt;
 
 &lt;p&gt;با توجه به نظر خیلی منفی‌ای که نسبت AngularJS و مشتقاتش دارم (Ionic با انگیولار کار می‌کنه) و فکر می‌کنم که هرگز نمیشه یک برنامه سالم رو با AngularJS توسعه داد، بعد از اون ماجرا تصمیم گرفتم اپ رو در زمان بیکاری با استفاده از React Native که اون روزها تازه داشت پا می‌گرفت دوباره پیاده سازی کنم. بعد از چند روز این کار رو کردم و نتیجه هم بد نبود. حداقل حس Native داشت و از انگیولار بهتر بود و ساختار بهتری داشت.&lt;/p&gt;
 
 &lt;p&gt;ولی مشکلی که وجود داشت این بود که React Native مشکلات زیادی داشت و من نمی‌تونستم همه اون‌هارو خودم حل کنم و توسعه‌دهنده‌هاش هم وقت زیادی برای حل همه اون مشکلات نداشتن (البته حالا همه اون مشکلات حل شدن و RN گزینه خوبی برای توسعه اپ هست). بنابراین تصمیم گرفتم کلا قید ماجرا رو بزنم.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/miratest/static/sallarblog/img/developing-for-ios/react-native.jpg&quot; alt=&quot;React Native&quot; title=&quot;react native&quot; &gt;&lt;/p&gt;
+&lt;p&gt;{{ img developing-for-ios/react-native.jpg &quot;React Native&quot; &quot;react native&quot; }}&lt;/p&gt;
 
 &lt;p&gt;از طرف دیگه مدت‌ها بود دلم میخواست زبان برنامه‌نویسی جدید اپل (سویفت) رو یاد بگیرم و حداقل امتحانی هم که شده یه کاری باهاش بکنم. من تاحالا هر اپی که برای موبایل توسعه داده بودم web-based بود و همیشه با جاواسکریپت اینکار رو می‌کردم. برای همین تصمیم گرفتم که هر روز بعد از کار تلاش کنم که سویفت رو یاد بگیرم. چند تا کتاب و آموزش آنلاین رو مطالعه کردم و بعد از مدتی شروع کردم به پیاده سازی امتحانی همین اپ با سویفت.&lt;/p&gt;
 
@@ -299,7 +272,7 @@ const arr = [
 
 &lt;p&gt;اپ رو با سویفت توسعه دادم بالاخره. البته با کلی سرچ و پرس و جو از دوستان و استفاده از پکیج‌های اوپن‌سورس. نتیجه خیلی بهتر و روان‌تر از اون چیزی بود که انتظار داشتم. طبیعتا یک اپ native خیلی بهتر از مشابه‌های قبلیش با جاواسکریپت بود. &lt;a href=&quot;https://github.com/sallar/lunchify-swift&quot;&gt;کد رو توی گیت‌هاب ببینید&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/miratest/static/sallarblog/img/developing-for-ios/swift.png&quot; alt=&quot;Swift&quot; title=&quot;Swift&quot; &gt;&lt;/p&gt;
+&lt;p&gt;{{ img developing-for-ios/swift.png &quot;Swift&quot; }}&lt;/p&gt;
 
 &lt;p&gt;در حین توسعه اپ چیزی دیگه‌ای یادم اومد که به کل فراموشش کرده بودم و اون هم این بود که اپ برای کار کردن جدی نیاز به داده‌های واقعی داره! و ۴-۵ تا رستوران اطراف شرکت برای اینکه اپ به صورت واقعی و کاربردی منتشر بشه کافی نیست. برای پیاده سازی دیتابیس اپ و ذخیره داده‌های مورد نیاز از NodeJS که بهتر از هرچیز دیگه‌ای می‌فهممش استفاده کردم. مرحله اول استخراج داده‌ها از منابع مورد نیاز بود و مرحله دوم ذخیره‌شون توی دیتابیس و توسعه API مورد نیاز برنامه.&lt;/p&gt;
 
@@ -316,12 +289,7 @@ const arr = [
           <link>/miratest/sallarblog/2016/04/18/developing-for-ios/</link>
           <guid isPermaLink="true">/miratest/sallarblog/2016/04/18/developing-for-ios/</guid>
 
-
-        <category>
-          
-            توسعه
-            
-        </category>
+		
         </item>
       
         <item>
@@ -379,12 +347,7 @@ const arr = [
           <link>/miratest/sallarblog/2016/01/13/working-at-kiosked/</link>
           <guid isPermaLink="true">/miratest/sallarblog/2016/01/13/working-at-kiosked/</guid>
 
-
-        <category>
-          
-            عمومی
-            
-        </category>
+		
         </item>
       
         <item>
@@ -414,12 +377,7 @@ const arr = [
           <link>/miratest/sallarblog/2015/06/07/why-i-left-iran/</link>
           <guid isPermaLink="true">/miratest/sallarblog/2015/06/07/why-i-left-iran/</guid>
 
-
-        <category>
-          
-            عمومی
-            
-        </category>
+		
         </item>
       
         <item>
@@ -447,12 +405,7 @@ const arr = [
           <link>/miratest/sallarblog/2015/02/17/to-my-mother/</link>
           <guid isPermaLink="true">/miratest/sallarblog/2015/02/17/to-my-mother/</guid>
 
-
-        <category>
-          
-            عمومی
-            
-        </category>
+		
         </item>
       
         <item>
@@ -470,12 +423,7 @@ const arr = [
           <link>/miratest/sallarblog/2014/12/29/open-typeface/</link>
           <guid isPermaLink="true">/miratest/sallarblog/2014/12/29/open-typeface/</guid>
 
-
-        <category>
-          
-            تایپوگرافی
-            
-        </category>
+		
         </item>
       
         <item>
@@ -557,16 +505,7 @@ const arr = [
           <link>/miratest/sallarblog/2014/11/20/1pezeshk/</link>
           <guid isPermaLink="true">/miratest/sallarblog/2014/11/20/1pezeshk/</guid>
 
-
-        <category>
-          
-            طراحی رابط کاربری
-            ,
-            تایپوگرافی
-            ,
-            نمونه کارها
-            
-        </category>
+		
         </item>
       
         <item>
@@ -655,12 +594,7 @@ Request timeout for icmp_seq 24
           <link>/miratest/sallarblog/2014/10/03/no-to-irancell-no-to-mobinnet/</link>
           <guid isPermaLink="true">/miratest/sallarblog/2014/10/03/no-to-irancell-no-to-mobinnet/</guid>
 
-
-        <category>
-          
-            نقد
-            
-        </category>
+		
         </item>
       
         <item>
@@ -684,12 +618,7 @@ Request timeout for icmp_seq 24
           <link>/miratest/sallarblog/2014/09/27/sallarcast-episode-2/</link>
           <guid isPermaLink="true">/miratest/sallarblog/2014/09/27/sallarcast-episode-2/</guid>
 
-
-        <category>
-          
-            پادکست
-            
-        </category>
+		
         </item>
       
         <item>
@@ -712,12 +641,7 @@ Request timeout for icmp_seq 24
           <link>/miratest/sallarblog/2014/08/21/sallarcast-episode-1/</link>
           <guid isPermaLink="true">/miratest/sallarblog/2014/08/21/sallarcast-episode-1/</guid>
 
-
-        <category>
-          
-            پادکست
-            
-        </category>
+		
         </item>
       
         <item>
@@ -770,14 +694,7 @@ Request timeout for icmp_seq 24
           <link>/miratest/sallarblog/2014/06/03/about-woff/</link>
           <guid isPermaLink="true">/miratest/sallarblog/2014/06/03/about-woff/</guid>
 
-
-        <category>
-          
-            آموزش
-            ,
-            تایپوگرافی
-            
-        </category>
+		
         </item>
       
         <item>
@@ -890,12 +807,13 @@ Request timeout for icmp_seq 24
 
 &lt;p&gt;من هم به نوبه خودم اشتباهات زیادی رو در طرح‌هام مرتکب شدم و حتی خیلی وقت‌ها روی موج ترندها سوار شدم و بدون توجه به نیاز مخاطب، طرحم رو پر کردم از چیزهایی که برای طرح هیچ سودی نداشتن. هیچ طراحی نمی‌تونه ادعا کنه که از روز اول تونسته طرح‌های عالی و بدون نقص خلق کنه و هیچ اشتباهی در کارش نداشته تاحالا. در طراحی هیچ چیز سفید یا سیاه نیست و نمیشه با قاطعیت گفت که چیزی درست هست یا غلط؛ هر طراحی یه نوع نگاه و دید داره نسبت به جهان پیرامونش و همین دید متفاوتش هست که باعث خلق طرح‌های نو می‌شه.&lt;/p&gt;
 
-&lt;div class=&quot;videoWrapper&quot;&gt;&lt;iframe src=&quot;https://player.vimeo.com/video/12793996?title=0&amp;amp;byline=0&amp;amp;portrait=0&quot; height=&quot;364&quot; width=&quot;640&quot; allowfullscreen=&quot;&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;div class=&quot;videoWrapper&quot;&amp;gt;&amp;lt;iframe src=&quot;https://player.vimeo.com/video/12793996?title=0&amp;amp;amp;byline=0&amp;amp;amp;portrait=0&quot; height=&quot;364&quot; width=&quot;640&quot; allowfullscreen=&quot;&quot; frameborder=&quot;0&quot;&amp;gt;&amp;lt;/iframe&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;ولی مهم‌ترین چیز اینه که «اصل» باشیم. خودمون باشیم. از کار دیگران الهام بگیریم، ایده بگیریم، ولی خودمون رو محدود نکنیم به مد روز. مدها میان و میرن و این طرح و اثر ماست که باید با گذر زمان اصالتش رو حفظ کنه. تاحالا فکر کردید که چرا بعضی محصولات بعد از گذشت ده‌ها سال از زمانی که طراحی شدن، هنوز هم جذابن؟&lt;/p&gt;
 
-&lt;p&gt;&lt;style type=&quot;text/css&quot;&gt;.size-full{
+&lt;pre&gt;&lt;code&gt;&amp;lt;style type=&quot;text/css&quot;&amp;gt;.size-full{
     max-width: 100%;
     height: auto;
 }.videoWrapper {
@@ -909,21 +827,13 @@ Request timeout for icmp_seq 24
     left: 0;
     width: 100%;
     height: 100%;
-}&lt;/style&gt;&lt;/p&gt;</description>
+}&amp;lt;/style&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;</description>
           <pubDate>2014-05-03 02:30:33</pubDate>
           <link>/miratest/sallarblog/2014/05/03/web-design-trends/</link>
           <guid isPermaLink="true">/miratest/sallarblog/2014/05/03/web-design-trends/</guid>
 
-
-        <category>
-          
-            طراحی رابط کاربری
-            ,
-            تایپوگرافی
-            ,
-            نقد
-            
-        </category>
+		
         </item>
       
         <item>
@@ -976,12 +886,7 @@ Request timeout for icmp_seq 24
           <link>/miratest/sallarblog/2014/03/17/the-backpack/</link>
           <guid isPermaLink="true">/miratest/sallarblog/2014/03/17/the-backpack/</guid>
 
-
-        <category>
-          
-            یاد‌داشت‌ها
-            
-        </category>
+		
         </item>
       
         <item>
@@ -1038,12 +943,7 @@ Request timeout for icmp_seq 24
           <link>/miratest/sallarblog/2014/03/02/the-last-startup-weekend/</link>
           <guid isPermaLink="true">/miratest/sallarblog/2014/03/02/the-last-startup-weekend/</guid>
 
-
-        <category>
-          
-            یاد‌داشت‌ها
-            
-        </category>
+		
         </item>
       
         <item>
@@ -1099,14 +999,7 @@ Request timeout for icmp_seq 24
           <link>/miratest/sallarblog/2014/01/14/copyright-week/</link>
           <guid isPermaLink="true">/miratest/sallarblog/2014/01/14/copyright-week/</guid>
 
-
-        <category>
-          
-            یاد‌داشت‌ها
-            ,
-            نقد
-            
-        </category>
+		
         </item>
       
         <item>
@@ -1160,14 +1053,7 @@ Request timeout for icmp_seq 24
           <link>/miratest/sallarblog/2014/01/09/copyright/</link>
           <guid isPermaLink="true">/miratest/sallarblog/2014/01/09/copyright/</guid>
 
-
-        <category>
-          
-            یاد‌داشت‌ها
-            ,
-            نقد
-            
-        </category>
+		
         </item>
       
 

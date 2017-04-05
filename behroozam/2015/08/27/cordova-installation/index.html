@@ -18,7 +18,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-  <link rel="canonical" href="https:/kiamazi.github.io/miratest/behroozam">
+  <link rel="canonical" href="https://kiamazi.github.io/miratest/behroozam">
 
   <link rel="shortcut icon" href="/miratest/static/theme/behroozam/images/favicon.ico">
 
@@ -27,7 +27,7 @@
 
   <link rel="stylesheet" type="text/css" media="screen" href="/miratest/static/theme/behroozam/css/main.css" />
   <link rel="stylesheet" type="text/css" media="print" href="/miratest/static/theme/behroozam/css/print.css" />
-  
+
 </head>
 
   <body itemscope itemtype="http://schema.org/Article">
@@ -38,20 +38,20 @@
 <!-- header end -->
 
     <main class="content" role="main">
-    
+
       <article class="post">
         
         <div class="article-image">
-          <div class="post-image-image" style="background-image: url(/miratest//static/behroozam/article_images/cordova/cordova-logo.png)">
+          <div class="post-image-image" style="background-image: url(/miratest/behroozam/assets/article_images/cordova/cordova-logo.png)">
             Article Image
           </div>
           <div class="post-meta">
             <h1 class="post-title">اپاچی کوردوا </h1>
             <div class="cf post-meta-text">
               <div class="author-image" style="background-image: url(/miratest/static/theme/behroozam/images/behroozam.jpg)">Blog Logo</div>
-              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">behroozam</h4>
+              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">behrooz hasanbeygi</h4>
               on
-              <span class="date" dir="rtl">۰۵&nbsp;&nbsp;شهریور&nbsp;&nbsp;۱۳۹۴</span>
+              <span class="date" dir="rtl">پنج‌شنبه۰۵شهریور۱۳۹۴</span>
             </div>
             <div style="text-align:center">
               <a href="#topofpage" class="topofpage"><i class="fa fa-angle-down"></i></a>
@@ -74,51 +74,59 @@
 
 <p>در ابتدا کافیه nodejs و npm رو دریافت کنید</p>
 
-<p>{% highlight bash %}
-sudo apt-get install nodejs npm
-{% endhighlight %}
-سپس بر اساس مستندات کوردوا کافیه در ترمینال این دستور رو وارد کنیم تا اخرین نسخه دانلود بشه
-{% highlight bash %}
-npm install -g cordova
-{% endhighlight %}
-خب تا اینجای کار همه چیز به خوبی و خوشی انجام شده . قسمت بد ماجرا تحریم های ظالمانه گوگل علیه دولوپر های عزیزمون هستش . پس با یه تغییر ip که انجام میدین google sdk manager رو دریافت میکنید فقط به دلیل جلوگیری از ارور های بعدی لطفا اخرین نسخه android sdk platform tools و android sdk build tools بعلاوه android 22 و 23 رو دریافت کنید . به دلیل اینکه راه های زیادی برای دریافت sdk manager هست در این مورد زیاد توضیح نمیدم . فقط یادتون باشه همه چیز باید آپدیت باشه . بخاطر همین به یه اینترنت خوب نیاز دارید
-بعد از نصب sdk manager و مشتقاتش حالا نیاز که اون رو به PATH سیستم بشناسونیم . برای من که از zsh استفاده میکنم کافیه در قسمت  <code>/home/<user>/.zshrc</code> قرار بدین و برای bash که اکثر کاربرا استفاده میکنن کافیه در همین مسیر <code>.bashrc</code> این رو قرار بدین کافیه تایپ کنید
-{% highlight bash %}
-nano /home/username shoma/.bashrc
-{% endhighlight %}
-و سپس این هارو به اخرش اضافه میکنیم
-{% highlight bash %}
-export PATH=$PATH:/home/<user>/Android/Sdk/tools
-export PATH=$PATH:/home/<user>Android/Sdk/platform-tools
-{% endhighlight %}
-سپس کد <code>source /home/<user>/.bashrc</code> رو وارد کنید تا پروفایل شما ری استارت بشه
+<pre><code>sudo apt-get install nodejs npm
+</code></pre>
+
+<p>سپس بر اساس مستندات کوردوا کافیه در ترمینال این دستور رو وارد کنیم تا اخرین نسخه دانلود بشه</p>
+
+<pre><code>npm install -g cordova
+</code></pre>
+
+<p>خب تا اینجای کار همه چیز به خوبی و خوشی انجام شده . قسمت بد ماجرا تحریم های ظالمانه گوگل علیه دولوپر های عزیزمون هستش . پس با یه تغییر ip که انجام میدین google sdk manager رو دریافت میکنید فقط به دلیل جلوگیری از ارور های بعدی لطفا اخرین نسخه android sdk platform tools و android sdk build tools بعلاوه android 22 و 23 رو دریافت کنید . به دلیل اینکه راه های زیادی برای دریافت sdk manager هست در این مورد زیاد توضیح نمیدم . فقط یادتون باشه همه چیز باید آپدیت باشه . بخاطر همین به یه اینترنت خوب نیاز دارید
+بعد از نصب sdk manager و مشتقاتش حالا نیاز که اون رو به PATH سیستم بشناسونیم . برای من که از zsh استفاده میکنم کافیه در قسمت  <code>/home/&lt;user&gt;/.zshrc</code> قرار بدین و برای bash که اکثر کاربرا استفاده میکنن کافیه در همین مسیر <code>.bashrc</code> این رو قرار بدین کافیه تایپ کنید</p>
+
+<pre><code>nano /home/username shoma/.bashrc
+</code></pre>
+
+<p>و سپس این هارو به اخرش اضافه میکنیم</p>
+
+<pre><code>export PATH=$PATH:/home/&lt;user&gt;/Android/Sdk/tools
+export PATH=$PATH:/home/&lt;user&gt;Android/Sdk/platform-tools
+</code></pre>
+
+<p>سپس کد <code>source /home/&lt;user&gt;/.bashrc</code> رو وارد کنید تا پروفایل شما ری استارت بشه
 البته توجه کنید که sdk manager من در دایرکتوری Android/sdk قرار داره که احتمالا با شما متفاوت هستش پس ادرس خودتون باهاش عوض کنید
-سپس اقدام به نصب jdk میکنیم
-{% highlight bash %}
-sudo apt-get install openjdk-8-jdk
-{% endhighlight %}
-لازم هستش که java رو هم به سیستم شناسونده بشه پس با دستور
-{% highlight bash %}
-sudo gedit /etc/environment
-{% endhighlight %}
-و  قرار دادن این کد
-{% highlight bash %}
-JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
-{% endhighlight %}
-که البته بازم بنا به معماری سیستم شما این ادرس میتونه متفاوت باشه . سپس کافیه کد <code>source /etc/environment</code> رو وارد کنید تا شناسونده بشه
-حالا اگه همه چیز خوب پیش رفته باشه باید با زدن همچین کد هایی برنامه سمپل hello کوردوا بویلد بشه
-{% highlight bash %}
-cordova create hello com.example.hello HelloWorld
+سپس اقدام به نصب jdk میکنیم</p>
+
+<pre><code>sudo apt-get install openjdk-8-jdk
+</code></pre>
+
+<p>لازم هستش که java رو هم به سیستم شناسونده بشه پس با دستور</p>
+
+<pre><code>sudo gedit /etc/environment
+</code></pre>
+
+<p>و  قرار دادن این کد</p>
+
+<pre><code>JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+</code></pre>
+
+<p>که البته بازم بنا به معماری سیستم شما این ادرس میتونه متفاوت باشه . سپس کافیه کد <code>source /etc/environment</code> رو وارد کنید تا شناسونده بشه
+حالا اگه همه چیز خوب پیش رفته باشه باید با زدن همچین کد هایی برنامه سمپل hello کوردوا بویلد بشه</p>
+
+<pre><code>cordova create hello com.example.hello HelloWorld
 cd hello
 cordova platform add android
 cordova build android
-{% endhighlight %}
-اگر که بویلد شد خوب و اگر نشد ارور ها شامل دوتا ارور عمده میشه ارور اول exit code 2 هست که به خاطر اپدیت و نصب نبودن sdk manager و android target 22 هستش . ارور exit code 8 زمانی به وجود میاد که در سیستم 64 بیتی مفسر سیستم 32 نباشه که با وارد کردن دستور زیر در ترمینال حل میشه
-{% highlight bash %}
-sudo apt-get install lib32stdc++6
+</code></pre>
+
+<p>اگر که بویلد شد خوب و اگر نشد ارور ها شامل دوتا ارور عمده میشه ارور اول exit code 2 هست که به خاطر اپدیت و نصب نبودن sdk manager و android target 22 هستش . ارور exit code 8 زمانی به وجود میاد که در سیستم 64 بیتی مفسر سیستم 32 نباشه که با وارد کردن دستور زیر در ترمینال حل میشه</p>
+
+<pre><code>sudo apt-get install lib32stdc++6
 sudo apt-get install lib32z1
-{% endhighlight %}
-به دلیل کند بودن امولاتور اندروید من استفاده از genymotion رو به شدت توصیه میکنم 
+</code></pre>
+
+<p>به دلیل کند بودن امولاتور اندروید من استفاده از genymotion رو به شدت توصیه میکنم
 من عادت به نوشتن همچین متن های بلند نصب و توسعه ندارم . اگه سوالی داشتید میتونید از تویتر یا گیتهابم یا ایمیلم که توی قایل کانفیگ بلاگ هست اقدام کنید</p>
         </section>
         <footer class="post-footer">
@@ -126,24 +134,14 @@ sudo apt-get install lib32z1
 
 	
               
-                <a class="icon-twitter" href="http://twitter.com/share?text=%D8%A7%D9%BE%D8%A7%DA%86%DB%8C%20%DA%A9%D9%88%D8%B1%D8%AF%D9%88%D8%A7%20&amp;url=https:/kiamazi.github.io/miratest/behroozam/miratest/behroozam/2015/08/27/cordova-installation/"
-                  onclick="window.open(this.href, '-share', 'width=550,height=255');return false;">
+                <a class="icon-twitter" href="http://twitter.com/share?text=%D8%A7%D9%BE%D8%A7%DA%86%DB%8C%20%DA%A9%D9%88%D8%B1%D8%AF%D9%88%D8%A7%20&amp;url=https://kiamazi.github.io/miratest/behroozam/miratest/behroozam/2015/08/27/cordova-installation/"
+                  onclick="window.open(this.href, 'twitter-share', 'width=550,height=255');return false;">
                 <i class="fa fa-twitter"></i><span class="hidden">twitter</span>
                 </a>
               
 	
               
-                <a class="icon-github" href="http://git.com/share?text=%D8%A7%D9%BE%D8%A7%DA%86%DB%8C%20%DA%A9%D9%88%D8%B1%D8%AF%D9%88%D8%A7%20&amp;url=https:/kiamazi.github.io/miratest/behroozam/miratest/behroozam/2015/08/27/cordova-installation/"
-                  onclick="window.open(this.href, '-share', 'width=550,height=255');return false;">
-                <i class="fa fa-github"></i><span class="hidden">github</span>
-                </a>
-              
 	
-              
-                <a class="icon-instagram" href="http://inst.com/share?text=%D8%A7%D9%BE%D8%A7%DA%86%DB%8C%20%DA%A9%D9%88%D8%B1%D8%AF%D9%88%D8%A7%20&amp;url=https:/kiamazi.github.io/miratest/behroozam/miratest/behroozam/2015/08/27/cordova-installation/"
-                  onclick="window.open(this.href, '-share', 'width=550,height=255');return false;">
-                <i class="fa fa-instagram"></i><span class="hidden">instagram</span>
-                </a>
               
 	
 
@@ -171,10 +169,10 @@ sudo apt-get install lib32z1
             <h5 class="index-headline featured"><span>Written by</span></h5>
             <section class="author">
               <div class="author-image" style="background-image: url(/miratest/static/theme/behroozam/images/behroozam.jpg)">Blog Logo</div>
-              <h4>behroozam</h4>
+              <h4>behrooz hasanbeygi</h4>
               <p class="bio"></p>
               <hr>
-              <p class="published">Published <time datetime="2015-08-27 03:08:51">27August2015</time></p>
+              <p class="published">Published <time datetime="2015-08-27 00:00:00">27Aug2015</time></p>
             </section>
           </div>
 
@@ -182,9 +180,9 @@ sudo apt-get install lib32z1
             <h5 class="index-headline featured"><span>Supported by</span></h5>
             <footer class="site-footer">
               <section dir="rtl" class="poweredby">قدرت گرفته به وسیله<a dir="rtl" href="http://miraxy.github.io"> mira</a></section>
-              <a class="subscribe" href="/miratest/behroozam/feed.xml"> <span class="tooltip"> <i class="fa fa-rss"></i> You should subscribe to my feed.</span></a>
+              <a class="subscribe" href="https://kiamazi.github.io/miratest/behroozam/feed.xml"> <span class="tooltip"> <i class="fa fa-rss"></i> You should subscribe to my feed.</span></a>
               <div class="inner">
-                <section class="copyright">All content Under GNU FDL <a href="https:/kiamazi.github.io/miratest/behroozam/">behroozam</a>  2015<br>free knowlege for all </section>
+                <section class="copyright">All content Under GNU FDL <a href="mailto:b.hasanbg[at]gmail[dot]com">behrooz hasanbeygi</a>  2017<br>free knowlege for all </section>
               </div>
             </footer>
           </div>
@@ -197,7 +195,7 @@ sudo apt-get install lib32z1
         Image
       </div>
       <div class="inner">
-        <h1 class="blog-title"></h1>
+        <h1 class="blog-title">بهروزم</h1>
         <h2 class="blog-description">manga / anime / gnu linux / networking</h2>
         <a href="/miratest/behroozam" class="btn">بازگشت به صفحه اول</a>
       </div>
@@ -206,6 +204,8 @@ sudo apt-get install lib32z1
 <script type="text/javascript" src="/miratest/static/theme/behroozam/js/jquery.fitvids.js"></script>
 <script type="text/javascript" src="/miratest/static/theme/behroozam/js/index.js"></script>
 <script type="text/javascript" src="/miratest/static/theme/behroozam/js/readingTime.min.js"></script>
+<script type="text/javascript" src="/miratest/static/theme/behroozam/js/prettify/prettify.js"></script>
+<script type="text/javascript" src="/miratest/static/theme/behroozam/js/run.js"></script>
 <script>
 (function ($) {
   "use strict";

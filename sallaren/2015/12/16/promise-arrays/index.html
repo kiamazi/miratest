@@ -1,7 +1,5 @@
 
-
-
-
+  
 
   <!DOCTYPE html>
 <html lang="English">
@@ -11,18 +9,36 @@
 
 <title>Promisified Arrays - Sallar Kaboli</title>
 
+
+
 <meta name="description" content="Exploring Javascript &amp; Things">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Exploring Javascript &amp; Things">
 <meta property="og:type" content="website">
-<meta property="og:title" content="">
-<meta property="og:url" content="https:/kiamazi.github.io/miratest/sallaren">
+<meta property="og:title" content="Promisified Arrays">
+<meta property="og:url" content="https://kiamazi.github.io/miratest/sallaren">
 <meta property="og:site_name" content="Sallar Kaboli">
-<meta property="og:description" content="">
+<meta property="og:description" content="&lt;p&gt;I like Javascript Promises a lot, so I’m trying to fit them everywhere in my apps. If you haven’t heard about Promises, or haven’t used them yet, I suggest you check out this great guide on them.
+
+I also like ES5 array functions and in my opinion they’re a few of the best additions to the language. My favorites are filter and map. The problem with these functions is they are synchronous, and I find myself trying to do something like this:
+
+var result = arr.map(function(item) {
+    // Do something Async here.
+});
+
+Which clearly isn’t going to work out since the callback function passed to map n&lt;/p&gt;">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="">
-<meta name="twitter:description" content="">
-<meta name="twitter:creator" content="@sallar">
+<meta name="twitter:title" content="Promisified Arrays">
+<meta name="twitter:description" content="&lt;p&gt;I like Javascript Promises a lot, so I’m trying to fit them everywhere in my apps. If you haven’t heard about Promises, or haven’t used them yet, I suggest you check out this great guide on them.
+
+I also like ES5 array functions and in my opinion they’re a few of the best additions to the language. My favorites are filter and map. The problem with these functions is they are synchronous, and I find myself trying to do something like this:
+
+var result = arr.map(function(item) {
+    // Do something Async here.
+});
+
+Which clearly isn’t going to work out since the callback function passed to map n&lt;/p&gt;">
+
 <link rel="alternative" href="/miratest/sallaren/atom.xml" title="Sallar Kaboli" type="application/atom+xml">
 <link rel="short icon" href="/miratest/static/theme/sallar/img/logo.png">
 <link rel="stylesheet" href="/miratest/static/theme/sallar/css/style-ltr.css" type="text/css">
@@ -31,12 +47,6 @@
 
 
 <body>
-
-<!--
- تیتر خام صفحه
- برای صفحه اصلی تیتر، برای پست ها خلاصه مطلب
-
--->
 
 
 
@@ -48,10 +58,10 @@
 
         <ul class="nav nav-list">
             <li class="nav-list-item"><a href="/miratest/sallaren/" target="_self" class="nav-list-link">Blog</a></li>
-            <li class="nav-list-item"><a href="https://sallar.me/about/" target="_self" class="nav-list-link">About</a></li>
-            <li class="nav-list-item"><a href="/miratest/sallaren/atom.xml" target="_self" class="nav-list-link">Rss</a></li>
-            <li class="nav-list-item"><a href="https://twitter.com/sallar" target="_blank" class="nav-list-link">Twitter</a></li>
-            <li class="nav-list-item"><a href="https://github.com/sallar" target="_blank" class="nav-list-link">Github</a></li>
+            <li class="nav-list-item"><a href="/miratest/sallaren/about/" target="_self" class="nav-list-link">About</a></li>
+            <li class="nav-list-item"><a href="/miratest/sallaren/feed.xml" target="_self" class="nav-list-link">Rss</a></li>
+            <li class="nav-list-item"><a href="https://twitter.com/USER" target="_blank" class="nav-list-link">Twitter</a></li>
+            <li class="nav-list-item"><a href="https://github.com/USER" target="_blank" class="nav-list-link">Github</a></li>
             <li class="nav-list-item"><a href="/miratest/sallarblog/" target="_self" class="nav-list-link">Persian</a></li>
 	</ul>
 
@@ -71,7 +81,7 @@
 
 	
 
-  <h4 class="time"><time datetime="2015-12-16 20:36:48" itemprop="datePublished">December&nbsp;&nbsp;16,&nbsp;&nbsp;2015</time></h4>
+  <h4 class="time"><time datetime="2015-12-16 20:36:48" itemprop="datePublished">Wednesday, December&nbsp;&nbsp;16,&nbsp;&nbsp;2015</time></h4>
 
 
 

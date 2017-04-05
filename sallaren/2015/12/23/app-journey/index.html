@@ -1,7 +1,5 @@
 
-
-
-
+  
 
   <!DOCTYPE html>
 <html lang="English">
@@ -11,18 +9,36 @@
 
 <title>Making an iOS app using Javascript vs. Swift - Sallar Kaboli</title>
 
+
+
 <meta name="description" content="Exploring Javascript &amp; Things">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Exploring Javascript &amp; Things">
 <meta property="og:type" content="website">
-<meta property="og:title" content="">
-<meta property="og:url" content="https:/kiamazi.github.io/miratest/sallaren">
+<meta property="og:title" content="Making an iOS app using Javascript vs. Swift">
+<meta property="og:url" content="https://kiamazi.github.io/miratest/sallaren">
 <meta property="og:site_name" content="Sallar Kaboli">
-<meta property="og:description" content="">
+<meta property="og:description" content="&lt;p&gt;We decided to do a small hackaton at Kiosked during summer which was all kinds of fun. Couple of colleagues and me decided to make an app for finding the best restaurant to go to for lunch, which as you know isn’t an easy thing to do ;-) Our lunch app was called Lunchify and it would do these things:
+
+Show the list of venues based on location proximity
+Show lunch menu for each restaurant
+Show directions to the venue (navigation)
+
+Cordova/AngularJS
+
+As a strong believer in Javascript, I suggested we build the app using Javascript so it would be easier to implement and also be cross-platform. Th&lt;/p&gt;">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="">
-<meta name="twitter:description" content="">
-<meta name="twitter:creator" content="@sallar">
+<meta name="twitter:title" content="Making an iOS app using Javascript vs. Swift">
+<meta name="twitter:description" content="&lt;p&gt;We decided to do a small hackaton at Kiosked during summer which was all kinds of fun. Couple of colleagues and me decided to make an app for finding the best restaurant to go to for lunch, which as you know isn’t an easy thing to do ;-) Our lunch app was called Lunchify and it would do these things:
+
+Show the list of venues based on location proximity
+Show lunch menu for each restaurant
+Show directions to the venue (navigation)
+
+Cordova/AngularJS
+
+As a strong believer in Javascript, I suggested we build the app using Javascript so it would be easier to implement and also be cross-platform. Th&lt;/p&gt;">
+
 <link rel="alternative" href="/miratest/sallaren/atom.xml" title="Sallar Kaboli" type="application/atom+xml">
 <link rel="short icon" href="/miratest/static/theme/sallar/img/logo.png">
 <link rel="stylesheet" href="/miratest/static/theme/sallar/css/style-ltr.css" type="text/css">
@@ -31,12 +47,6 @@
 
 
 <body>
-
-<!--
- تیتر خام صفحه
- برای صفحه اصلی تیتر، برای پست ها خلاصه مطلب
-
--->
 
 
 
@@ -48,10 +58,10 @@
 
         <ul class="nav nav-list">
             <li class="nav-list-item"><a href="/miratest/sallaren/" target="_self" class="nav-list-link">Blog</a></li>
-            <li class="nav-list-item"><a href="https://sallar.me/about/" target="_self" class="nav-list-link">About</a></li>
-            <li class="nav-list-item"><a href="/miratest/sallaren/atom.xml" target="_self" class="nav-list-link">Rss</a></li>
-            <li class="nav-list-item"><a href="https://twitter.com/sallar" target="_blank" class="nav-list-link">Twitter</a></li>
-            <li class="nav-list-item"><a href="https://github.com/sallar" target="_blank" class="nav-list-link">Github</a></li>
+            <li class="nav-list-item"><a href="/miratest/sallaren/about/" target="_self" class="nav-list-link">About</a></li>
+            <li class="nav-list-item"><a href="/miratest/sallaren/feed.xml" target="_self" class="nav-list-link">Rss</a></li>
+            <li class="nav-list-item"><a href="https://twitter.com/USER" target="_blank" class="nav-list-link">Twitter</a></li>
+            <li class="nav-list-item"><a href="https://github.com/USER" target="_blank" class="nav-list-link">Github</a></li>
             <li class="nav-list-item"><a href="/miratest/sallarblog/" target="_self" class="nav-list-link">Persian</a></li>
 	</ul>
 
@@ -71,7 +81,7 @@
 
 	
 
-  <h4 class="time"><time datetime="2015-12-23 21:35:00" itemprop="datePublished">December&nbsp;&nbsp;23,&nbsp;&nbsp;2015</time></h4>
+  <h4 class="time"><time datetime="2015-12-23 21:35:00" itemprop="datePublished">Wednesday, December&nbsp;&nbsp;23,&nbsp;&nbsp;2015</time></h4>
 
 
 
@@ -92,10 +102,10 @@
 
 <h2>Cordova/AngularJS</h2>
 
-<p>As a strong believer in Javascript, I suggested we build the app using Javascript so it would be easier to implement and also be cross-platform. The guys worked out the API behind the app and scraped some data from the web to show in the app, and I coded the app using JS, <a href="https://cordova.apache.org/">Cordova</a> and <a href="http://ionicframework.com/">Ionic</a> Framework. The whole thing went pretty well and we had a working app by the end of second day. 
+<p>As a strong believer in Javascript, I suggested we build the app using Javascript so it would be easier to implement and also be cross-platform. The guys worked out the API behind the app and scraped some data from the web to show in the app, and I coded the app using JS, <a href="https://cordova.apache.org/">Cordova</a> and <a href="http://ionicframework.com/">Ionic</a> Framework. The whole thing went pretty well and we had a working app by the end of second day.
 The amount of effort I put into making the app was really minimal and many things were already being handled by Ionic and <a href="https://angularjs.org/">AngularJS</a>, so what I was actually doing was just connecting things together. This is the result:</p>
 
-<p><img src="/miratest/static/sallaren/img/app-journey/cordova.jpg" alt="Cordova AngularJS" title="Cordova AngularJS" ></p>
+<p><img src="/miratest/sallaren/img/app-journey/cordova.jpg" alt="Cordova AngularJS" title="Cordova AngularJS" ></p>
 
 <p>The result was more than OK for what it was (a hackaton project) and everybody was happy with it. But as a perfectionist that I am, I wanted it to be more than that. So I registered a new domain and decided to do a real app to be released in the App Store. I could just continue working on the existing project, but it had a few issues:</p>
 
@@ -119,7 +129,7 @@ The amount of effort I put into making the app was really minimal and many thing
 
 <p>I rebuilt most of what I had done in Cordova using React Native, and while the process wasn’t all sunshine and candies (since React Native was and is in Beta and changes a lot), the resulting app was <em>native</em> and smooth. Here it is:</p>
 
-<p><img src="/miratest/static/sallaren/img/app-journey/react-native.jpg" alt="React Native" title="React Native" ></p>
+<p><img src="/miratest/sallaren/img/app-journey/react-native.jpg" alt="React Native" title="React Native" ></p>
 
 <p>Although I put nearly a month of my free time into this, but I wasn’t quite happy with the result. Mainly because:</p>
 
@@ -133,7 +143,7 @@ The amount of effort I put into making the app was really minimal and many thing
 
 <h2>Swift</h2>
 
-<p>OK, at this point I had two options. Choose between React Native and AngularJS/Cordova, or just give up and forget about the project. It was a nice experiment after all. Then I thought of a third option: Learn <a href="https://swift.org/">Swift</a> and build the app with that. How hard could it possibly be? Turns out: Not hard at all. 
+<p>OK, at this point I had two options. Choose between React Native and AngularJS/Cordova, or just give up and forget about the project. It was a nice experiment after all. Then I thought of a third option: Learn <a href="https://swift.org/">Swift</a> and build the app with that. How hard could it possibly be? Turns out: Not hard at all.
 I never liked Objective-C’s syntax. It’s too verbose in my opinion. But Swift on the other hand looked really clean and had a modern syntax, much like the languages I’m already familiar with. So I followed some online courses, read the Swift docs and a book, and then started coding the same thing in XCode. Pros:</p>
 
 <ul>
@@ -146,10 +156,10 @@ I never liked Objective-C’s syntax. It’s too verbose in my opinion. But Swif
 
 <p>As I’m writing this post, the app looks like this:</p>
 
-<p><img src="/miratest/static/sallaren/img/app-journey/swift.jpg" alt="Swift" title="Swift" ></p>
+<p><img src="/miratest/sallaren/img/app-journey/swift.jpg" alt="Swift" title="Swift" ></p>
 
-<p>And the source code is <a href="https://github.com/sallar/lunchify-swift">on Github</a> at your disposal. I’m a rookie Swift developer so excuse any bad practices or repetative code, I will make it better as I go further. 
-I also put the <a href="https://github.com/sallar/lunchify-cordova">Cordova</a> and <a href="https://github.com/sallar/lunchify-react-native">React Native</a> source codes on Github if you want to check them out too for any reason. I haven’t cleaned the code up though. </p>
+<p>And the source code is <a href="https://github.com/sallar/lunchify-swift">on Github</a> at your disposal. I’m a rookie Swift developer so excuse any bad practices or repetative code, I will make it better as I go further.
+I also put the <a href="https://github.com/sallar/lunchify-cordova">Cordova</a> and <a href="https://github.com/sallar/lunchify-react-native">React Native</a> source codes on Github if you want to check them out too for any reason. I haven’t cleaned the code up though.</p>
 
 <h2>Now What?</h2>
 
