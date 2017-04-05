@@ -4,22 +4,22 @@
   <nav class="container">
 
     {{ IF SITE.language == 'Farsi' }}
-	{{ IF next }}
-	  <a class="extend next" rel="next" href="{{ next }}"><i>→</i><span> نوشته‌های کهنه‌تر</span></a>
+	{{ IF page.next }}
+	  <a class="extend next" rel="next" href="{{ page.next }}"><i>→</i><span> نوشته‌های کهنه‌تر</span></a>
 	{{- END }}
 
-	{{ IF prev }}
-	  <a class="extend prev" rel="prev" href="{{ prev }}"><span>نوشته‌های تازه‌تر </span><i>←</i></a>
+	{{ IF page.prev }}
+	  <a class="extend prev" rel="prev" href="{{ page.prev }}"><span>نوشته‌های تازه‌تر </span><i>←</i></a>
 	{{- END }}
 
 
     {{ ELSIF SITE.language == 'English' }}
-	{{ IF next }}
-	  <a class="extend next" rel="next" href="{{ next }}"><i>→</i><span> older posts</span></a>
+	{{ IF page.next }}
+	  <a class="extend next" rel="next" href="{{ page.next }}"><i>→</i><span> older posts</span></a>
 	{{- END }}
 
-	{{ IF prev }}
-	  <a class="extend prev" rel="prev" href="{{ prev }}"><span>newer post </span><i>←</i></a>
+	{{ IF page.prev }}
+	  <a class="extend prev" rel="prev" href="{{ page.prev }}"><span>newer post </span><i>←</i></a>
 	{{- END }}
 
 

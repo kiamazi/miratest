@@ -124,23 +124,24 @@ utid: 20140503023033
 
 من هم به نوبه خودم اشتباهات زیادی رو در طرح‌هام مرتکب شدم و حتی خیلی وقت‌ها روی موج ترندها سوار شدم و بدون توجه به نیاز مخاطب، طرحم رو پر کردم از چیزهایی که برای طرح هیچ سودی نداشتن. هیچ طراحی نمی‌تونه ادعا کنه که از روز اول تونسته طرح‌های عالی و بدون نقص خلق کنه و هیچ اشتباهی در کارش نداشته تاحالا. در طراحی هیچ چیز سفید یا سیاه نیست و نمیشه با قاطعیت گفت که چیزی درست هست یا غلط؛ هر طراحی یه نوع نگاه و دید داره نسبت به جهان پیرامونش و همین دید متفاوتش هست که باعث خلق طرح‌های نو می‌شه.
 
-<div class="videoWrapper"><iframe src="https://player.vimeo.com/video/12793996?title=0&amp;byline=0&amp;portrait=0" height="364" width="640" allowfullscreen="" frameborder="0"></iframe>
-</div>
+	<div class="videoWrapper"><iframe src="https://player.vimeo.com/video/12793996?title=0&amp;byline=0&amp;portrait=0" height="364" width="640" allowfullscreen="" frameborder="0"></iframe>
+	</div>
 
 ولی مهم‌ترین چیز اینه که «اصل» باشیم. خودمون باشیم. از کار دیگران الهام بگیریم، ایده بگیریم، ولی خودمون رو محدود نکنیم به مد روز. مدها میان و میرن و این طرح و اثر ماست که باید با گذر زمان اصالتش رو حفظ کنه. تاحالا فکر کردید که چرا بعضی محصولات بعد از گذشت ده‌ها سال از زمانی که طراحی شدن، هنوز هم جذابن؟
 
-<style type="text/css">.size-full{
-    max-width: 100%;
-    height: auto;
-}.videoWrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    margin-bottom: 1em;
-}.videoWrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}</style>
+	<style type="text/css">.size-full{
+	    max-width: 100%;
+	    height: auto;
+	}.videoWrapper {
+	    position: relative;
+	    padding-bottom: 56.25%;
+	    height: 0;
+	    margin-bottom: 1em;
+	}.videoWrapper iframe {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    height: 100%;
+	}</style>
+

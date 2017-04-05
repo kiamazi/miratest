@@ -5,8 +5,8 @@
     <description>{{ FloorDESCRIPTION }}</description>
     <link>{{ FloorURL }}</link>
     <atom:link href="{{ URL }}/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>{{ DATE }}</pubDate>
-    <lastBuildDate>{{ DATE }}</lastBuildDate>
+    <pubDate>{{ BUILD.date }}</pubDate>
+    <lastBuildDate>{{ BUILD.date }}</lastBuildDate>
     <generator>mira</generator>
 
 
@@ -20,7 +20,7 @@
 
 
         <category>
-          {{ FOREACH categories.values }}
+          {{ FOREACH category.values }}
             {{ name }}
             {{ IF (loop.index != loop.max) }},{{- END }}
           {{- END }}

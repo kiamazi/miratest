@@ -4,12 +4,12 @@
     <nav class="container">
         <ul>
             <li><a href="{{ MainROOT }}/">صفحه اول</a></li>
-            <li><a href="{{ ROOT }}/">بلاگ</a></li>
+            <li><a href="{{ ROOT}}/feed.xml" target="_self">فید</a></li>
             <li><a href="{{ ROOT }}/contact/">تماس</a></li>
-            <li class="logo"><a href="{{ MainURL }}">- سالار‌کابلی -</a></li>
-            <li><a href="https://fi.linkedin.com/in/sallarkaboli" target="_blank">لینکدین</a></li>
-            <li><a href="https://github.com/sallar" target="_blank">گیتهاب</a></li>
-            <li><a href="https://twitter.com/sallar" target="_blank">توییتر</a></li>
+            <li class="logo"><a href="{{ MainROOT }}/">{{ TITLE }}</a></li>
+            <li><a href="https://en.linkedin.com/in/USER" target="_blank">لینکدین</a></li>
+            <li><a href="https://github.com/USER" target="_blank">گیتهاب</a></li>
+            <li><a href="https://twitter.com/USER" target="_blank">توییتر</a></li>
         </ul>
     </nav>
 </header>
@@ -20,10 +20,10 @@
 
         <ul class="nav nav-list">
             <li class="nav-list-item"><a href="{{ ROOT }}/" target="_self" class="nav-list-link">Blog</a></li>
-            <li class="nav-list-item"><a href="https://sallar.me/about/" target="_self" class="nav-list-link">About</a></li>
-            <li class="nav-list-item"><a href="{{ ROOT}}/atom.xml" target="_self" class="nav-list-link">Rss</a></li>
-            <li class="nav-list-item"><a href="https://twitter.com/sallar" target="_blank" class="nav-list-link">Twitter</a></li>
-            <li class="nav-list-item"><a href="https://github.com/sallar" target="_blank" class="nav-list-link">Github</a></li>
+            <li class="nav-list-item"><a href="{{ ROOT }}/about/" target="_self" class="nav-list-link">About</a></li>
+            <li class="nav-list-item"><a href="{{ ROOT}}/feed.xml" target="_self" class="nav-list-link">Rss</a></li>
+            <li class="nav-list-item"><a href="https://twitter.com/USER" target="_blank" class="nav-list-link">Twitter</a></li>
+            <li class="nav-list-item"><a href="https://github.com/USER" target="_blank" class="nav-list-link">Github</a></li>
             <li class="nav-list-item"><a href="{{ MainROOT }}/sallarblog/" target="_self" class="nav-list-link">Persian</a></li>
 	</ul>
 

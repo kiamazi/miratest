@@ -6,8 +6,8 @@
     {{ IF categories }}
 			<span class="hide-on-mobile">
 		  منتشر شده در:
-			{{ FOREACH categories.values }}
-				<a href="{{ url }}">{{ name }}</a>
+			{{ FOREACH cat IN categories.values }}
+				<a href="{{ cat.url }}">{{ cat.name }}</a>
 				{{ IF (loop.index != loop.max) }}،&nbsp;{{ END }}
 			{{- END }}
 			</span>
@@ -20,8 +20,8 @@
     {{ IF tags }}
 	<span class="hide-on-mobile">
 	tags: 
-	{{ FOREACH tags.values }}
-	  <a href="{{ url }}">{{ name }}</a>
+	{{ FOREACH tag IN tags.values }}
+	  <a href="{{ tag.url }}">{{ tag.name }}</a>
 	  {{ IF (loop.index != loop.max) }}،&nbsp;{{ END }}
 	{{- END }}
 	</span>

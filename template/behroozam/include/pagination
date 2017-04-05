@@ -1,0 +1,11 @@
+<nav class="pagination" role="navigation" dir="ltr">
+
+  {{ IF PAGE.next }}
+  <a class="older-posts" href="{{ PAGE.next.url }}">&larr; Older posts</i></a>
+  {{- END }}
+&nbsp;&nbsp;|&nbsp;&nbsp;page&nbsp;{{ PAGE.number }}&nbsp;of&nbsp;{{ PAGE.total }}&nbsp;&nbsp;|&nbsp;&nbsp;
+  {{ IF PAGE.prev }}
+  <a class="newer-posts" href="{{ PAGE.prev.url }}">Newer posts &rarr;</a>
+  {{- END }}
+
+</nav>

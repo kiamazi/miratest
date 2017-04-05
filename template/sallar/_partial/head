@@ -6,6 +6,8 @@
 
 <title>{{ PageTITLE }}</title>
 
+
+
 <meta name="description" content="Exploring Javascript &amp; Things">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Exploring Javascript &amp; Things">
@@ -17,8 +19,8 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="{{ TitleContent }}">
 <meta name="twitter:description" content="{{ HeadDesc }}">
-<meta name="twitter:creator" content="@sallar">
-<link rel="alternative" href="{{ ROOT }}/atom.xml" title="Sallar Kaboli" type="application/atom+xml">
+
+<link rel="alternative" href="{{ ROOT }}/atom.xml" title="{{ TITLE }}" type="application/atom+xml">
 <link rel="short icon" href="{{ SITE.icon }}">
 <link rel="stylesheet" href="{{ MainSTATIC }}/theme/sallar/css/{{ SITE.css }}" type="text/css">
 
@@ -27,8 +29,3 @@
 
 <body>
 
-<!--
-{{ TitleContent }} تیتر خام صفحه
-{{ HeadDesc }} برای صفحه اصلی تیتر، برای پست ها خلاصه مطلب
-
--->

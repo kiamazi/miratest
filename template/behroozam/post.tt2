@@ -4,20 +4,20 @@
   <body itemscope itemtype="http://schema.org/Article">
     {{ INCLUDE header }}
     <main class="content" role="main">
-    {{ FOREACH POSTS }}
+
       <article class="post">
-        {{ IF image }}
+        {{ IF post.image }}
         <div class="article-image">
-          <div class="post-image-image" style="background-image: url(/miratest/{{ image }})">
+          <div class="post-image-image" style="background-image: url({{ post.image }})">
             Article Image
           </div>
           <div class="post-meta">
-            <h1 class="post-title">{{ title }}</h1>
+            <h1 class="post-title">{{ post.title }}</h1>
             <div class="cf post-meta-text">
               <div class="author-image" style="background-image: url({{ SITE.author_image }})">Blog Logo</div>
-              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ author }}</h4>
+              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ post.author }}</h4>
               on
-              <span class="date" dir="rtl">{{ CALENDAR.jday | $FarsiNum }}&nbsp;&nbsp;{{ CALENDAR.jmonth_name }}&nbsp;&nbsp;{{ CALENDAR.jyear | $FarsiNum }}</span>
+              <span class="date" dir="rtl">{{ post.CALENDAR.jday_name | $FarsiNum }}{{ post.CALENDAR.jday | $FarsiNum }}{{ post.CALENDAR.jmonth_name }}{{ post.CALENDAR.jyear | $FarsiNum }}</span>
             </div>
             <div style="text-align:center">
               <a href="#topofpage" class="topofpage"><i class="fa fa-angle-down"></i></a>
@@ -27,12 +27,12 @@
         {{ ELSE }}
         <div class="noarticleimage">
           <div class="post-meta">
-            <h1 class="post-title">{{ title }}</h1>
+            <h1 class="post-title">{{ post.title }}</h1>
             <div class="cf post-meta-text">
               <div class="author-image" style="background-image: url({{ SITE.author_image }})">Blog Logo</div>
-              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ author }}</h4>
+              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ post.author }}</h4>
               on<br>
-              <time datetime="{{ date }}" dir="rtl">{{ CALENDAR.jday | $FarsiNum }}{{ CALENDAR.jmonth_name }}{{ CALENDAR.jyear | $FarsiNum }}</time>
+              <time datetime="{{ post.date }}" dir="rtl">{{ post.CALENDAR.jday_name | $FarsiNum }}{{ post.CALENDAR.jday | $FarsiNum }}{{ post.CALENDAR.jmonth_name }}{{ post.CALENDAR.jyear | $FarsiNum }}</time>
             </div>
           </div>
         </div>
@@ -45,21 +45,21 @@
             <span class="post-reading-time"></span> read
           </div>
           <a name="topofpage"></a>
-          {{ body.more }}
+          {{ post.body.more }}
         </section>
         <footer class="post-footer">
           <section class="share">
 
 	{{ FOREACH social IN SITE.social }}
               {{ IF social.share_url }}
-                <a class="icon-{{ social.icon }}" href="{{ social.share_url }}{{ social.share_title }}{{ title | uri }}{{ social.share_link }}{{ URL }}{{ url }}"
-                  onclick="window.open(this.href, '{{ icon }}-share', 'width=550,height=255');return false;">
+                <a class="icon-{{ social.icon }}" href="{{ social.share_url }}{{ social.share_title }}{{ post.title | uri }}{{ social.share_link }}{{ URL }}{{ post.url }}"
+                  onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">
                 <i class="fa fa-{{ social.icon }}"></i><span class="hidden">{{ social.icon }}</span>
                 </a>
               {{ END }}
 	{{ END }}
 
-             {{ IF comment == 'yes' }}
+             {{ IF post.comment != 'no' }}
               <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
@@ -83,10 +83,10 @@
             <h5 class="index-headline featured"><span>Written by</span></h5>
             <section class="author">
               <div class="author-image" style="background-image: url({{ SITE.author_image }})">Blog Logo</div>
-              <h4>{{ author }}</h4>
+              <h4>{{ post.author }}</h4>
               <p class="bio">{{ SITE.authorbio }}</p>
               <hr>
-              <p class="published">Published <time datetime="{{ date }}">{{ CALENDAR.day }}{{ CALENDAR.month_name }}{{ CALENDAR.year }}</time></p>
+              <p class="published">Published <time datetime="{{ post.date }}">{{ post.CALENDAR.day }}{{ post.CALENDAR.month_abbr }}{{ post.CALENDAR.year }}</time></p>
             </section>
           </div>
 
@@ -94,22 +94,22 @@
             <h5 class="index-headline featured"><span>Supported by</span></h5>
             <footer class="site-footer">
               <section dir="rtl" class="poweredby">قدرت گرفته به وسیله<a dir="rtl" href="http://miraxy.github.io"> mira</a></section>
-              <a class="subscribe" href="{{ ROOT }}/feed.xml"> <span class="tooltip"> <i class="fa fa-rss"></i> You should subscribe to my feed.</span></a>
+              <a class="subscribe" href="{{ URL }}/feed.xml"> <span class="tooltip"> <i class="fa fa-rss"></i> You should subscribe to my feed.</span></a>
               <div class="inner">
-                <section class="copyright">All content Under GNU FDL <a href="{{ URL }}/">{{ author }}</a>  {{ CALENDAR.year }}<br>free knowlege for all </section>
+                <section class="copyright">All content Under GNU FDL <a href="mailto:{{ EMAIL }}">{{ AUTHOR }}</a>  {{ BUILD.year }}<br>free knowlege for all </section>
               </div>
             </footer>
           </div>
         </div>
       </article>
-{{ END }}
+
     </main>
     <div class="bottom-closer">
       <div class="background-closer-image" style="background-image: url({{ SITE.cover }})">
         Image
       </div>
       <div class="inner">
-        <h1 class="blog-title">{{ TITILE }}</h1>
+        <h1 class="blog-title">{{ TITLE }}</h1>
         <h2 class="blog-description">{{ DESCRIPTION }}</h2>
         <a href="{{ ROOT }}" class="btn">بازگشت به صفحه اول</a>
       </div>

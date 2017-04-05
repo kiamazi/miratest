@@ -1,0 +1,61 @@
+
+
+  {{ INCLUDE head }}
+  <body itemscope itemtype="http://schema.org/Article">
+    {{ INCLUDE header }}
+    <main class="content" role="main">
+
+      <article class="post">
+        {{ IF post.image }}
+        <div class="article-image">
+          <div class="post-image-image" style="background-image: url({{ post.image }})">
+            Article Image
+          </div>
+          <div class="post-meta">
+            <h1 class="post-title">{{ post.title }}</h1>
+            <div class="cf post-meta-text">
+              <div class="author-image" style="background-image: url({{ SITE.author_image }})">Blog Logo</div>
+              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ SITE.author }}</h4>
+            </div>
+            <div style="text-align:center">
+              <a href="#topofpage" class="topofpage"><i class="fa fa-angle-down"></i></a>
+            </div>
+          </div>
+        </div>
+        {{ ELSE }}
+        <div class="noarticleimage">
+          <div class="post-meta">
+            <h1 class="post-title">{{ post.title }}</h1>
+            <div class="cf post-meta-text">
+              <div class="author-image" style="background-image: url({{ SITE.author_image }})">Blog Logo</div>
+              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ SITE.author }}</h4>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        {{ END }}
+        <section dir="rtl" class="post-content">
+          <div class="post-reading">
+            <span class="post-reading-time"></span> read
+          </div>
+          <a name="topofpage"></a>
+          {{ post.body.more }}
+        </section>
+      </article>
+    </main>
+    <div class="bottom-closer">
+      <div class="background-closer-image" style="background-image: url({{ SITE.cover }})">
+        Image
+      </div>
+      <div class="inner">
+        <h1 class="blog-title">{{ SITE.title }}</h1>
+        <h2 class="blog-description">{{ SITE.description }}</h2>
+        <a href="{{ ROOT }}" class="btn">بازگشت به صفحه اول</a>
+      </div>
+    </div>
+    {{ INCLUDE javascripts }}
+
+  </body>
+</html>

@@ -1,7 +1,4 @@
 
-
-
-## Site settings
 title: بهروزم
 description: manga / anime / gnu linux / networking
 
@@ -11,72 +8,41 @@ name: 'behroozam'
 author: 'behrooz hasanbeygi'
 email: b.hasanbg[at]gmail[dot]com
 
- # the base hostname & protocol for your site
 url: https://kiamazi.github.io/miratest/behroozam/
 root: /miratest/behroozam/
-
-
 
 logo: /miratest/static/theme/behroozam/images/logo2.jpg
 cover: /miratest/static/theme/behroozam/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg
 author_image: /miratest/static/theme/behroozam/images/behroozam.jpg
 icon: /miratest/static/theme/behroozam/images/favicon.ico
 
-# if fill static and imageurl, they will be cretaed in your root
-# change from /MAIN_ROOT/YOUR_MAIN_STATIC_PATH to-> /MAIN_ROOT/FLOOR_ROOT/YOUR_STATIC_PATH
-# and
-# change from /MAIN_ROOT/YOUR_MAIN_Image_PATH to-> /MAIN_ROOT/FLOOR_ROOT/YOUR_Image_PATH
-static: /miratest/static/behroozam
-imageurl: /miratest/static/behroozam/article_images
+static: /miratest/behroozam/assets
+imageurl: /miratest/behroozam/assets/article_images
 
-## default post permanent link
 permalink: :year/:month/:day/:title/
 
-##date format default is gregorian, but you can change it to jalali
-date_format: jalali
-
-## Your local Time Zone
-TimeZone: +03:30
-
-## Build settings
-default_markup: markdown
-
-## number of posts will be show in main index page
-post_num: 5
-
-## number of posts will be show in archives index page
-archive_post_num: all
-
-
-## Mira's main directory in your pc
-
-
-
-## template path by root is penurlPATH/template
-## if you want use a custom template for examle in penurlPATH/template/CustomThEM
-## just type custom template folder name
-#> template: Custom_Template_Folde_Name
 template: behroozam
 
-## the fields you want use for archive, like category, tag and ...
-## by default Mira archive date field dont need type it here
-## Mira use this fields by default for the floors which haven't field section
-## in FloorName.yaml, or haven't FloorName.yaml file
+default_markup: markdown
 
-#this fields are not allowed: archives, static
+post_num: 5
+archive_post_num: all
+
+plugins:
+ - Jdate
+
 lists:
- - categories
 
 namespace:
-  آموزش: learn
+  ویژه: featured
+  توسعه: development
+  زی کانف: zconf
+  امنیت: security
+  آزاد و متن باز: foss
+  زندگی: life
   کتاب: book
-  درباره: about
-  شخصی: personal
-  عمومی: general
-  نمونه کارها: portfolios
-  نمونه کار: portfolios
-  طراحی مجدد: redesign
-  تایپوگرافی: typographi
+  انیمه: anime
+  آینده نگر: Futurist
 
 disqus_shortname: behroozam
 
@@ -91,13 +57,13 @@ social:
  -  icon: github
     url: https://github.com/behroozam
     desc: Fork me on github
-    share_url: http://git.com/share
-    share_title: ?text=
-    share_link: "&amp;url="
+    share_url:
+    share_title:
+    share_link:
 
  -  icon: instagram
     url: https://instagram.com/behroozam
     desc: Follow me
-    share_url: http://inst.com/share
-    share_title: ?text=
-    share_link: "&amp;url="
+    share_url:
+    share_title:
+    share_link:

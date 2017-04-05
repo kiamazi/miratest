@@ -1,68 +1,34 @@
 
 
-
-## Site settings
 title: Sallar Kaboli
 subtitle:
 description: Sallar Kaboli / Exploring JavaScript & Things.
 author: Sallar Kaboli
 language: English
-timezone: Europe/Helsinki
 
 source: http://sallar.me/
 
- # the base hostname & protocol for your site
 url: https://kiamazi.github.io/miratest/sallaren/
 root: /miratest/sallaren/
 
-
 icon: /miratest/static/theme/sallar/img/logo.png
 css: style-ltr.css
-# if fill static and imageurl, they will be cretaed in your root
-# change from /MAIN_ROOT/YOUR_MAIN_STATIC_PATH to-> /MAIN_ROOT/FLOOR_ROOT/YOUR_STATIC_PATH
-# and
-# change from /MAIN_ROOT/YOUR_MAIN_Image_PATH to-> /MAIN_ROOT/FLOOR_ROOT/YOUR_Image_PATH
-static: /miratest/static/sallaren
-imageurl: /miratest/static/sallaren/img/
+
+static: /miratest/sallaren/static/
+imageurl: /miratest/sallaren/img/
 
 ## default post permanent link
 permalink: :year/:month/:day/:title/
 
-##date format default is gregorian, but you can change it to jalali
+default_markup: markdown
 
-
-## Your local Time Zone
-TimeZone: +03:30
-
-## Build settings
-default_body_format: markdown
-
-## number of posts will be show in main index page
 post_num: 10
-
-## number of posts will be show in archives index page
 archive_post_num: 20
 
-
-## Mira's main directory in your pc
-
-
-
-## template path by root is penurlPATH/template
-## if you want use a custom template for examle in penurlPATH/template/CustomThEM
-## just type custom template folder name
-#> template: Custom_Template_Folde_Name
 template: sallar
 
-## the fields you want use for archive, like category, tag and ...
-## by default Mira archive date field dont need type it here
-## Mira use this fields by default for the floors which haven't field section
-## in FloorName.yaml, or haven't FloorName.yaml file
-
-#this fields are not allowed: archives, static
 lists:
  - tags
-
 
 disqus_shortname: sallar
 

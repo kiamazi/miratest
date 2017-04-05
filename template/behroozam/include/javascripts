@@ -2,6 +2,8 @@
 <script type="text/javascript" src="{{ MainSTATIC }}/theme/behroozam/js/jquery.fitvids.js"></script>
 <script type="text/javascript" src="{{ MainSTATIC }}/theme/behroozam/js/index.js"></script>
 <script type="text/javascript" src="{{ MainSTATIC }}/theme/behroozam/js/readingTime.min.js"></script>
+<script type="text/javascript" src="{{ MainSTATIC }}/theme/behroozam/js/prettify/prettify.js"></script>
+<script type="text/javascript" src="{{ MainSTATIC }}/theme/behroozam/js/run.js"></script>
 <script>
 (function (\$) {
   "use strict";

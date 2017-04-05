@@ -17,13 +17,13 @@
 
 <header class="blog-header">
 
-      <a class="blog-logo" href="{{ URL }}" style="background-image: url('{{ SITE.logo }}')">{{ TITLE }}</a>
+      <a class="blog-logo" href="{{ ROOT }}" style="background-image: url('{{ SITE.logo }}')">{{ TITLE }}</a>
 
     <h1 class="blog-title">{{ TITLE }}</h1>
     <h2 class="blog-description">{{ DESCRIPTION }}<br><a href="{{ SITE.source }}">{{ SITE.source }}</a></h2>
 
     <div class="custom-links">
-      {{ FOREACH social in SITE.social }}
+      {{ FOREACH social IN SITE.social }}
         {{ IF social.url }}
             <a class="icon-{{ social.icon }}" href="{{ social.url }}">
               <i class="fa fa-{{ social.icon }}"></i>
@@ -32,43 +32,31 @@
         {{ END }}
       {{- END }}
 
-      <a href="/behroozam/about/">درباره بهروزم</a>
+      <a href="/about/">درباره بهروزم</a>
     </div>
 </header>
 
 <main dir="rtl" class="content" role="main">
 
     <div class="cf frame">
-      {{ FOREACH POSTS }}
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
-          <div class="article-item">
-            <header class="post-header">
-              <h2 class="post-title" itemprop="name"><a href="{{ url }}" itemprop="url">{{ title }}</a></h2>
-            </header>
-            <section class="post-excerpt" itemprop="description">
-              <p>{{ body.less | html_break | truncate(300, '.....') }}</p>
-            </section>
-            <div class="post-meta">
- <span class="post-meta"><span class="date">{{ CALENDAR.jday | $FarsiNum }}{{ CALENDAR.jmonth_name }}{{ CALENDAR.jyear | $FarsiNum }}</span></span>
-            </div>
+      {{ FOREACH post IN POSTS }}
+      <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
+        <div class="article-item">
+          <header class="post-header">
+            <h2 class="post-title" itemprop="name"><a href="{{ post.url }}" itemprop="url">{{ post.title }}</a></h2>
+          </header>
+          <section class="post-excerpt" itemprop="description">
+            <p>{{ post.body.less | html_break | truncate(300, '.....') }}</p>
+          </section>
+          <div class="post-meta">
+            <span class="post-meta"><span class="date">{{ post.CALENDAR.jday_name | $FarsiNum }}{{ post.CALENDAR.jday | $FarsiNum }}{{ post.CALENDAR.jmonth_name }}{{ post.CALENDAR.jyear | $FarsiNum }}</span></span>
           </div>
-        </article>
+        </div>
+      </article>
       {{ END }}
     </div>
 
-    <nav class="pagination" role="navigation" dir="ltr">
-
-   {{ IF next }}
-      <a class="older-posts" href="{{ next }}">&larr; Older posts</i></a>
-   {{- END }}
-&nbsp;&nbsp;|&nbsp;&nbsp;
-   {{ IF prev }}
-      <a class="newer-posts" href="{{ prev }}">Newer posts &rarr;</a>
-   {{- END }}
-
-    </nav>
-
-
+    {{ INCLUDE pagination }}
 
 </main>
 

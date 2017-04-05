@@ -1,13 +1,9 @@
-{{ FOREACH POSTS }}
-{{ TitleContent = title }}
-{{ HeadDesc = body.less }}
-{{ END }}
+
+  {{ HeadDesc = post.body.less | html }}
 
   {{ INCLUDE _partial/head 
-	TitleContent
-	HeadDesc
+	TitleContent = post.title
   }}
-
 
     {{ INCLUDE _partial/header }}
 
